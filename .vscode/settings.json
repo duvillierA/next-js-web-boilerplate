@@ -1,0 +1,22 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit",
+    "source.removeUnusedImports": "explicit"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "files.watcherExclude": {
+    "**/.next": true,
+    "**/.test": true,
+    "**/.husky": true
+  },
+  "search.exclude": {
+    "**/.next": true,
+    "**/.test": true,
+    "**/.husky": true
+  }
+}
