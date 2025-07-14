@@ -11,7 +11,7 @@ A modern Next.js project template with TypeScript, Tailwind CSS, shadcn/ui compo
 | 💅 Tailwind CSS | Modern styling |
 | 🎨 shadcn/ui | UI component library |
 | 🧪 Vitest | Testing framework:<br>• Unit tests (Node environment)<br>• DOM tests (JSDOM environment)<br>• E2E tests (Playwright) |
-| 📱 Responsive Design | Mobile-first approach |
+| 📦 ESLint | Linting with ESLint:<br>• jsx-a11y<br>• prettier<br>• vitest<br>• tailwindcss<br>• next/core-web-vitals<br>• next/typescript |
 | 🔤 Google Fonts | Roboto & Roboto Mono |
 
 ## Getting Started
