@@ -6,13 +6,12 @@ A modern Next.js project template with TypeScript, Tailwind CSS, shadcn/ui compo
 
 | Feature | Description |
 |---------|-------------|
-| ⚡️ Next.js 15 | App Router support |
-| 🔒 TypeScript | Type safety |
-| 💅 Tailwind CSS | Modern styling |
+| ⚡️ Next.js *15* | App Router support |
+| 🔒 TypeScript *5* | Type safety |
+| 💅 Tailwind CSS *4* | Modern styling |
 | 🎨 shadcn/ui | UI component library |
 | 🧪 Vitest | Testing framework:<br>• Unit tests (Node environment)<br>• DOM tests (JSDOM environment)<br>• E2E tests (Playwright) |
-| 📦 ESLint | Linting with ESLint:<br>• jsx-a11y<br>• prettier<br>• vitest<br>• tailwindcss<br>• next/core-web-vitals<br>• next/typescript |
-| 🔤 Google Fonts | Roboto & Roboto Mono |
+| 📦 ESLint *9* | Linting with ESLint:<br>• jsx-a11y<br>• prettier<br>• vitest<br>• tailwindcss<br>• next/core-web-vitals<br>• next/typescript |
 
 ## Getting Started
 
