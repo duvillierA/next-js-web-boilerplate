@@ -1,45 +1,40 @@
-import react from "@vitejs/plugin-react";
-import { loadEnv } from 'vite';
-import tsconfigPaths from 'vite-tsconfig-paths';
-import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react'
+import { loadEnv } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
-  plugins: [
-    tsconfigPaths(),
-    react(),
-  ],
+  plugins: [tsconfigPaths(), react()],
   test: {
     env: loadEnv('', process.cwd(), ''),
     coverage: {
-      include: ["src/**/*"],
+      include: ['src/**/*'],
       exclude: ['src/**/*.d.ts'],
     },
     projects: [
       {
         extends: true,
         test: {
-          name: "unit",
-          include: ["**/*.test.ts"],
-          environment: "node",
-        }
+          name: 'unit',
+          include: ['**/*.test.ts'],
+          environment: 'node',
+        },
       },
       {
         extends: true,
         test: {
-          name: "ui",
+          name: 'ui',
           setupFiles: ['.test/setup-browser.ts'],
-          include: ["**/*.test.tsx"],
+          include: ['**/*.test.tsx'],
           browser: {
             enabled: true,
             headless: true,
-            provider: "playwright",
-            instances: [
-              { browser: "chromium" },
-            ],
+            provider: 'playwright',
+            instances: [{ browser: 'chromium' }],
           },
           globals: true,
-        }
-      }
+        },
+      },
     ],
   },
-});
+})

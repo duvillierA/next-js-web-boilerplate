@@ -1,8 +1,8 @@
 {
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit",
     "source.organizeImports": "explicit",
     "source.removeUnusedImports": "explicit"
   },
@@ -12,11 +12,29 @@
   "files.watcherExclude": {
     "**/.next": true,
     "**/.test": true,
-    "**/.husky": true
+    "**/.husky": true,
+    "**/.vscode": true,
+    "**/.turbo": true,
+    "**/coverage": true,
+    "**/.eslintrc.mts": true,
+    "**/.eslintrc.mjs": true,
+    "**/.eslintrc.js": true,
+    "**/.eslintrc.cjs": true,
+    "**/.eslintrc.json": true,
+    "**/.eslintrc.yaml": true,
   },
   "search.exclude": {
     "**/.next": true,
     "**/.test": true,
-    "**/.husky": true
+    "**/.husky": true,
+    "**/.vscode": true,
+    "**/.turbo": true,
+    "**/coverage": true,
+    "**/.eslintrc.mts": true,
+    "**/.eslintrc.mjs": true,
+    "**/.eslintrc.js": true,
+    "**/.eslintrc.cjs": true,
+    "**/.eslintrc.json": true,
+    "**/.eslintrc.yaml": true,
   }
 }
