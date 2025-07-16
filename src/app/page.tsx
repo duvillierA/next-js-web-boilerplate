@@ -1,3 +1,4 @@
+import { TrackingButton } from '@/shared/components/tracking/button'
 import Image from 'next/image'
 
 export default function Home() {
@@ -47,6 +48,7 @@ export default function Home() {
           >
             Read our docs
           </a>
+          <TrackingButton>Track me</TrackingButton>
         </div>
       </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-[24px]">

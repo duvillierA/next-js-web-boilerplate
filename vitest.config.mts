@@ -31,6 +31,7 @@ export default defineConfig({
             headless: true,
             provider: 'playwright',
             instances: [{ browser: 'chromium' }],
+            screenshotDirectory: './test/__screenshots__',
           },
           globals: true,
         },
