@@ -15,6 +15,13 @@ describe('publicConfig', () => {
       expect(config.NEXT_PUBLIC_VERCEL_BRANCH_URL).toBeUndefined()
     })
 
+    it('should parse NEXT_PUBLIC_DEFAULT_LOCALE as string', () => {
+      const config = publicConfigBuilder({
+        NEXT_PUBLIC_DEFAULT_LOCALE: 'es',
+      })
+      expect(config.NEXT_PUBLIC_DEFAULT_LOCALE).toEqual('es')
+    })
+
     it('should parse NEXT_PUBLIC_LOCALES as array', () => {
       const config = publicConfigBuilder({
         NEXT_PUBLIC_LOCALES: 'en,fr,es',
@@ -47,11 +54,11 @@ describe('publicConfig', () => {
     it('should accept vercel URLs', () => {
       const config = publicConfigBuilder({
         NEXT_PUBLIC_VERCEL_URL: 'test.vercel.app',
-        NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: 'prod.vercel.app',
+        NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: 'https://www.my-app.com',
         NEXT_PUBLIC_VERCEL_BRANCH_URL: 'branch.vercel.app',
       })
       expect(config.NEXT_PUBLIC_VERCEL_URL).toBe('test.vercel.app')
-      expect(config.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL).toBe('prod.vercel.app')
+      expect(config.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL).toBe('https://www.my-app.com')
       expect(config.NEXT_PUBLIC_VERCEL_BRANCH_URL).toBe('branch.vercel.app')
     })
   })

@@ -2,9 +2,9 @@ import { z } from 'zod'
 
 const vercelConfigSchema = z.object({
   NEXT_PUBLIC_VERCEL_ENV: z.enum(['development', 'production', 'preview']).optional(),
-  NEXT_PUBLIC_VERCEL_URL: z.string().optional(),
+  NEXT_PUBLIC_VERCEL_URL: z.string().endsWith('.vercel.app').optional(),
   NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: z.string().optional(),
-  NEXT_PUBLIC_VERCEL_BRANCH_URL: z.string().optional(),
+  NEXT_PUBLIC_VERCEL_BRANCH_URL: z.string().endsWith('.vercel.app').optional(),
 })
 
 const posthogConfigSchema = z.object({

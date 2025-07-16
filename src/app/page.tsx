@@ -48,7 +48,12 @@ export default function Home() {
           >
             Read our docs
           </a>
-          <TrackingButton>Track me</TrackingButton>
+          <TrackingButton
+            eventName="button_clicked"
+            eventProperties={{ foo: 'bar' }}
+          >
+            Track me
+          </TrackingButton>
         </div>
       </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-[24px]">

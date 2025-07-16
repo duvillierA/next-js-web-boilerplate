@@ -1,6 +1,6 @@
 import { TrackingButton } from '@/shared/components/tracking/button'
 import posthog from 'posthog-js'
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { afterAll, describe, expect, it, vi } from 'vitest'
 import { render } from 'vitest-browser-react'
 
 vi.mock('posthog-js', () => ({
@@ -10,7 +10,7 @@ vi.mock('posthog-js', () => ({
 }))
 
 describe('TrackingButton', () => {
-  afterEach(() => {
+  afterAll(() => {
     vi.clearAllMocks()
   })
   it('captures click event in PostHog', async () => {

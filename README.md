@@ -12,7 +12,7 @@ A modern Next.js project template with TypeScript, Tailwind CSS, shadcn/ui compo
 | 🎨 shadcn/ui | UI component library |
 | 🧪 Vitest | Testing framework:<br>• Unit tests (Node environment)<br>• DOM tests (JSDOM environment)<br>• E2E tests (Playwright) |
 | 📦 ESLint *9* | Linting with ESLint:<br>• jsx-a11y<br>• prettier<br>• vitest<br>• tailwindcss<br>• next/core-web-vitals<br>• next/typescript <br> |
-| 📦 Pre-commit hooks | • Commit message linting<br>• Running tests / lint |
+| 📦 Pre-commit hooks | • Commit message linting (build, chore,ci, docs, feat, fix, perf, refactor, revert, style, test)<br>• Running tests / lint |
 
 ## Getting Started
 
