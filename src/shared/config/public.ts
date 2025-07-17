@@ -13,6 +13,7 @@ const posthogConfigSchema = z.object({
 })
 
 const publicBaseConfigSchema = z.object({
+  NEXT_PUBLIC_APP_NAME: z.string(),
   NEXT_PUBLIC_LOCALES: z
     .string()
     .transform((val) => val.replaceAll(' ', '').split(','))
@@ -26,11 +27,15 @@ const publicConfigSchema = z.object({
   ...posthogConfigSchema.shape,
 })
 
-export const publicConfigBuilder = (env: Record<string, string | undefined>) => {
+export const publicConfigBuilder = (
+  env: Record<keyof typeof publicConfigSchema.shape, string | undefined>,
+) => {
   return publicConfigSchema.parse(env)
 }
 
+// define default values for public config at build time
 export const publicConfig = publicConfigBuilder({
+  NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME,
   NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
   NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
   NEXT_PUBLIC_VERCEL_ENV: process.env.NEXT_PUBLIC_VERCEL_ENV,

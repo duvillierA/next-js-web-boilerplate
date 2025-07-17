@@ -1,5 +1,7 @@
+import { ThemeProvider } from '@/shared/components/core/theme'
 import { cn } from '@/shared/lib/utils'
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+
 type RootLayoutProps = React.ComponentProps<'body'> & {
   lang?: string
   gtmId?: string
@@ -15,14 +17,24 @@ export const RootLayout: React.FC<RootLayoutProps> = ({
   ...props
 }) => {
   return (
-    <html lang={lang}>
+    <html
+      lang={lang}
+      suppressHydrationWarning
+    >
       {!!gtmId && <GoogleTagManager gtmId={gtmId} />}
       {!!gaId && <GoogleAnalytics gaId={gaId} />}
       <body
         className={cn('antialiased', className)}
         {...props}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
