@@ -27,6 +27,8 @@ export default function AppRootLayout({ children }: PropsWithChildren) {
     <RootLayout
       lang="en"
       className={cn(roboto.variable, robotoMono.variable)}
+      googleAnalyticsId={config.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
+      googleTagManagerId={config.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}
     >
       <main className="container mx-auto flex min-h-screen flex-col gap-4">
         <Header />

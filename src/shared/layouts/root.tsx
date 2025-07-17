@@ -4,16 +4,16 @@ import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 type RootLayoutProps = React.ComponentProps<'body'> & {
   lang?: string
-  gtmId?: string
-  gaId?: string
+  googleTagManagerId?: string
+  googleAnalyticsId?: string
 }
 
 export const RootLayout: React.FC<RootLayoutProps> = ({
   children,
   lang = 'en',
   className,
-  gtmId,
-  gaId,
+  googleTagManagerId,
+  googleAnalyticsId,
   ...props
 }) => {
   return (
@@ -21,8 +21,8 @@ export const RootLayout: React.FC<RootLayoutProps> = ({
       lang={lang}
       suppressHydrationWarning
     >
-      {!!gtmId && <GoogleTagManager gtmId={gtmId} />}
-      {!!gaId && <GoogleAnalytics gaId={gaId} />}
+      {!!googleTagManagerId && <GoogleTagManager gtmId={googleTagManagerId} />}
+      {!!googleAnalyticsId && <GoogleAnalytics gaId={googleAnalyticsId} />}
       <body
         className={cn('antialiased', className)}
         {...props}

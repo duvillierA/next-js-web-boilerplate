@@ -1,22 +1,11 @@
-import { publicConfigBuilder } from '@/shared/config/public'
+import { PUBLIC_DEFAULT_CONFIG, publicConfigBuilder } from '@/shared/config/public'
 import { describe, expect, it } from 'vitest'
-
-const defaultConfigData = {
-  NEXT_PUBLIC_APP_NAME: 'My App',
-  NEXT_PUBLIC_POSTHOG_KEY: undefined,
-  NEXT_PUBLIC_POSTHOG_HOST: undefined,
-  NEXT_PUBLIC_VERCEL_ENV: undefined,
-  NEXT_PUBLIC_VERCEL_URL: undefined,
-  NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: undefined,
-  NEXT_PUBLIC_VERCEL_BRANCH_URL: undefined,
-  NEXT_PUBLIC_LOCALES: undefined,
-  NEXT_PUBLIC_DEFAULT_LOCALE: undefined,
-} satisfies Parameters<typeof publicConfigBuilder>[0]
 
 describe('publicConfig', () => {
   describe('publicConfigBuilder', () => {
     it('should set default values when env variables are not provided', () => {
-      const config = publicConfigBuilder(defaultConfigData)
+      // @ts-expect-error - we want to test the default values
+      const config = publicConfigBuilder({})
       expect(config.NEXT_PUBLIC_LOCALES).toEqual(['en'])
       expect(config.NEXT_PUBLIC_DEFAULT_LOCALE).toBe('en')
       expect(config.NEXT_PUBLIC_POSTHOG_HOST).toBe('https://eu.i.posthog.com')
@@ -29,7 +18,7 @@ describe('publicConfig', () => {
 
     it('should parse NEXT_PUBLIC_DEFAULT_LOCALE as string', () => {
       const config = publicConfigBuilder({
-        ...defaultConfigData,
+        ...PUBLIC_DEFAULT_CONFIG,
         NEXT_PUBLIC_DEFAULT_LOCALE: 'es',
       })
       expect(config.NEXT_PUBLIC_DEFAULT_LOCALE).toEqual('es')
@@ -37,7 +26,7 @@ describe('publicConfig', () => {
 
     it('should parse NEXT_PUBLIC_LOCALES as array', () => {
       const config = publicConfigBuilder({
-        ...defaultConfigData,
+        ...PUBLIC_DEFAULT_CONFIG,
         NEXT_PUBLIC_LOCALES: 'en,fr,es',
       })
       expect(config.NEXT_PUBLIC_LOCALES).toEqual(['en', 'fr', 'es'])
@@ -45,14 +34,14 @@ describe('publicConfig', () => {
 
     it('should validate NEXT_PUBLIC_VERCEL_ENV enum values', () => {
       const config = publicConfigBuilder({
-        ...defaultConfigData,
+        ...PUBLIC_DEFAULT_CONFIG,
         NEXT_PUBLIC_VERCEL_ENV: 'preview',
       })
       expect(config.NEXT_PUBLIC_VERCEL_ENV).toBe('preview')
 
       expect(() =>
         publicConfigBuilder({
-          ...defaultConfigData,
+          ...PUBLIC_DEFAULT_CONFIG,
           NEXT_PUBLIC_VERCEL_ENV: 'invalid',
         }),
       ).toThrow()
@@ -60,7 +49,7 @@ describe('publicConfig', () => {
 
     it('should accept custom posthog configuration', () => {
       const config = publicConfigBuilder({
-        ...defaultConfigData,
+        ...PUBLIC_DEFAULT_CONFIG,
         NEXT_PUBLIC_POSTHOG_KEY: 'test-key',
         NEXT_PUBLIC_POSTHOG_HOST: 'https://custom.posthog.com',
       })
@@ -70,7 +59,7 @@ describe('publicConfig', () => {
 
     it('should accept vercel URLs', () => {
       const config = publicConfigBuilder({
-        ...defaultConfigData,
+        ...PUBLIC_DEFAULT_CONFIG,
         NEXT_PUBLIC_VERCEL_URL: 'test.vercel.app',
         NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: 'https://www.my-app.com',
         NEXT_PUBLIC_VERCEL_BRANCH_URL: 'branch.vercel.app',
