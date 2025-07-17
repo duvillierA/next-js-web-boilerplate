@@ -1,4 +1,4 @@
-import { Button } from '@/shared/components/ui/button/button'
+import { Button } from '@/shared/components/ui/button'
 import { describe, expect, it } from 'vitest'
 import { render } from 'vitest-browser-react'
 

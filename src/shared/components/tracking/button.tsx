@@ -1,5 +1,5 @@
 'use client'
-import { Button } from '@/shared/components/ui/button/button'
+import { Button } from '@/shared/components/ui/button'
 import posthog from 'posthog-js'
 
 type TrackingButtonProps = React.ComponentProps<typeof Button> & {
