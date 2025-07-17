@@ -17,6 +17,7 @@
     "prepare": "npx playwright install --with-deps && husky install"
   },
   "dependencies": {
+    "@next/third-parties": "^15.4.1",
     "@radix-ui/react-select": "^2.2.5",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-switch": "^1.2.5",
