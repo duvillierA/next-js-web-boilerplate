@@ -12,7 +12,9 @@
     "test:dev": "vitest dev",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-    "prepare": "husky install && playwright install"
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "prepare": "npx playwright install --with-deps && husky install"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
@@ -31,6 +33,7 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.54.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -42,6 +45,7 @@
     "eslint-config-next": "15.3.5",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-playwright": "^2.2.0",
     "eslint-plugin-prettier": "^5.5.1",
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",

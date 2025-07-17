@@ -7,7 +7,12 @@ type TrackingButtonProps = React.ComponentProps<typeof Button> & {
   eventProperties?: Record<string, unknown>
 }
 
-export const TrackingButton: React.FC<TrackingButtonProps> = ({ children, eventName, eventProperties, ...props }) => {
+export const TrackingButton: React.FC<TrackingButtonProps> = ({
+  children,
+  eventName,
+  eventProperties,
+  ...props
+}) => {
   return (
     <Button
       {...props}

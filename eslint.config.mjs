@@ -2,6 +2,7 @@ import { FlatCompat } from '@eslint/eslintrc'
 import vitest from '@vitest/eslint-plugin'
 import eslintConfigPrettier from 'eslint-config-prettier/flat'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
+import playwright from 'eslint-plugin-playwright'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 const compat = new FlatCompat({
@@ -25,6 +26,13 @@ const eslintConfig = [
   {
     ...vitest.configs.recommended,
     files: ['**/*.test.ts', '**/*.test.tsx'],
+  },
+  {
+    ...playwright.configs['flat/recommended'],
+    files: ['**/*.spec.ts', '**/*.e2e.ts'],
+    rules: {
+      ...playwright.configs['flat/recommended'].rules,
+    },
   },
 ]
 

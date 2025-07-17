@@ -37,10 +37,10 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "next.config.ts",
+    "playwright.config.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.mts"
-  ],
+    "**/*.mts" ],
   "exclude": [
     "node_modules"
   ]
