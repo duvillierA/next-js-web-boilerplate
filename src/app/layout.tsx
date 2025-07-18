@@ -30,7 +30,7 @@ export default function AppRootLayout({ children }: PropsWithChildren) {
       googleAnalyticsId={config.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
       googleTagManagerId={config.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}
     >
-      <main className="container mx-auto flex min-h-screen flex-col gap-4">
+      <main className="container mx-auto flex min-h-screen flex-col gap-4 px-4">
         <Header />
         {children}
       </main>

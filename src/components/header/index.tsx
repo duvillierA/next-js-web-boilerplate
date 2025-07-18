@@ -1,5 +1,6 @@
 import { ThemeToggle } from '@/shared/components/core/theme/toggle'
 import { config } from '@/shared/config'
+import { cn } from '@/shared/lib/utils'
 import { Rocket } from 'lucide-react'
 import Link from 'next/link'
 
@@ -10,11 +11,18 @@ export const Header = () => {
         <h1>
           <Link
             href="/"
-            className="inline-flex items-center space-x-2 hover:no-underline"
+            className="group/logo inline-flex items-center space-x-2 hover:no-underline"
             title="Go to home page"
           >
-            <Rocket className="inline-block h-4 w-4" />
-            <span className="font-semibold">{config.NEXT_PUBLIC_APP_NAME}</span>
+            <Rocket
+              className={cn(
+                'relative inline-block h-4 w-4 transition-transform duration-300 ease-in-out',
+                'group-hover/logo:translate-x-0.5 group-hover/logo:-translate-y-1 group-hover/logo:opacity-80',
+              )}
+            />
+            <span className="font-semibold group-hover/logo:opacity-80">
+              {config.NEXT_PUBLIC_APP_NAME}
+            </span>
           </Link>
         </h1>
         <small className="text-sm text-muted-foreground">Next.js project template</small>
