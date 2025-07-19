@@ -28,10 +28,12 @@
         "dependsOn": ["^typecheck"]
       },
       "format": {},
-      "test:unit": {
+      "test:node": {
+        "cache": false
+      },
+      "test:dom": {
         "cache": false,
-        "dependsOn": [],
-        "outputs": ["coverage/**",  "__screenshots__/**"]
+        "outputs": ["__screenshots__/**"]
       },
       "test:e2e": {
         "cache": false,
@@ -39,7 +41,12 @@
         "outputs": ["playwright-report/**"]
       },
       "test": {
-        "dependsOn": ["test:unit", "test:e2e"]
+        "cache": false,
+        "dependsOn": ["^test:node", "^test:dom", "^test:e2e"]
+      },
+      "coverage": {
+        "cache": false,
+        "outputs": ["coverage/**"]
       },
       "dev": {
         "persistent": true,

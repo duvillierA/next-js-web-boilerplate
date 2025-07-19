@@ -6,10 +6,16 @@
   "files": ["postcss.config.mjs", "src/styles/globals.css"],
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
+    "coverage": "vitest run --coverage",
     "lint": "eslint .",
     "format": "eslint . --fix", 
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:dev": "vitest dev",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:node": "vitest run --project=node",
+    "test:dom": "vitest run --project=dom"
   },
   "exports": {
     "./alert": "./src/components/alert.tsx",

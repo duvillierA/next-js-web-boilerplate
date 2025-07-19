@@ -9,13 +9,17 @@
   ],
   "scripts": {
     "dev": "turbo dev --parallel",
-    "clean": "turbo clean",
+    "clean": "turbo clean --parallel",
+    "coverage": "turbo coverage --parallel",
     "build": "turbo build",
     "start": "turbo start",
     "lint": "turbo lint",
     "format": "turbo format",
     "typecheck": "turbo typecheck",
     "test": "turbo test --parallel",
+    "test:node": "turbo test:node",
+    "test:dom": "turbo test:dom",
+    "test:e2e": "turbo test:e2e",
     "prepare": "husky install"
   },
   "devDependencies": {

@@ -7,25 +7,42 @@ export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   test: {
     env: loadEnv('', process.cwd(), ''),
+    globals: true,
     coverage: {
+      provider: 'v8',
       include: ['src/**/*'],
-      exclude: ['src/**/*.d.ts'],
+      exclude: [
+        'src/**/*.d.ts',
+        'src/**/*.stories.*',
+        'src/**/*.test.*',
+        'src/**/index.ts',
+        'src/styles/**/*',
+      ],
+      thresholds: {
+        global: {
+          branches: 80,
+          functions: 80,
+          lines: 80,
+          statements: 80,
+        },
+      },
+      reporter: ['text', 'json', 'html'],
     },
     projects: [
       {
         extends: true,
         test: {
-          name: 'unit',
+          name: 'node',
           include: ['**/*.test.ts'],
           environment: 'node',
+          setupFiles: [],
         },
       },
       {
         extends: true,
         test: {
-          name: 'ui',
-          setupFiles: ['test/setup-browser.ts'],
-          include: ['**/*.test.tsx'],
+          name: 'dom',
+          include: ['**/*.test.tsx', '**/*.dom.test.tsx'],
           browser: {
             enabled: true,
             headless: true,
@@ -34,8 +51,21 @@ export default defineConfig({
             screenshotDirectory: 'test/__screenshots__',
           },
           globals: true,
+          setupFiles: ['test/setup-browser.ts'],
         },
       },
     ],
+    // Performance optimizations
+    pool: 'forks',
+    poolOptions: {
+      forks: {
+        singleFork: true,
+      },
+    },
+    // Better error reporting
+    reporters: ['verbose'],
+    // Timeout configuration
+    testTimeout: 10000,
+    hookTimeout: 10000,
   },
 })
