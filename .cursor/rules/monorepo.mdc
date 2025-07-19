@@ -1,0 +1,62 @@
+---
+description: This project uses a monorepo architecture with the following structure:
+globs:
+alwaysApply: true
+---
+
+
+## Monorepo Structure
+
+This project uses a monorepo architecture with the following structure:
+
+The monorepo structure follows these key principles:
+
+1. **Apps Directory (`/apps`)**
+   - Contains end-user applications
+   - Each app is a standalone deployable unit
+   - Currently houses the Next.js web application
+
+2. **Packages Directory (`/packages`)**
+   - Contains shared libraries and configurations
+   - Each package is independently versioned and published
+   - Includes:
+     - UI components library TailwindCSS (shadcn/ui based)
+     - Shared ESLint configurations
+     - Shared TypeScript configurations
+
+3. **Workspace Management**
+   - Uses npm workspaces for dependency management
+   - Turborepo for build system and task running
+   - Shared development dependencies at root level
+
+4. **Key Commands**
+   - `npm run dev`: Start all applications
+   - `npm run build`: Build all packages and apps
+   - `npm run test`: Run all tests
+   - `npm run lint`: Lint all packages
+   - `npm run clean`: Clean build artifacts
+   - `npm run typecheck`: Type check all packages
+
+```
+boilerplate/
+├── apps/                    # Application packages
+│   └── web/                # Next.js web application
+│       ├── src/            # Application source code
+│       ├── public/         # Static assets
+│       └── test/           # E2E and integration tests
+├── packages/               # Shared packages
+│   ├── ui/                # Reusable UI components (@boilerplate/ui)
+│   │   ├── src/components/ # shadcn/ui components
+│   │   └── src/utils/      # Utility functions
+│   ├── eslintconfig/      # Shared ESLint configurations (@boilerplate/eslintconfig)
+│   │   ├── base.mjs       # Base ESLint config
+│   │   ├── nextjs.mjs     # Next.js specific config
+│   │   └── react-library.mjs # React library config
+│   └── tsconfig/          # Shared TypeScript configurations (@boilerplate/tsconfig)
+│       ├── base.json      # Base TypeScript config
+│       ├── nextjs.json    # Next.js specific config
+│       └── react-library.json # React library config
+├── package.json           # Root package.json with workspaces
+└── turbo.json            # Turborepo configuration
+```
+
