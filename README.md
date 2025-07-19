@@ -35,6 +35,10 @@ boilerplate/
 │   │   ├── base.mjs       # Base ESLint config
 │   │   ├── nextjs.mjs     # Next.js specific config
 │   │   └── react-library.mjs # React library config
+│   ├── testconfig/        # Shared testing configurations (@boilerplate/testconfig)
+│   │   ├── vitest.base.mjs # Base Vitest configuration
+│   │   ├── setup-dom.mjs # Shared dom test setup
+│   │   └── postcss.base.mjs # Shared PostCSS configuration
 │   └── tsconfig/          # Shared TypeScript configurations (@boilerplate/tsconfig)
 │       ├── base.json      # Base TypeScript config
 │       ├── nextjs.json    # Next.js specific config
@@ -49,6 +53,7 @@ boilerplate/
 - **apps/web**: Main Next.js application that consumes shared packages
 - **packages/ui**: Reusable UI component library built with shadcn/ui
 - **packages/eslintconfig**: Shared ESLint configurations for consistent code quality
+- **packages/testconfig**: Shared testing configurations (Vitest, PostCSS) for consistent testing setup
 - **packages/tsconfig**: Shared TypeScript configurations for type safety
 
 ### Turborepo Tasks

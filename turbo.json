@@ -42,7 +42,7 @@
       },
       "test": {
         "cache": false,
-        "dependsOn": ["^test:node", "^test:dom", "^test:e2e"]
+        "dependsOn": ["^test:node", "^test:dom", "test:e2e"]
       },
       "coverage": {
         "cache": false,
