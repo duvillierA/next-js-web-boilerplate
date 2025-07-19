@@ -1,0 +1,22 @@
+{
+  "extends": "@boilerplate/tsconfig/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "next.config.ts",
+    "playwright.config.ts",
+    "tailwind.config.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mts"
+, "tailwind.config.mjs"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

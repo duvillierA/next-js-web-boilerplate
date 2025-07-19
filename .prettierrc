@@ -11,6 +11,6 @@
   "quoteProps": "as-needed",
   "jsxSingleQuote": false,
   "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindStylesheet": "./src/shared/styles/globals.css",
+  "tailwindStylesheet": "./packages/ui/src/styles/globals.css",
   "tailwindFunctions": ["cn", "cva"]
 } 

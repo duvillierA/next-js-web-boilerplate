@@ -1,0 +1,53 @@
+{
+    "$schema": "https://turborepo.com/schema.json",
+    "globalDependencies": ["**/.env", "**/.env.local"],
+    "ui": "stream",
+    "tasks": {
+      "build": {
+        "env": ["NEXT_PUBLIC_*"],
+        "dependsOn": ["^build"],
+        "inputs": [
+          "$TURBO_DEFAULT$",
+          "!**/*.test.ts",
+          "!**/*.test.tsx",
+          "!**/*.spec.ts",
+          "!**/*.e2e.ts",
+          "!README.md"
+        ],
+        "outputs": [
+            ".next/**",
+            "!.next/cache/**",
+            "next-env.d.ts",
+            "dist/**",
+            "build/**",
+            "lib/**"
+        ]
+      },
+      "typecheck": {},
+      "lint": {
+        "dependsOn": ["^typecheck"]
+      },
+      "format": {},
+      "test:unit": {
+        "cache": false,
+        "dependsOn": [],
+        "outputs": ["coverage/**",  "__screenshots__/**"]
+      },
+      "test:e2e": {
+        "cache": false,
+        "dependsOn": ["build"],
+        "outputs": ["playwright-report/**"]
+      },
+      "test": {
+        "dependsOn": ["test:unit", "test:e2e"]
+      },
+      "dev": {
+        "persistent": true,
+        "cache": false
+      },
+      "start": {
+        "cache": false,
+        "dependsOn": ["build"]
+      }
+    }
+  }
