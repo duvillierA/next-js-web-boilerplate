@@ -4,16 +4,12 @@
   "private": true,
   "files": [
     "vitest.base.mjs",
-    "vitest.dom.mjs",
-    "vitest.node.mjs",
-    "setup-dom.mjs",
-    "postcss.base.mjs"
+    "vitest-setup-dom.mjs",
+    "playwright.base.mjs"
   ],
   "exports": {
     "./vitest-base": "./vitest.base.mjs",
-    "./vitest-dom": "./vitest.dom.mjs", 
-    "./vitest-node": "./vitest.node.mjs",
-    "./setup-dom": "./setup-dom.mjs",
-    "./postcss-base": "./postcss.base.mjs"
+    "./vitest-setup-dom": "./vitest-setup-dom.mjs",
+    "./playwright-base": "./playwright.base.mjs"
   }
 } 
