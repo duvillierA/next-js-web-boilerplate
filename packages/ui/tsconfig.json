@@ -3,7 +3,7 @@
     "compilerOptions": {
       "baseUrl": ".",
       "paths": {
-        "@/*": ["./src/*"]
+        "@boilerplate/ui/*": ["./src/*"] // mimics the package naming
       }
     },
     "include": ["src"],
