@@ -1,3 +1,10 @@
-import { createPostCSSConfig } from '@boilerplate/testconfig/postcss-base'
+/**
+ * @type {import('postcss').Config}
+ */
+const config = {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+}
 
-export default createPostCSSConfig({ useObjectSyntax: true })
+export default config

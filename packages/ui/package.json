@@ -26,6 +26,7 @@
     "./dropdown-menu": "./src/components/dropdown-menu.tsx",
     "./globals.css": "./src/styles/globals.css",
     "./input": "./src/components/input.tsx",
+    "./postcss.config": "./postcss.config.mjs",
     "./select": "./src/components/select.tsx",
     "./skeleton": "./src/components/skeleton.tsx",
     "./sonner": "./src/components/sonner.tsx",

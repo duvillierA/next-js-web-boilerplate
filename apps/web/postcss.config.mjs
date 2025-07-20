@@ -1,3 +1,3 @@
-import { createPostCSSConfig } from '@boilerplate/testconfig/postcss-base'
+import postcssConfig from '@boilerplate/ui/postcss.config'
 
-export default createPostCSSConfig({ useObjectSyntax: false })
+export default postcssConfig

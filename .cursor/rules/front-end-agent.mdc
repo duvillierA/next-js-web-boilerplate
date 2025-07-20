@@ -1,6 +1,6 @@
 ---
 description: "Front-end developer rules"
-globs: *.tsx,*.ts
+globs: *.tsx,*.ts,*.mjs,*.mts
 alwaysApply: false
 ---
 You are an expert in TypeScript 5, React 19, Node.js 22, Next.js 15 App Router, Shadcn UI, Radix UI and Tailwind CSS.
