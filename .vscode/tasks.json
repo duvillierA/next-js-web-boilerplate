@@ -1,5 +1,13 @@
 {
   "version": "2.0.0",
+  "inputs": [
+    {
+      "id": "component",
+      "description": "Enter the name of the component",
+      "default": "",
+      "type": "promptString"
+    }
+  ],
   "tasks": [
     {
       "label": "Run Vitest Coverage",
@@ -30,6 +38,27 @@
       ],
       "group": {
         "kind": "test"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Add Shadcn Component",
+      "type": "shell",
+      "command": "npx",
+      "args": [
+        "shadcn@latest",
+        "add",
+        "${input:component}"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/packages/ui"
+      },
+      "group": {
+        "kind": "build"
       },
       "presentation": {
         "reveal": "always",
