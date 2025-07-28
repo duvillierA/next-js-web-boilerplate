@@ -101,16 +101,6 @@ No additional setup is required for these tools.
 ### Maintenance
 - `npm run clean` - Clean all build artifacts and node_modules
 
-
-## Shadcn/ui
-
-Add components to the project:
-
-```bash
-npx shadcn@latest add <component>
-```
-
 ## Pre-commit hooks
-
 - Linting with ESLint
 - Running related tests with Vitest
