@@ -36,10 +36,12 @@ The monorepo structure follows these key principles:
    - `npm run lint`: Lint all packages
    - `npm run clean`: Clean build artifacts
    - `npm run typecheck`: Type check all packages
+   - `npm run format`: Lint fix all packages
 
 ```
 boilerplate/
-├── apps/                    # Application packages
+├── apps/                   # Application packages
+│   ├── design-system/      # Storybook and design system documentation app (colors/typography/ui/templates/etc)
 │   └── web/                # Next.js web application
 │       ├── src/            # Application source code
 │       ├── public/         # Static assets
@@ -48,6 +50,12 @@ boilerplate/
 │   ├── ui/                # Reusable UI components (@boilerplate/ui)
 │   │   ├── src/components/ # shadcn/ui components
 │   │   └── src/utils/      # Utility functions
+│   │   └── src/styles/      # Global and shared styles (Tailwind, CSS variables, themes)
+│   │   └── src/hooks/       # Shared hooks
+│   ├── testconfig/         # Shared test configurations (@boilerplate/testconfig)
+│   │   ├── vitest.config.ts    # Vitest configuration for unit/integration tests
+│   │   ├── playwright.config.ts # Playwright configuration for e2e tests
+│   │   └── jest.config.ts      # Jest configuration (if needed for legacy tests)
 │   ├── eslintconfig/      # Shared ESLint configurations (@boilerplate/eslintconfig)
 │   │   ├── base.mjs       # Base ESLint config
 │   │   ├── nextjs.mjs     # Next.js specific config

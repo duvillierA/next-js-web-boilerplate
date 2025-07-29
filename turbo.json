@@ -20,8 +20,12 @@
             "next-env.d.ts",
             "dist/**",
             "build/**",
-            "lib/**"
+            "lib/**",
+            "storybook-static/**"
         ]
+      },
+      "clean": {
+        "cache": false
       },
       "typecheck": {},
       "lint": {

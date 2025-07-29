@@ -15,7 +15,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.mts"
-, "tailwind.config.mjs"  ],
+  ],
   "exclude": [
     "node_modules"
   ]
