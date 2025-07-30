@@ -21,7 +21,7 @@ const config: StorybookConfig = {
     name: getAbsolutePath('@storybook/nextjs-vite'),
     options: {},
   },
-  staticDirs: ['../public'],
+  staticDirs: ['../src/public'],
   viteFinal: async (config) => {
     return config
   },

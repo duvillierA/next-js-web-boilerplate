@@ -27,9 +27,14 @@ boilerplate/
 │       ├── src/            # Application source code
 │       ├── public/         # Static assets
 │       └── test/           # E2E and integration tests
+├── design-system/          # Storybook and design system documentation app
+│   ├── src/                # Storybook stories and design system source
+│   │   ├── stories/        # Component and style stories (typography, colors, UI, templates, etc)
+│   │   └── public/         # Static assets for design system
+│   └── .storybook/         # Storybook configuration
 ├── packages/               # Shared packages
 │   ├── ui/                # Reusable UI components (@boilerplate/ui)
-│   │   ├── src/components/ # shadcn/ui components
+│   │   ├── src/components/ # Atomic components
 │   │   └── src/utils/      # Utility functions
 │   ├── eslintconfig/      # Shared ESLint configurations (@boilerplate/eslintconfig)
 │   │   ├── base.mjs       # Base ESLint config
