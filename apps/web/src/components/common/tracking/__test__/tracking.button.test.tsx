@@ -1,4 +1,4 @@
-import { TrackingButton } from '@/components/tracking/button'
+import { TrackingButton } from '@/components/common/tracking/button'
 import posthog from 'posthog-js'
 import { afterAll, describe, expect, it, vi } from 'vitest'
 import { render } from 'vitest-browser-react'

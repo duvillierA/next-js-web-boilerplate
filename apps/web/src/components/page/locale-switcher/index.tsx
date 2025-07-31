@@ -18,7 +18,6 @@ export default function LocaleSwitcher() {
   const router = useRouter()
   const pathname = usePathname()
   const params = useParams()
-  console.log(pathname)
   const handleLocaleChange = (newLocale: typeof locale) => {
     // @ts-expect-error -- TypeScript will validate that only known `params`
     // are used in combination with a given `pathname`. Since the two will

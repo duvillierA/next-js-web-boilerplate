@@ -1,5 +1,5 @@
-import { AsyncCard, AsyncCardSkeleton } from '@/components/async'
-import { TrackingButton } from '@/components/tracking/button'
+import { AsyncCard, AsyncCardSkeleton } from '@/components/common/async'
+import { TrackingButton } from '@/components/common/tracking/button'
 import { Badge } from '@boilerplate/ui/badge'
 import { Card, CardAction, CardDescription, CardHeader, CardTitle } from '@boilerplate/ui/card'
 import { useTranslations } from 'next-intl'

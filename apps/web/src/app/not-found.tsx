@@ -1,8 +1,8 @@
+import { BaseLayout } from '@/components/layouts/base'
+import { RootLayout } from '@/components/layouts/root'
+import { NotFound } from '@/components/templates/not-found'
 import { config } from '@/config'
-import { RootLayout } from '@/layouts/root'
 import { routing } from '@/lib/i18n/routing'
-import { NotFound } from '@/templates/not-found'
-import { Page } from '@/templates/page'
 import { cn } from '@boilerplate/ui/utils'
 import { Roboto, Roboto_Mono } from 'next/font/google'
 
@@ -30,9 +30,9 @@ export default function NotFoundPage() {
       googleAnalyticsId={config.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
       googleTagManagerId={config.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}
     >
-      <Page>
+      <BaseLayout>
         <NotFound />
-      </Page>
+      </BaseLayout>
     </RootLayout>
   )
 }

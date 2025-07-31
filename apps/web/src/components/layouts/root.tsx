@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@/components/theme'
+import { ThemeProvider } from '@/components/common/theme'
 import { cn } from '@boilerplate/ui/utils'
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import { NextIntlClientProvider } from 'next-intl'

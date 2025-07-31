@@ -1,9 +1,9 @@
+import { BaseLayout } from '@/components/layouts/base'
+import { RootLayout } from '@/components/layouts/root'
 import { config } from '@/config'
-import { RootLayout } from '@/layouts/root'
 import { getPathname } from '@/lib/i18n/navigation'
 import { routing } from '@/lib/i18n/routing'
-import { Page } from '@/templates/page'
-import { getHttpUrl } from '@/utils/url'
+import { getHttpUrl } from '@/lib/utils'
 
 import { cn } from '@boilerplate/ui/utils'
 import type { Metadata } from 'next'
@@ -85,7 +85,7 @@ export default async function AppRootLayout({
       googleAnalyticsId={config.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
       googleTagManagerId={config.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}
     >
-      <Page>{children}</Page>
+      <BaseLayout>{children}</BaseLayout>
     </RootLayout>
   )
 }
