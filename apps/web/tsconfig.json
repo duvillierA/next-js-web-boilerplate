@@ -14,7 +14,8 @@
     "tailwind.config.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.mts"
+    "**/*.mts",
+    "**/*.json"
   ],
   "exclude": [
     "node_modules"

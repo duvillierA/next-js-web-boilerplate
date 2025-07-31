@@ -9,7 +9,6 @@
     "format": "eslint . --fix",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
     "start": "http-server storybook-static -p 6006"
   },
   "dependencies": {

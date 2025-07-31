@@ -1,0 +1,56 @@
+{
+  "Navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact",
+    "language": "Langue"
+  },
+  "HomePage": {
+    "title": "Bienvenue dans notre application",
+    "description": "Une application Next.js moderne avec support d'internationalisation",
+    "cta": "Commencer",
+    "features": {
+      "title": "Fonctionnalités",
+      "i18n": "Internationalisation",
+      "typescript": "TypeScript",
+      "tailwind": "Tailwind CSS",
+      "testing": "Tests"
+    }
+  },
+  "AboutPage": {
+    "title": "À propos de nous",
+    "description": "En savoir plus sur notre équipe et notre mission",
+    "team": "Notre équipe",
+    "mission": "Notre mission"
+  },
+  "ContactPage": {
+    "title": "Contactez-nous",
+    "description": "Entrez en contact avec notre équipe",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Envoyer le message"
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Sélectionner la langue",
+    "en": "Anglais",
+    "fr": "Français",
+    "es": "Espagnol"
+  },
+  "Layout": {
+    "title": "Application Next.js moderne avec support d'internationalisation",
+    "description": "Une application Next.js moderne avec support d'internationalisation"
+  },
+  "Common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "notFound": "Page non trouvée",
+    "backToHome": "Retour à l'accueil"
+  },
+  "Error": {
+    "title": "Erreur",
+    "description": "Une erreur s'est produite lors du chargement de la page."
+  }
+} 

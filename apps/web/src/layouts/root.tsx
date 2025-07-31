@@ -1,6 +1,7 @@
 import { ThemeProvider } from '@/components/theme'
 import { cn } from '@boilerplate/ui/utils'
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import { NextIntlClientProvider } from 'next-intl'
 
 type RootLayoutProps = React.ComponentProps<'body'> & {
   lang?: string
@@ -33,7 +34,7 @@ export const RootLayout: React.FC<RootLayoutProps> = ({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>

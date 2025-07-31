@@ -16,11 +16,6 @@ const analyticsConfigSchema = z.object({
 
 const publicBaseConfigSchema = z.object({
   NEXT_PUBLIC_APP_NAME: z.string().default('My App'),
-  NEXT_PUBLIC_LOCALES: z
-    .string()
-    .transform((val) => val.replaceAll(' ', '').split(','))
-    .default(['en']),
-  NEXT_PUBLIC_DEFAULT_LOCALE: z.string().default('en'),
 })
 
 const publicConfigSchema = z.object({
@@ -44,8 +39,6 @@ export const PUBLIC_DEFAULT_CONFIG: PublicConfigBuilderProps = {
   NEXT_PUBLIC_VERCEL_URL: process.env.NEXT_PUBLIC_VERCEL_URL,
   NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL,
   NEXT_PUBLIC_VERCEL_BRANCH_URL: process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL,
-  NEXT_PUBLIC_LOCALES: process.env.NEXT_PUBLIC_LOCALES,
-  NEXT_PUBLIC_DEFAULT_LOCALE: process.env.NEXT_PUBLIC_DEFAULT_LOCALE,
 }
 
 // define default values for public config at build time

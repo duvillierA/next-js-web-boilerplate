@@ -1,0 +1,56 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "HomePage": {
+    "title": "Welcome to our application",
+    "description": "A modern Next.js application with internationalization support",
+    "cta": "Get Started",
+    "features": {
+      "title": "Features",
+      "i18n": "Internationalization",
+      "typescript": "TypeScript",
+      "tailwind": "Tailwind CSS",
+      "testing": "Testing"
+    }
+  },
+  "AboutPage": {
+    "title": "About Us",
+    "description": "Learn more about our team and mission",
+    "team": "Our Team",
+    "mission": "Our Mission"
+  },
+  "ContactPage": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Select Language",
+    "en": "English",
+    "fr": "Français",
+    "es": "Español"
+  },
+  "Layout": {
+    "title": "Boilerplate",
+    "description": "A modern Next.js application with internationalization support"
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "notFound": "Page not found",
+    "backToHome": "Back to Home"
+  },
+  "Error": {
+    "title": "Error",
+    "description": "An error occurred while loading the page."
+  }
+} 

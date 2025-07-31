@@ -6,30 +6,12 @@ describe('publicConfig', () => {
     it('should set default values when env variables are not provided', () => {
       // @ts-expect-error - we want to test the default values
       const config = publicConfigBuilder({})
-      expect(config.NEXT_PUBLIC_LOCALES).toEqual(['en'])
-      expect(config.NEXT_PUBLIC_DEFAULT_LOCALE).toBe('en')
       expect(config.NEXT_PUBLIC_POSTHOG_HOST).toBe('https://eu.i.posthog.com')
       expect(config.NEXT_PUBLIC_POSTHOG_KEY).toBeUndefined()
       expect(config.NEXT_PUBLIC_VERCEL_ENV).toBeUndefined()
       expect(config.NEXT_PUBLIC_VERCEL_URL).toBeUndefined()
       expect(config.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL).toBeUndefined()
       expect(config.NEXT_PUBLIC_VERCEL_BRANCH_URL).toBeUndefined()
-    })
-
-    it('should parse NEXT_PUBLIC_DEFAULT_LOCALE as string', () => {
-      const config = publicConfigBuilder({
-        ...PUBLIC_DEFAULT_CONFIG,
-        NEXT_PUBLIC_DEFAULT_LOCALE: 'es',
-      })
-      expect(config.NEXT_PUBLIC_DEFAULT_LOCALE).toEqual('es')
-    })
-
-    it('should parse NEXT_PUBLIC_LOCALES as array', () => {
-      const config = publicConfigBuilder({
-        ...PUBLIC_DEFAULT_CONFIG,
-        NEXT_PUBLIC_LOCALES: 'en,fr,es',
-      })
-      expect(config.NEXT_PUBLIC_LOCALES).toEqual(['en', 'fr', 'es'])
     })
 
     it('should validate NEXT_PUBLIC_VERCEL_ENV enum values', () => {

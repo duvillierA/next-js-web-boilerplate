@@ -10,7 +10,7 @@ test.describe('home page', () => {
     await expect(page).toHaveTitle('Boilerplate')
     await expect(page.locator('meta[name="description"]')).toHaveAttribute(
       'content',
-      /Application description/,
+      /A modern Next.js application with internationalization support/,
     )
   })
 })

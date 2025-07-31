@@ -2,23 +2,28 @@ import { AsyncCard, AsyncCardSkeleton } from '@/components/async'
 import { TrackingButton } from '@/components/tracking/button'
 import { Badge } from '@boilerplate/ui/badge'
 import { Card, CardAction, CardDescription, CardHeader, CardTitle } from '@boilerplate/ui/card'
+import { useTranslations } from 'next-intl'
 import { Suspense } from 'react'
+
 export default function Home() {
+  const t = useTranslations('HomePage')
+
   return (
     <div className="flex flex-col gap-8">
       <section>
-        <h2 className="mb-2 text-2xl font-bold">Features</h2>
+        <h2 className="mb-2 text-2xl font-bold">{t('features.title')}</h2>
         <div className="flex flex-wrap gap-2">
-          <Badge variant="default">Next.js 15</Badge>
-          <Badge variant="default">TypeScript 5</Badge>
-          <Badge variant="default">Tailwind CSS 4</Badge>
+          <Badge variant="default">{t('features.i18n')}</Badge>
+          <Badge variant="default">{t('features.typescript')}</Badge>
+          <Badge variant="default">{t('features.tailwind')}</Badge>
           <Badge variant="default">shadcn/ui</Badge>
-          <Badge variant="secondary">Vitest</Badge>
+          <Badge variant="secondary">{t('features.testing')}</Badge>
           <Badge variant="secondary">Playwright</Badge>
           <Badge variant="secondary">ESLint 9</Badge>
           <Badge variant="secondary">PostHog</Badge>
         </div>
       </section>
+
       <section>
         <h2 className="mb-2 text-2xl font-bold">Examples</h2>
         <div className="grid gap-4 md:grid-cols-2">
@@ -41,6 +46,7 @@ export default function Home() {
           </Card>
         </div>
       </section>
+
       <section>
         <h2 className="mb-2 text-2xl font-bold">Suspense</h2>
         <div className="grid gap-4 md:grid-cols-3">
