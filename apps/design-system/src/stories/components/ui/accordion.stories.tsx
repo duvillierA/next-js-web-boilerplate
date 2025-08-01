@@ -10,7 +10,7 @@ const meta: Meta<typeof Accordion> = {
   title: 'Components/UI/Accordion',
   component: Accordion,
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
     docs: {
       description: {
         component:
