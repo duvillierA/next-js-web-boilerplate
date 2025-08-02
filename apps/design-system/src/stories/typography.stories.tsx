@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@boilerplate/ui/card'
+import { H1, H2, H3, H4, H5, H6 } from '@boilerplate/ui/heading'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta = {
@@ -23,10 +24,12 @@ function TypographyComponent() {
           <CardTitle className="mb-4 text-2xl font-bold">Headings</CardTitle>
         </CardHeader>
         <CardContent className="space-y-2">
-          <h1 className="scroll-m-20">H1 - The quick brown fox jumps over the lazy dog</h1>
-          <h2 className="scroll-m-20">H2 - The quick brown fox jumps over the lazy dog</h2>
-          <h3 className="scroll-m-20">H3 - The quick brown fox jumps over the lazy dog</h3>
-          <h4 className="scroll-m-20">H4 - The quick brown fox jumps over the lazy dog</h4>
+          <H1 className="scroll-m-20">H1 - The quick brown fox jumps over the lazy dog</H1>
+          <H2 className="scroll-m-20">H2 - The quick brown fox jumps over the lazy dog</H2>
+          <H3 className="scroll-m-20">H3 - The quick brown fox jumps over the lazy dog</H3>
+          <H4 className="scroll-m-20">H4 - The quick brown fox jumps over the lazy dog</H4>
+          <H5 className="scroll-m-20">H5 - The quick brown fox jumps over the lazy dog</H5>
+          <H6 className="scroll-m-20">H6 - The quick brown fox jumps over the lazy dog</H6>
         </CardContent>
       </Card>
 

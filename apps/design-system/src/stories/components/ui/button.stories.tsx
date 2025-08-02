@@ -1,4 +1,5 @@
 import { Button } from '@boilerplate/ui/button'
+import { Spinner } from '@boilerplate/ui/spinner'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { Mail, Plus } from 'lucide-react'
 
@@ -98,7 +99,7 @@ export const Large: Story = {
 export const Icon: Story = {
   args: {
     size: 'icon',
-    children: <Plus className="h-4 w-4" />,
+    children: <Plus className="size-4" />,
   },
 }
 
@@ -113,7 +114,7 @@ export const WithIcon: Story = {
   args: {
     children: (
       <>
-        <Mail className="mr-2 h-4 w-4" />
+        <Mail className="h-4 w-4" />
         Send Email
       </>
     ),
@@ -125,7 +126,7 @@ export const Loading: Story = {
     disabled: true,
     children: (
       <>
-        <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+        <Spinner />
         Loading...
       </>
     ),
