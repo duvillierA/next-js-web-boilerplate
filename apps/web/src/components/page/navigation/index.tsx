@@ -1,6 +1,12 @@
 'use client'
 import { Link, usePathname } from '@/lib/i18n/navigation'
-import { cn } from '@boilerplate/ui/utils'
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from '@boilerplate/ui/navigation-menu'
 import { useTranslations } from 'next-intl'
 
 export default function Navigation() {
@@ -8,19 +14,27 @@ export default function Navigation() {
   const pathname = usePathname()
 
   return (
-    <nav className="flex items-center space-x-4">
-      <Link
-        href="/"
-        className={cn({ 'font-semibold': pathname === '/' })}
-      >
-        {t('home')}
-      </Link>
-      <Link
-        href="/about"
-        className={cn({ 'font-semibold': pathname === '/about' })}
-      >
-        {t('about')}
-      </Link>
-    </nav>
+    <NavigationMenu className="ml-2">
+      <NavigationMenuList>
+        <NavigationMenuItem value="home">
+          <NavigationMenuLink
+            asChild
+            className={navigationMenuTriggerStyle()}
+            active={pathname === '/'}
+          >
+            <Link href="/">{t('home')}</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            asChild
+            className={navigationMenuTriggerStyle()}
+            active={pathname === '/about'}
+          >
+            <Link href="/about">{t('about')}</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
   )
 }

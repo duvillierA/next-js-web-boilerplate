@@ -7,7 +7,7 @@ const meta: Meta<typeof Collapsible> = {
   title: 'Components/UI/Collapsible',
   component: Collapsible,
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
     docs: {
       description: {
         component:
@@ -69,107 +69,10 @@ function SimpleCollapsible() {
   )
 }
 
-function MultipleCollapsible() {
-  const [openItems, setOpenItems] = useState<Set<string>>(new Set())
-
-  const toggleItem = (item: string) => {
-    const newOpenItems = new Set(openItems)
-    if (newOpenItems.has(item)) {
-      newOpenItems.delete(item)
-    } else {
-      newOpenItems.add(item)
-    }
-    setOpenItems(newOpenItems)
-  }
-
-  return (
-    <div className="w-[400px] space-y-2">
-      {['Section 1', 'Section 2', 'Section 3'].map((section) => (
-        <Collapsible
-          key={section}
-          open={openItems.has(section)}
-          onOpenChange={() => toggleItem(section)}
-          className="space-y-2"
-        >
-          <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg border p-4 text-left font-medium hover:bg-accent">
-            <span>{section}</span>
-            {openItems.has(section) ? (
-              <ChevronDown className="h-4 w-4" />
-            ) : (
-              <ChevronRight className="h-4 w-4" />
-            )}
-          </CollapsibleTrigger>
-          <CollapsibleContent className="rounded-lg border p-4">
-            <p className="text-sm text-muted-foreground">
-              This is the content for {section}. You can have multiple collapsible sections that can
-              be opened and closed independently.
-            </p>
-          </CollapsibleContent>
-        </Collapsible>
-      ))}
-    </div>
-  )
-}
-
-function AccordionStyleCollapsible() {
-  const [openItem, setOpenItem] = useState<string | null>(null)
-
-  const items = [
-    {
-      id: '1',
-      title: 'What is React?',
-      content: 'React is a JavaScript library for building user interfaces.',
-    },
-    {
-      id: '2',
-      title: 'What is TypeScript?',
-      content: 'TypeScript is a typed superset of JavaScript.',
-    },
-    {
-      id: '3',
-      title: 'What is Tailwind CSS?',
-      content: 'Tailwind CSS is a utility-first CSS framework.',
-    },
-  ]
-
-  return (
-    <div className="w-[400px] space-y-1">
-      {items.map((item) => (
-        <Collapsible
-          key={item.id}
-          open={openItem === item.id}
-          onOpenChange={(open) => setOpenItem(open ? item.id : null)}
-          className="border-b"
-        >
-          <CollapsibleTrigger className="flex w-full items-center justify-between p-4 text-left font-medium hover:bg-accent">
-            <span>{item.title}</span>
-            {openItem === item.id ? (
-              <ChevronDown className="h-4 w-4" />
-            ) : (
-              <ChevronRight className="h-4 w-4" />
-            )}
-          </CollapsibleTrigger>
-          <CollapsibleContent className="px-4 pb-4">
-            <p className="text-sm text-muted-foreground">{item.content}</p>
-          </CollapsibleContent>
-        </Collapsible>
-      ))}
-    </div>
-  )
-}
-
 export const Default: Story = {
   render: () => <DefaultCollapsible />,
 }
 
 export const Simple: Story = {
   render: () => <SimpleCollapsible />,
-}
-
-export const Multiple: Story = {
-  render: () => <MultipleCollapsible />,
-}
-
-export const AccordionStyle: Story = {
-  render: () => <AccordionStyleCollapsible />,
 }

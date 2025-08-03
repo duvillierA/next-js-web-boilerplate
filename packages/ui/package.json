@@ -42,7 +42,6 @@
     "./select": "./src/components/select.tsx",
     "./separator": "./src/components/separator.tsx",
     "./skeleton": "./src/components/skeleton.tsx",
-    "./slot": "./src/components/slot.tsx",
     "./spinner": "./src/components/spinner.tsx",
     "./sonner": "./src/components/sonner.tsx",
     "./switch": "./src/components/switch.tsx",
@@ -73,7 +72,8 @@
     "lucide-react": "^0.525.0",
     "sonner": "^2.0.6",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.3.6"
   },
   "devDependencies": {
     "@boilerplate/eslintconfig": "*",
