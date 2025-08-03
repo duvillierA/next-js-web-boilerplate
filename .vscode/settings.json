@@ -1,14 +1,13 @@
 {
-  "prettier.enable": false,
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "explicit",
     "source.removeUnusedImports": "explicit"
   },
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "files.watcherExclude": {
     "**/.next": true,
     "**/.test": true,
@@ -23,6 +22,7 @@
     "**/.eslintrc.json": true,
     "**/.eslintrc.yaml": true,
   },
+  "prettier.enable": false,
   "search.exclude": {
     "**/.next": true,
     "**/.test": true,
@@ -36,5 +36,14 @@
     "**/.eslintrc.cjs": true,
     "**/.eslintrc.json": true,
     "**/.eslintrc.yaml": true,
-  }
+  },
+  "tailwindCSS.classFunctions": ["cn", "cva", "clsx"],
+  "tailwindCSS.experimental.configFile": {
+    "apps/web/src/styles/globals.css": "apps/web/src/**",
+    "apps/design-system/src/styles/globals.css": "apps/design-system/src/**",
+    "packages/ui/src/styles/globals.css": "packages/ui/src/**",
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
 }
