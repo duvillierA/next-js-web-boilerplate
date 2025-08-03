@@ -14,7 +14,7 @@ const meta: Meta<typeof Card> = {
   title: 'Components/UI/Card',
   component: Card,
   parameters: {
-    layout: 'centered',
+    layout: 'padded',
   },
   tags: ['autodocs'],
 }
@@ -128,41 +128,6 @@ export const ComplexLayout: Story = {
             <div className="flex justify-between">
               <span className="text-sm text-muted-foreground">Team</span>
               <span className="text-sm font-medium">8 members</span>
-            </div>
-          </div>
-        </CardContent>
-        <CardFooter>
-          <Button>Edit Project</Button>
-          <Button variant="outline">Share</Button>
-        </CardFooter>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Project Beta</CardTitle>
-          <CardDescription>A collaborative project with multiple stakeholders</CardDescription>
-          <CardAction>
-            <Button
-              variant="outline"
-              size="sm"
-            >
-              View
-            </Button>
-          </CardAction>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-2">
-            <div className="flex justify-between">
-              <span className="text-sm text-muted-foreground">Status</span>
-              <span className="text-sm font-medium">Planning</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-sm text-muted-foreground">Progress</span>
-              <span className="text-sm font-medium">25%</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-sm text-muted-foreground">Team</span>
-              <span className="text-sm font-medium">12 members</span>
             </div>
           </div>
         </CardContent>

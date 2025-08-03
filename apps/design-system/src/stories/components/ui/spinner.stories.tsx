@@ -1,5 +1,6 @@
 import { Spinner } from '@boilerplate/ui/spinner'
 import type { Meta, StoryObj } from '@storybook/react'
+import { Loader, RefreshCw } from 'lucide-react'
 
 const meta: Meta = {
   title: 'Components/UI/Spinner',
@@ -44,4 +45,21 @@ export const CustomColor: Story = {
     className: 'text-destructive',
   },
   name: 'Custom Color',
+}
+
+export const CustomIcons: Story = {
+  args: {
+    asChild: true,
+  },
+  render: () => (
+    <div className="flex items-center gap-4">
+      <Spinner asChild>
+        <Loader />
+      </Spinner>
+      <Spinner asChild>
+        <RefreshCw />
+      </Spinner>
+    </div>
+  ),
+  name: 'Custom Icons',
 }

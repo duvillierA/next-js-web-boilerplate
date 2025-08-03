@@ -1,2 +1,3 @@
 @import "tailwindcss";
-@import "@boilerplate/ui/globals.css";@config "../../tailwind.config.ts";
+@import "@boilerplate/ui/globals.css";
+@config "../../tailwind.config.ts";
