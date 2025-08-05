@@ -36,7 +36,7 @@ export const Default: Story = {
         </p>
       </CardContent>
       <CardFooter>
-        <Button>Action</Button>
+        <Button className="w-full">Action</Button>
       </CardFooter>
     </Card>
   ),
@@ -91,7 +91,7 @@ export const FooterOnly: Story = {
       <CardContent>
         <p>This card has content and footer but no header.</p>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="grid grid-cols-2 gap-2">
         <Button>Primary Action</Button>
         <Button variant="outline">Secondary</Button>
       </CardFooter>
@@ -131,7 +131,7 @@ export const ComplexLayout: Story = {
             </div>
           </div>
         </CardContent>
-        <CardFooter>
+        <CardFooter className="grid grid-cols-2 gap-2">
           <Button>Edit Project</Button>
           <Button variant="outline">Share</Button>
         </CardFooter>

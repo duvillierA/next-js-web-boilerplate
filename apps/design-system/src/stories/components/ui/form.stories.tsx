@@ -35,6 +35,8 @@ import { CalendarIcon } from 'lucide-react'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import { toast } from 'sonner'
 
+import { RadioGroup, RadioGroupItem } from '@boilerplate/ui/radio-group'
+import { Separator } from '@boilerplate/ui/separator'
 import { Spinner } from '@boilerplate/ui/spinner'
 import { cn } from '@boilerplate/ui/utils'
 
@@ -69,21 +71,18 @@ function FormComponentsDemo() {
       bio: '',
       acceptTerms: false,
       notifications: false,
-      option: '',
+      option: 'option1',
       dob: undefined,
     },
   })
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    console.log('Form submitted', data)
-
     await new Promise((resolve) => setTimeout(resolve, 1000))
-
-    // Inform: Using context7 for latest usage of Sonner (sonner.tsx) from @boilerplate/ui.
-    // Show a toast notification on successful form submit
-    // (Assumes Toaster is rendered at the app root, as per sonner usage)
-
-    toast.success('Form submitted successfully!', { position: 'top-center' })
+    toast.success(`Form submitted successfully!`, {
+      position: 'top-center',
+      description: `Username: ${data.username}`,
+    })
+    form.reset()
   }
 
   return (
@@ -107,6 +106,10 @@ function FormComponentsDemo() {
                   required: {
                     value: true,
                     message: 'Username is required',
+                  },
+                  minLength: {
+                    value: 6,
+                    message: 'Username must be at least 6 characters',
                   },
                 }}
                 render={({ field }) => (
@@ -150,6 +153,12 @@ function FormComponentsDemo() {
               <FormField
                 control={form.control}
                 name="dob"
+                rules={{
+                  required: {
+                    value: true,
+                    message: 'Date of birth is required',
+                  },
+                }}
                 render={({ field }) => (
                   <FormItem className="flex flex-col">
                     <FormLabel>Date of birth</FormLabel>
@@ -190,6 +199,8 @@ function FormComponentsDemo() {
                 )}
               />
 
+              <Separator />
+
               {/* Checkbox (Accept terms) */}
               <FormField
                 control={form.control}
@@ -200,10 +211,9 @@ function FormComponentsDemo() {
                       <Checkbox
                         checked={field.value}
                         onCheckedChange={field.onChange}
-                        id="accept-terms"
                       />
                     </FormControl>
-                    <FormLabel htmlFor="accept-terms">Accept terms and conditions</FormLabel>
+                    <FormLabel>Accept terms and conditions</FormLabel>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -219,14 +229,69 @@ function FormComponentsDemo() {
                       <Switch
                         checked={field.value}
                         onCheckedChange={field.onChange}
-                        id="enable-notifications"
                       />
                     </FormControl>
-                    <FormLabel htmlFor="enable-notifications">Enable notifications</FormLabel>
+                    <FormLabel>Enable notifications</FormLabel>
                     <FormMessage />
                   </FormItem>
                 )}
               />
+
+              <FormField
+                control={form.control}
+                name="option"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Choose one option</FormLabel>
+                    <FormControl>
+                      <RadioGroup
+                        onValueChange={field.onChange}
+                        value={field.value}
+                      >
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem
+                            value="option1"
+                            id="radio-option-1"
+                          />
+                          <FormLabel
+                            htmlFor="radio-option-1"
+                            className="font-normal"
+                          >
+                            Option 1
+                          </FormLabel>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem
+                            value="option2"
+                            id="radio-option-2"
+                          />
+                          <FormLabel
+                            htmlFor="radio-option-2"
+                            className="font-normal"
+                          >
+                            Option 2
+                          </FormLabel>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem
+                            value="option3"
+                            id="radio-option-3"
+                          />
+                          <FormLabel
+                            htmlFor="radio-option-3"
+                            className="font-normal"
+                          >
+                            Option 3
+                          </FormLabel>
+                        </div>
+                      </RadioGroup>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <Separator />
 
               {/* Select (Option) */}
               <FormField

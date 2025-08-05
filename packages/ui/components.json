@@ -11,7 +11,7 @@
     "prefix": ""
   },
   "aliases": {
-    "components": "@boilerplate/ui",
+    "components": "@boilerplate/ui/components",
     "utils": "@boilerplate/ui/utils",
     "ui": "@boilerplate/ui",
     "lib": "@boilerplate/ui/lib",
