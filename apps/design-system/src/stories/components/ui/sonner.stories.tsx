@@ -16,14 +16,6 @@ const meta: Meta<typeof Toaster> = {
     },
   },
   tags: ['autodocs'],
-  decorators: [
-    (Story) => (
-      <>
-        <Story />
-        <Toaster />
-      </>
-    ),
-  ],
 }
 
 export default meta

@@ -1,5 +1,7 @@
+import { Toaster } from '@boilerplate/ui/sonner'
 import { withThemeByClassName } from '@storybook/addon-themes'
 import type { Preview, ReactRenderer } from '@storybook/nextjs-vite'
+import React from 'react'
 import '../src/styles/globals.css'
 
 const preview: Preview = {
@@ -27,6 +29,12 @@ const preview: Preview = {
     },
   },
   decorators: [
+    (Story) => {
+      return React.createElement('div', null, [
+        React.createElement(Story, { key: 'story' }),
+        React.createElement(Toaster, { key: 'toaster' }),
+      ])
+    },
     withThemeByClassName<ReactRenderer>({
       themes: {
         light: '',

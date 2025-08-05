@@ -1,6 +1,25 @@
+import { Button } from '@boilerplate/ui/button'
+import { Calendar } from '@boilerplate/ui/calendar'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@boilerplate/ui/card'
 import { Checkbox } from '@boilerplate/ui/checkbox'
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@boilerplate/ui/form'
 import { Input } from '@boilerplate/ui/input'
-import { Label } from '@boilerplate/ui/label'
+import { Popover, PopoverContent, PopoverTrigger } from '@boilerplate/ui/popover'
 import {
   Select,
   SelectContent,
@@ -11,24 +30,20 @@ import {
 import { Switch } from '@boilerplate/ui/switch'
 import { Textarea } from '@boilerplate/ui/textarea'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { useId, useState } from 'react'
+import { format } from 'date-fns'
+import { CalendarIcon } from 'lucide-react'
+import { useForm, type SubmitHandler } from 'react-hook-form'
+import { toast } from 'sonner'
 
-// If you have a Card component in your design system, import it here:
-import { Button } from '@boilerplate/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@boilerplate/ui/card'
+import { Spinner } from '@boilerplate/ui/spinner'
+import { cn } from '@boilerplate/ui/utils'
 
 const meta: Meta = {
   title: 'Components/UI/Form',
   parameters: {
     layout: 'padded',
   },
+  tags: ['autodocs'],
 }
 
 export default meta
@@ -36,111 +51,251 @@ type Story = StoryObj
 
 /**
  * FormComponentsDemo showcases all major form components from the design system, inside a Card.
+ * Now uses react-hook-form and @boilerplate/ui/form primitives for a more realistic example.
  */
+type FormValues = {
+  username: string
+  bio: string
+  acceptTerms: boolean
+  notifications: boolean
+  option: string
+  dob: Date | undefined
+}
+
 function FormComponentsDemo() {
-  const id = useId()
-  const [inputValue, setInputValue] = useState('')
-  const [checkboxChecked, setCheckboxChecked] = useState(false)
-  const [switchChecked, setSwitchChecked] = useState(false)
-  const [textareaValue, setTextareaValue] = useState('')
-  const [selectValue, setSelectValue] = useState<string | undefined>(undefined)
+  const form = useForm<FormValues>({
+    defaultValues: {
+      username: '',
+      bio: '',
+      acceptTerms: false,
+      notifications: false,
+      option: '',
+      dob: undefined,
+    },
+  })
+
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    console.log('Form submitted', data)
+
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+
+    // Inform: Using context7 for latest usage of Sonner (sonner.tsx) from @boilerplate/ui.
+    // Show a toast notification on successful form submit
+    // (Assumes Toaster is rendered at the app root, as per sonner usage)
+
+    toast.success('Form submitted successfully!', { position: 'top-center' })
+  }
 
   return (
-    <Card className="mx-auto max-w-md">
-      <form
-        className="space-y-8"
-        onSubmit={(e) => {
-          e.preventDefault()
-          console.log('Form submitted')
-        }}
-      >
-        <CardHeader>
-          <CardTitle>Form</CardTitle>
-          <CardDescription>Example form</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-8">
-          {/* Input */}
-          <div className="space-y-2">
-            <Label htmlFor={`${id}-input-demo`}>Input</Label>
-            <Input
-              id={`${id}-input-demo`}
-              placeholder="Type something..."
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-            />
-          </div>
+    <div className="grid grid-cols-[1fr_minmax(0,1fr)] gap-4">
+      <Card>
+        <Form {...form}>
+          <form
+            className="space-y-8"
+            onSubmit={form.handleSubmit(onSubmit)}
+          >
+            <CardHeader>
+              <CardTitle>Form</CardTitle>
+              <CardDescription>Example form</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-8">
+              {/* Input (Username) */}
+              <FormField
+                control={form.control}
+                name="username"
+                rules={{
+                  required: {
+                    value: true,
+                    message: 'Username is required',
+                  },
+                }}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>
+                      <span className="text-destructive">*</span> Username
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="shadcn"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormDescription>This is your public display name.</FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-          {/* Textarea */}
-          <div className="space-y-2">
-            <Label htmlFor={`${id}-textarea-demo`}>Textarea</Label>
-            <Textarea
-              className="h-24"
-              id={`${id}-textarea-demo`}
-              placeholder="Type a longer message..."
-              value={textareaValue}
-              onChange={(e) => setTextareaValue(e.target.value)}
-            />
-          </div>
+              {/* Textarea (Bio) */}
+              <FormField
+                control={form.control}
+                name="bio"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Bio</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        className="h-24"
+                        placeholder="Type a longer message..."
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormDescription>Tell us a little about yourself.</FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-          {/* Checkbox */}
-          <div className="flex items-center space-x-2">
-            <Checkbox
-              id={`${id}-checkbox-demo`}
-              checked={checkboxChecked}
-              onCheckedChange={(checked) =>
-                setCheckboxChecked(checked === 'indeterminate' ? false : checked)
-              }
-            />
-            <Label htmlFor={`${id}-checkbox-demo`}>Accept terms and conditions</Label>
-          </div>
+              {/* Date Picker (Date of Birth) */}
+              <FormField
+                control={form.control}
+                name="dob"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col">
+                    <FormLabel>Date of birth</FormLabel>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant={'outline'}
+                            className={cn(
+                              'w-full pl-3 text-left font-normal',
+                              !field.value && 'text-muted-foreground',
+                            )}
+                            disabled={field.disabled}
+                          >
+                            {field.value ? format(field.value, 'PPP') : <span>Pick a date</span>}
+                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                          </Button>
+                        </FormControl>
+                      </PopoverTrigger>
+                      <PopoverContent
+                        className="w-auto p-0"
+                        align="start"
+                      >
+                        <Calendar
+                          mode="single"
+                          selected={field.value}
+                          onSelect={field.onChange}
+                          disabled={(date) => date > new Date() || date < new Date('1900-01-01')}
+                          captionLayout="dropdown"
+                        />
+                      </PopoverContent>
+                    </Popover>
+                    <FormDescription>
+                      Your date of birth is used to calculate your age.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-          {/* Switch */}
-          <div className="flex items-center space-x-2">
-            <Switch
-              id={`${id}-switch-demo`}
-              checked={switchChecked}
-              onCheckedChange={setSwitchChecked}
-            />
-            <Label htmlFor={`${id}-switch-demo`}>Enable notifications</Label>
-          </div>
+              {/* Checkbox (Accept terms) */}
+              <FormField
+                control={form.control}
+                name="acceptTerms"
+                render={({ field }) => (
+                  <FormItem className="flex items-center space-x-2">
+                    <FormControl>
+                      <Checkbox
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                        id="accept-terms"
+                      />
+                    </FormControl>
+                    <FormLabel htmlFor="accept-terms">Accept terms and conditions</FormLabel>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-          {/* Select */}
-          <div className="space-y-2">
-            <Label htmlFor={`${id}-select-demo`}>Select an option</Label>
-            <Select
-              value={selectValue}
-              onValueChange={setSelectValue}
-            >
-              <SelectTrigger
-                id={`${id}-select-demo`}
-                className="w-full"
+              {/* Switch (Enable notifications) */}
+              <FormField
+                control={form.control}
+                name="notifications"
+                render={({ field }) => (
+                  <FormItem className="flex items-center space-x-2">
+                    <FormControl>
+                      <Switch
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                        id="enable-notifications"
+                      />
+                    </FormControl>
+                    <FormLabel htmlFor="enable-notifications">Enable notifications</FormLabel>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Select (Option) */}
+              <FormField
+                control={form.control}
+                name="option"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Select an option</FormLabel>
+                    <FormControl>
+                      <Select
+                        value={field.value}
+                        onValueChange={field.onChange}
+                      >
+                        <SelectTrigger
+                          className="w-full"
+                          id="select-demo"
+                        >
+                          <SelectValue placeholder="Choose an option" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="option1">Option 1</SelectItem>
+                          <SelectItem value="option2">Option 2</SelectItem>
+                          <SelectItem value="option3">Option 3</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </FormControl>
+                    <FormDescription>Pick your favorite option.</FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </CardContent>
+            <CardFooter className="grid grid-cols-2 gap-2">
+              <Button
+                variant={'secondary'}
+                type="button"
+                disabled={!form.formState.isDirty}
+                onClick={() => form.reset()}
               >
-                <SelectValue placeholder="Choose an option" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="option1">Option 1</SelectItem>
-                <SelectItem value="option2">Option 2</SelectItem>
-                <SelectItem value="option3">Option 3</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-        </CardContent>
-        <CardFooter className="grid grid-cols-2 gap-2">
-          <Button variant={'secondary'}>Reset</Button>
-          <Button type="submit">Submit</Button>
-        </CardFooter>
-      </form>
-    </Card>
+                Reset
+              </Button>
+              <Button
+                type="submit"
+                disabled={form.formState.isSubmitting}
+              >
+                {form.formState.isSubmitting && <Spinner />}
+                Submit
+              </Button>
+            </CardFooter>
+          </form>
+        </Form>
+      </Card>
+      <div className="flex flex-col gap-2">
+        <h2 className="text-lg font-bold">Fields values</h2>
+        <p className="border border-border bg-muted p-2 text-sm text-muted-foreground">
+          <pre>{JSON.stringify(form.watch(), null, 2)}</pre>
+        </p>
+      </div>
+    </div>
   )
 }
 
-export const Form: Story = {
+export const Default: Story = {
   render: () => <FormComponentsDemo />,
   parameters: {
     docs: {
       description: {
         story:
-          'A showcase of all form components (`Input`, `Textarea`, `Checkbox`, `Switch`, `Select`, `Label`) from the design system, inside a Card. Use these components to build accessible and consistent forms.',
+          'A showcase of all form components (`Input`, `Textarea`, `Checkbox`, `Switch`, `Select`, `Label`) from the design system, inside a Card. Uses react-hook-form and @boilerplate/ui/form primitives for accessible and consistent forms.',
       },
     },
   },

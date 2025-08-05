@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@/components/common/theme'
+import { Toaster } from '@boilerplate/ui/sonner'
 import { cn } from '@boilerplate/ui/utils'
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import { NextIntlClientProvider } from 'next-intl'
@@ -36,6 +37,7 @@ export const RootLayout: React.FC<RootLayoutProps> = ({
         >
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   )
