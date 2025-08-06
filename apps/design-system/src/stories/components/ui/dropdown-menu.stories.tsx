@@ -18,7 +18,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { CreditCard, LogOut, Settings, User } from 'lucide-react'
 
 const meta: Meta<typeof DropdownMenu> = {
-  title: 'Components/UI/DropdownMenu',
+  title: 'Components/Navigation/DropdownMenu',
   component: DropdownMenu,
   parameters: {
     layout: 'centered',

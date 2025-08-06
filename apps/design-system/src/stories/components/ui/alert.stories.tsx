@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { AlertCircle, XCircle } from 'lucide-react'
 
 const meta: Meta<typeof Alert> = {
-  title: 'Components/UI/Alert',
+  title: 'Components/Feedback/Alert',
   component: Alert,
   parameters: {
     layout: 'centered',

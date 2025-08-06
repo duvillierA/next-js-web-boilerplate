@@ -2,7 +2,7 @@ import { Checkbox } from '@boilerplate/ui/checkbox'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Components/UI/Checkbox',
+  title: 'Components/Forms/Checkbox',
   component: Checkbox,
   parameters: {
     layout: 'centered',

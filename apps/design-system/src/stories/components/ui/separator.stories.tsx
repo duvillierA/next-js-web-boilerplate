@@ -2,7 +2,7 @@ import { Separator } from '@boilerplate/ui/separator'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Separator> = {
-  title: 'Components/UI/Separator',
+  title: 'Components/Layout/Separator',
   component: Separator,
   parameters: {
     layout: 'centered',

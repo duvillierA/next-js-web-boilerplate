@@ -10,7 +10,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { ChevronRight, Home } from 'lucide-react'
 
 const meta: Meta<typeof Breadcrumb> = {
-  title: 'Components/UI/Breadcrumb',
+  title: 'Components/Navigation/Breadcrumb',
   component: Breadcrumb,
   parameters: {
     layout: 'centered',

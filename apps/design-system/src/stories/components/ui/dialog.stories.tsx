@@ -12,7 +12,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { useState } from 'react'
 
 const meta: Meta<typeof Dialog> = {
-  title: 'Components/UI/Dialog',
+  title: 'Components/Overlays/Dialog',
   component: Dialog,
   parameters: {
     layout: 'centered',

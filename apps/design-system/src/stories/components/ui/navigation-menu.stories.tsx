@@ -17,7 +17,7 @@ import {
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof NavigationMenu> = {
-  title: 'Components/UI/NavigationMenu',
+  title: 'Components/Navigation/NavigationMenu',
   component: NavigationMenu,
   parameters: {
     layout: 'centered',

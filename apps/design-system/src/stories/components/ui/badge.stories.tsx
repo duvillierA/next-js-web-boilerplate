@@ -2,7 +2,7 @@ import { Badge } from '@boilerplate/ui/badge'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Badge> = {
-  title: 'Components/UI/Badge',
+  title: 'Components/Feedback/Badge',
   component: Badge,
   parameters: {
     layout: 'centered',

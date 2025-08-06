@@ -2,7 +2,7 @@ import { AspectRatio } from '@boilerplate/ui/aspect-ratio'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof AspectRatio> = {
-  title: 'Components/UI/AspectRatio',
+  title: 'Components/Layout/AspectRatio',
   component: AspectRatio,
   parameters: {
     layout: 'padded',

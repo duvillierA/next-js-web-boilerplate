@@ -7,7 +7,7 @@ import {
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Accordion> = {
-  title: 'Components/UI/Accordion',
+  title: 'Components/Interactive/Accordion',
   component: Accordion,
   parameters: {
     layout: 'padded',

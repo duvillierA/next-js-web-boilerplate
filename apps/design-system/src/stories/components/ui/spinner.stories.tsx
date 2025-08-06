@@ -2,8 +2,8 @@ import { Spinner } from '@boilerplate/ui/spinner'
 import type { Meta, StoryObj } from '@storybook/react'
 import { Loader, RefreshCw } from 'lucide-react'
 
-const meta: Meta = {
-  title: 'Components/UI/Spinner',
+const meta: Meta<typeof Spinner> = {
+  title: 'Components/Feedback/Spinner',
   component: Spinner,
   parameters: {
     layout: 'centered',

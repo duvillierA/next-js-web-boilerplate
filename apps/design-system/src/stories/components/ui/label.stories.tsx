@@ -4,7 +4,7 @@ import { Label } from '@boilerplate/ui/label'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Label> = {
-  title: 'Components/UI/Label',
+  title: 'Components/Forms/Label',
   component: Label,
   parameters: {
     layout: 'centered',

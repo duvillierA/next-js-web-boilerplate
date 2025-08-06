@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@boilerplate/ui/tabs'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Tabs> = {
-  title: 'Components/UI/Tabs',
+  title: 'Components/Navigation/Tabs',
   component: Tabs,
   parameters: {
     layout: 'centered',

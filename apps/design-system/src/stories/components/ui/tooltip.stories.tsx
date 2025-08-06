@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { AlertCircle, HelpCircle, Info } from 'lucide-react'
 
 const meta: Meta<typeof Tooltip> = {
-  title: 'Components/UI/Tooltip',
+  title: 'Components/Overlays/Tooltip',
   component: Tooltip,
   parameters: {
     layout: 'centered',

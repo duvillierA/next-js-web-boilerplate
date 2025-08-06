@@ -5,8 +5,8 @@ import * as React from 'react'
 
 import { Calendar } from '@boilerplate/ui/calendar'
 
-const meta: Meta = {
-  title: 'Components/UI/Calendar',
+const meta: Meta<typeof Calendar> = {
+  title: 'Components/Data/Calendar',
   component: Calendar,
   parameters: {
     layout: 'centered',

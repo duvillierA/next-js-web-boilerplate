@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { useState } from 'react'
 
 const meta: Meta<typeof Switch> = {
-  title: 'Components/UI/Switch',
+  title: 'Components/Forms/Switch',
   component: Switch,
   parameters: {
     layout: 'centered',

@@ -11,7 +11,7 @@ import {
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Card> = {
-  title: 'Components/UI/Card',
+  title: 'Components/Interactive/Card',
   component: Card,
   parameters: {
     layout: 'padded',

@@ -1,8 +1,8 @@
 import { H1, H2, H3, H4, H5, H6 } from '@boilerplate/ui/heading'
 import type { Meta, StoryObj } from '@storybook/react'
 
-const meta: Meta = {
-  title: 'Components/UI/Heading',
+const meta: Meta<typeof H1> = {
+  title: 'Components/Typography/Heading',
   parameters: {
     layout: 'padded',
     docs: {

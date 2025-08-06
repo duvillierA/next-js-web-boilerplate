@@ -40,8 +40,9 @@ import { Separator } from '@boilerplate/ui/separator'
 import { Spinner } from '@boilerplate/ui/spinner'
 import { cn } from '@boilerplate/ui/utils'
 
-const meta: Meta = {
-  title: 'Components/UI/Form',
+const meta: Meta<typeof Form> = {
+  title: 'Components/Forms/Form',
+  component: Form,
   parameters: {
     layout: 'padded',
   },

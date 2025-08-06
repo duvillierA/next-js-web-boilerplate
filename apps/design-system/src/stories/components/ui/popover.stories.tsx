@@ -7,8 +7,8 @@ import { Input } from '@boilerplate/ui/input'
 import { Label } from '@boilerplate/ui/label'
 import { Popover, PopoverContent, PopoverTrigger } from '@boilerplate/ui/popover'
 
-const meta: Meta = {
-  title: 'Components/UI/Popover',
+const meta: Meta<typeof Popover> = {
+  title: 'Components/Overlays/Popover',
   component: Popover,
   parameters: {
     layout: 'centered',

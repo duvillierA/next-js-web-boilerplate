@@ -1,15 +1,19 @@
 import { Footer } from '@/components/page/footer'
 import { Header } from '@/components/page/header'
+import { Container, Spacing } from '@boilerplate/ui/layout'
+import { cn } from '@boilerplate/ui/utils'
 
 export const BaseLayout: React.FC<{ children: React.ReactNode; className?: string }> = ({
   children,
   className,
 }) => {
   return (
-    <div className="container mx-auto flex min-h-screen flex-col gap-4 px-4">
-      <Header />
-      <main className={className}>{children}</main>
-      <Footer />
-    </div>
+    <Container asChild>
+      <Spacing className="min-h-screen">
+        <Header />
+        <main className={cn('flex-1', className)}>{children}</main>
+        <Footer />
+      </Spacing>
+    </Container>
   )
 }

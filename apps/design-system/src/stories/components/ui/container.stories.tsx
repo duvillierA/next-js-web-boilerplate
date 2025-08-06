@@ -1,9 +1,9 @@
-import { Container } from '@boilerplate/ui/container'
+import { Container } from '@boilerplate/ui/layout'
 import { cn } from '@boilerplate/ui/utils'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Container> = {
-  title: 'Components/Ui/Container',
+  title: 'Components/Layout/Container',
   component: Container,
   parameters: {
     layout: 'fullscreen',

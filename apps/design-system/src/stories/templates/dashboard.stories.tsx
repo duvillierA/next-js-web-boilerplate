@@ -1,7 +1,7 @@
 import { Badge } from '@boilerplate/ui/badge'
 import { Button } from '@boilerplate/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@boilerplate/ui/card'
-import { Container } from '@boilerplate/ui/container'
+import { Container } from '@boilerplate/ui/layout'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import {
   BarChartIcon,

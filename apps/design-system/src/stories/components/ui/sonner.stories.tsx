@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { toast } from 'sonner'
 
 const meta: Meta<typeof Toaster> = {
-  title: 'Components/UI/Sonner',
+  title: 'Components/Feedback/Sonner',
   component: Toaster,
   parameters: {
     layout: 'centered',

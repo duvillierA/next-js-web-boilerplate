@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { Mail, Plus } from 'lucide-react'
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/UI/Button',
+  title: 'Components/Interactive/Button',
   component: Button,
   parameters: {
     layout: 'centered',
