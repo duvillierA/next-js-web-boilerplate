@@ -1,6 +1,7 @@
 import { Badge } from '@boilerplate/ui/badge'
 import { Button } from '@boilerplate/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@boilerplate/ui/card'
+import { Container } from '@boilerplate/ui/container'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import {
   BarChartIcon,
@@ -27,7 +28,10 @@ export const Default: Story = {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b bg-card">
-        <div className="container mx-auto px-4 py-4">
+        <Container
+          className="py-4"
+          asChild
+        >
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold">Dashboard</h1>
@@ -38,11 +42,11 @@ export const Default: Story = {
               <Button>New Project</Button>
             </div>
           </div>
-        </div>
+        </Container>
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
+      <Container className="py-8">
         {/* Stats Grid */}
         <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           <Card>
@@ -160,7 +164,7 @@ export const Default: Story = {
             </CardContent>
           </Card>
         </div>
-      </main>
+      </Container>
     </div>
   ),
 }
