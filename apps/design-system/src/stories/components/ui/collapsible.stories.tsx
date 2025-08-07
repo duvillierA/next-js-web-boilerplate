@@ -1,4 +1,6 @@
+import { Button } from '@boilerplate/ui/button'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@boilerplate/ui/collapsible'
+import { Spacing } from '@boilerplate/ui/layout'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { ChevronDown, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
@@ -30,14 +32,21 @@ function DefaultCollapsible() {
       onOpenChange={setIsOpen}
       className="w-[350px] space-y-2"
     >
-      <div className="flex items-center justify-between space-x-4 px-4">
+      <Spacing
+        direction="horizontal"
+        align="center"
+        justify="between"
+      >
         <h4 className="text-sm font-semibold">@peduarte starred 3 repositories</h4>
         <CollapsibleTrigger asChild>
-          <button className="rounded-md p-2 hover:bg-accent hover:text-accent-foreground">
-            {isOpen ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
-          </button>
+          <Button
+            variant="ghost"
+            size="icon"
+          >
+            {isOpen ? <ChevronDown className="size-4" /> : <ChevronRight className="size-4" />}
+          </Button>
         </CollapsibleTrigger>
-      </div>
+      </Spacing>
       <div className="rounded-md border px-4 py-3 font-mono text-sm">@radix-ui/primitives</div>
       <CollapsibleContent className="space-y-2">
         <div className="rounded-md border px-4 py-3 font-mono text-sm">@radix-ui/colors</div>
@@ -56,9 +65,15 @@ function SimpleCollapsible() {
       onOpenChange={setIsOpen}
       className="w-[350px] space-y-2"
     >
-      <CollapsibleTrigger className="flex w-full items-center justify-between rounded-lg border p-4 text-left font-medium hover:bg-accent">
-        <span>Click to expand</span>
-        {isOpen ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
+      <CollapsibleTrigger asChild>
+        <Button
+          size="lg"
+          variant="outline"
+          className="w-full"
+        >
+          <span>Click to expand</span>
+          {isOpen ? <ChevronDown className="size-4" /> : <ChevronRight className="size-4" />}
+        </Button>
       </CollapsibleTrigger>
       <CollapsibleContent className="rounded-lg border p-4">
         <p className="text-sm text-muted-foreground">

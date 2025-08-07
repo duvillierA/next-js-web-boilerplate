@@ -1,4 +1,6 @@
 import { Checkbox } from '@boilerplate/ui/checkbox'
+import { Label } from '@boilerplate/ui/label'
+import { Spacing } from '@boilerplate/ui/layout'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Checkbox> = {
@@ -41,21 +43,21 @@ export const Default: Story = {
 
 export const Checked: Story = {
   args: {
-    id: 'terms',
+    id: 'terms-checked',
     checked: true,
   },
 }
 
 export const Disabled: Story = {
   args: {
-    id: 'terms',
+    id: 'terms-disabled',
     disabled: true,
   },
 }
 
 export const DisabledChecked: Story = {
   args: {
-    id: 'terms',
+    id: 'terms-disabled-checked',
     checked: true,
     disabled: true,
   },
@@ -63,76 +65,71 @@ export const DisabledChecked: Story = {
 
 export const WithLabel: Story = {
   render: () => (
-    <div className="flex items-center space-x-2">
-      <Checkbox id="terms" />
-      <label
-        htmlFor="terms"
+    <Spacing
+      direction="horizontal"
+      gap="sm"
+    >
+      <Checkbox id="terms-with-label" />
+      <Label
+        htmlFor="terms-with-label"
         className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
       >
         Accept terms and conditions
-      </label>
-    </div>
+      </Label>
+    </Spacing>
   ),
 }
 
 export const Multiple: Story = {
   render: () => (
     <div className="space-y-3">
-      <div className="flex items-center space-x-2">
+      <Spacing
+        direction="horizontal"
+        gap="sm"
+      >
         <Checkbox id="option1" />
-        <label
-          htmlFor="option1"
-          className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-        >
-          Option 1
-        </label>
-      </div>
-      <div className="flex items-center space-x-2">
+        <Label htmlFor="option1">Option 1</Label>
+      </Spacing>
+      <Spacing
+        direction="horizontal"
+        gap="sm"
+      >
         <Checkbox
           id="option2"
           defaultChecked
         />
-        <label
-          htmlFor="option2"
-          className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-        >
-          Option 2
-        </label>
-      </div>
-      <div className="flex items-center space-x-2">
+        <Label htmlFor="option2">Option 2</Label>
+      </Spacing>
+      <Spacing
+        direction="horizontal"
+        gap="sm"
+      >
         <Checkbox
           id="option3"
           disabled
         />
-        <label
-          htmlFor="option3"
-          className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-        >
-          Option 3 (Disabled)
-        </label>
-      </div>
+        <Label htmlFor="option3">Option 3 (Disabled)</Label>
+      </Spacing>
     </div>
   ),
 }
 
 export const WithDescription: Story = {
   render: () => (
-    <div className="space-y-2">
-      <div className="flex items-center space-x-2">
-        <Checkbox id="notifications" />
-        <div className="grid gap-1.5 leading-none">
-          <label
-            htmlFor="notifications"
-            className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            Email notifications
-          </label>
-          <p className="text-sm text-muted-foreground">
-            Receive emails about your account activity.
-          </p>
-        </div>
-      </div>
-    </div>
+    <Spacing
+      direction="horizontal"
+      gap="sm"
+    >
+      <Checkbox id="notifications" />
+      <Spacing
+        align="baseline"
+        direction="vertical"
+        gap="xs"
+      >
+        <Label htmlFor="notifications">Email notifications</Label>
+        <p className="text-sm text-muted-foreground">Receive emails about your account activity.</p>
+      </Spacing>
+    </Spacing>
   ),
 }
 
@@ -143,12 +140,7 @@ export const Required: Story = {
         id="required"
         required
       />
-      <label
-        htmlFor="required"
-        className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-      >
-        I agree to the terms and conditions *
-      </label>
+      <Label htmlFor="required">I agree to the terms and conditions *</Label>
     </div>
   ),
 }
