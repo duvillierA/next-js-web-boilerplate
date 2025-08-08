@@ -4,7 +4,7 @@ import { RadioGroup, RadioGroupItem } from '@boilerplate/ui/radio-group'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof RadioGroup> = {
-  title: 'Components/Forms/RadioGroup',
+  title: 'Components/Data Entry/RadioGroup',
   component: RadioGroup,
   parameters: {
     layout: 'padded',

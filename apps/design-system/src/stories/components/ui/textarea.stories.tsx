@@ -3,7 +3,7 @@ import { Textarea } from '@boilerplate/ui/textarea'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Textarea> = {
-  title: 'Components/Forms/Textarea',
+  title: 'Components/Data Entry/Textarea',
   component: Textarea,
   parameters: {
     layout: 'centered',

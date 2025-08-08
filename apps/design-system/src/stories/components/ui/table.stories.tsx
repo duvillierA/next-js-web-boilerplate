@@ -10,7 +10,7 @@ import {
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Table> = {
-  title: 'Components/Data/Table',
+  title: 'Components/Data Display/Table',
   component: Table,
   parameters: {
     layout: 'centered',

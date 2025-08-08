@@ -105,6 +105,38 @@ const gridSpacingVariants = cva('grid', {
       false: '',
     },
   },
+  compoundVariants: [
+    {
+      responsive: true,
+      cols: 1,
+      class: 'grid-cols-1',
+    },
+    {
+      responsive: true,
+      cols: 2,
+      class: 'grid-cols-1 md:grid-cols-2',
+    },
+    {
+      responsive: true,
+      cols: 3,
+      class: 'grid-cols-1 md:grid-cols-3',
+    },
+    {
+      responsive: true,
+      cols: 4,
+      class: 'grid-cols-1 md:grid-cols-4',
+    },
+    {
+      responsive: true,
+      cols: 5,
+      class: 'grid-cols-1 md:grid-cols-5',
+    },
+    {
+      responsive: true,
+      cols: 6,
+      class: 'grid-cols-1 md:grid-cols-6',
+    },
+  ],
   defaultVariants: {
     gap: 'md',
     cols: 1,
@@ -137,15 +169,10 @@ export function GridSpacing({
   ...props
 }: GridSpacingProps) {
   // Responsive grid cols class
-  const gridColsClass = responsive ? `grid-cols-1 md:grid-cols-${cols}` : `grid-cols-${cols}`
   const Comp = asChild ? Slot : 'div'
   return (
     <Comp
-      className={cn(
-        gridSpacingVariants({ gap, cols, responsive }),
-        responsive ? gridColsClass : undefined,
-        className,
-      )}
+      className={cn(gridSpacingVariants({ gap, cols, responsive }), className)}
       {...props}
     >
       {children}

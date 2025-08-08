@@ -35,13 +35,14 @@ import { CalendarIcon } from 'lucide-react'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import { toast } from 'sonner'
 
+import { Spacing } from '@boilerplate/ui/layout'
 import { RadioGroup, RadioGroupItem } from '@boilerplate/ui/radio-group'
 import { Separator } from '@boilerplate/ui/separator'
 import { Spinner } from '@boilerplate/ui/spinner'
 import { cn } from '@boilerplate/ui/utils'
 
 const meta: Meta<typeof Form> = {
-  title: 'Components/Forms/Form',
+  title: 'Components/Data Entry/Form',
   component: Form,
   parameters: {
     layout: 'padded',
@@ -63,6 +64,7 @@ type FormValues = {
   notifications: boolean
   option: string
   dob: Date | undefined
+  radioOption: string
 }
 
 function FormComponentsDemo() {
@@ -74,6 +76,7 @@ function FormComponentsDemo() {
       notifications: false,
       option: 'option1',
       dob: undefined,
+      radioOption: 'option1',
     },
   })
 
@@ -207,16 +210,22 @@ function FormComponentsDemo() {
                 control={form.control}
                 name="acceptTerms"
                 render={({ field }) => (
-                  <FormItem className="flex items-center space-x-2">
-                    <FormControl>
-                      <Checkbox
-                        checked={field.value}
-                        onCheckedChange={field.onChange}
-                      />
-                    </FormControl>
-                    <FormLabel>Accept terms and conditions</FormLabel>
-                    <FormMessage />
-                  </FormItem>
+                  <Spacing
+                    direction="horizontal"
+                    gap="sm"
+                    asChild
+                  >
+                    <FormItem>
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                        />
+                      </FormControl>
+                      <FormLabel>Accept terms and conditions</FormLabel>
+                      <FormMessage />
+                    </FormItem>
+                  </Spacing>
                 )}
               />
 
@@ -225,22 +234,28 @@ function FormComponentsDemo() {
                 control={form.control}
                 name="notifications"
                 render={({ field }) => (
-                  <FormItem className="flex items-center space-x-2">
-                    <FormControl>
-                      <Switch
-                        checked={field.value}
-                        onCheckedChange={field.onChange}
-                      />
-                    </FormControl>
-                    <FormLabel>Enable notifications</FormLabel>
-                    <FormMessage />
-                  </FormItem>
+                  <Spacing
+                    direction="horizontal"
+                    gap="sm"
+                    asChild
+                  >
+                    <FormItem>
+                      <FormControl>
+                        <Switch
+                          checked={field.value}
+                          onCheckedChange={field.onChange}
+                        />
+                      </FormControl>
+                      <FormLabel>Enable notifications</FormLabel>
+                      <FormMessage />
+                    </FormItem>
+                  </Spacing>
                 )}
               />
 
               <FormField
                 control={form.control}
-                name="option"
+                name="radioOption"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Choose one option</FormLabel>
@@ -249,7 +264,10 @@ function FormComponentsDemo() {
                         onValueChange={field.onChange}
                         value={field.value}
                       >
-                        <div className="flex items-center space-x-2">
+                        <Spacing
+                          direction="horizontal"
+                          gap="sm"
+                        >
                           <RadioGroupItem
                             value="option1"
                             id="radio-option-1"
@@ -260,8 +278,11 @@ function FormComponentsDemo() {
                           >
                             Option 1
                           </FormLabel>
-                        </div>
-                        <div className="flex items-center space-x-2">
+                        </Spacing>
+                        <Spacing
+                          direction="horizontal"
+                          gap="sm"
+                        >
                           <RadioGroupItem
                             value="option2"
                             id="radio-option-2"
@@ -272,8 +293,11 @@ function FormComponentsDemo() {
                           >
                             Option 2
                           </FormLabel>
-                        </div>
-                        <div className="flex items-center space-x-2">
+                        </Spacing>
+                        <Spacing
+                          direction="horizontal"
+                          gap="sm"
+                        >
                           <RadioGroupItem
                             value="option3"
                             id="radio-option-3"
@@ -284,7 +308,7 @@ function FormComponentsDemo() {
                           >
                             Option 3
                           </FormLabel>
-                        </div>
+                        </Spacing>
                       </RadioGroup>
                     </FormControl>
                     <FormMessage />

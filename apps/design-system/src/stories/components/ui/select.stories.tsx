@@ -9,7 +9,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { useState } from 'react'
 
 const meta: Meta<typeof Select> = {
-  title: 'Components/Forms/Select',
+  title: 'Components/Data Entry/Select',
   component: Select,
   parameters: {
     layout: 'centered',

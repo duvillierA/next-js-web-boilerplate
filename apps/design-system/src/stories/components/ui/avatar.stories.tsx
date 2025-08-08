@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@boilerplate/ui/avatar'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Avatar> = {
-  title: 'Components/Data/Avatar',
+  title: 'Components/Data Display/Avatar',
   component: Avatar,
   parameters: {
     layout: 'centered',

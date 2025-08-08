@@ -2,12 +2,38 @@ import * as React from 'react'
 
 import { cn } from '@boilerplate/ui/utils'
 
-function Card({ className, ...props }: React.ComponentProps<'div'>) {
+type CardProps = React.ComponentProps<'div'> & {
+  interactive?: boolean
+  selected?: boolean
+  disabled?: boolean
+  variant?: 'surface' | 'classic'
+}
+
+function Card({
+  className,
+  interactive,
+  selected,
+  disabled,
+  variant = 'classic',
+  ...props
+}: CardProps) {
   return (
     <div
       data-slot="card"
+      role={interactive ? 'button' : undefined}
+      aria-pressed={interactive ? !!selected : undefined}
+      tabIndex={interactive ? 0 : undefined}
+      aria-disabled={disabled}
       className={cn(
-        'flex flex-col gap-6 rounded-xl border bg-card py-6 text-card-foreground shadow-sm',
+        'flex flex-col gap-6 rounded-xl border bg-card py-6 text-card-foreground',
+        {
+          'shadow-sm': variant === 'classic',
+          'transition-colors': interactive,
+          'border-primary': selected,
+          'cursor-not-allowed': disabled,
+          'cursor-pointer hover:bg-accent/50 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none':
+            interactive && !disabled,
+        },
         className,
       )}
       {...props}

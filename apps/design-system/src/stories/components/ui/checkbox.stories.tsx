@@ -4,7 +4,7 @@ import { Spacing } from '@boilerplate/ui/layout'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Components/Forms/Checkbox',
+  title: 'Components/Data Entry/Checkbox',
   component: Checkbox,
   parameters: {
     layout: 'centered',

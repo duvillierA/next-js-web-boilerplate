@@ -8,23 +8,35 @@ import {
   CardHeader,
   CardTitle,
 } from '@boilerplate/ui/card'
+import { Spacing } from '@boilerplate/ui/layout'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import { useState } from 'react'
 
 const meta: Meta<typeof Card> = {
-  title: 'Components/Interactive/Card',
+  title: 'Components/Data Display/Card',
   component: Card,
   parameters: {
     layout: 'padded',
   },
   tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['surface', 'classic'],
+      defaultValue: 'classic',
+    },
+  },
 }
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  render: () => (
-    <Card className="w-[350px]">
+  render: (args) => (
+    <Card
+      className="w-[350px]"
+      {...args}
+    >
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
         <CardDescription>Card Description</CardDescription>
@@ -43,8 +55,11 @@ export const Default: Story = {
 }
 
 export const WithAction: Story = {
-  render: () => (
-    <Card className="w-[350px]">
+  render: (args) => (
+    <Card
+      className="w-[350px]"
+      {...args}
+    >
       <CardHeader>
         <CardTitle>Card with Action</CardTitle>
         <CardDescription>This card has an action button in the header</CardDescription>
@@ -65,8 +80,11 @@ export const WithAction: Story = {
 }
 
 export const ContentOnly: Story = {
-  render: () => (
-    <Card className="w-[350px]">
+  render: (args) => (
+    <Card
+      className="w-[350px]"
+      {...args}
+    >
       <CardContent>
         <p>This card only has content, no header or footer.</p>
       </CardContent>
@@ -86,8 +104,11 @@ export const HeaderOnly: Story = {
 }
 
 export const FooterOnly: Story = {
-  render: () => (
-    <Card className="w-[350px]">
+  render: (args) => (
+    <Card
+      className="w-[350px]"
+      {...args}
+    >
       <CardContent>
         <p>This card has content and footer but no header.</p>
       </CardContent>
@@ -100,9 +121,9 @@ export const FooterOnly: Story = {
 }
 
 export const ComplexLayout: Story = {
-  render: () => (
+  render: (args) => (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-      <Card>
+      <Card {...args}>
         <CardHeader>
           <CardTitle>Project Alpha</CardTitle>
           <CardDescription>An innovative project with cutting-edge technology</CardDescription>
@@ -116,26 +137,68 @@ export const ComplexLayout: Story = {
           </CardAction>
         </CardHeader>
         <CardContent>
-          <div className="space-y-2">
-            <div className="flex justify-between">
+          <Spacing gap="sm">
+            <Spacing
+              justify="between"
+              direction="horizontal"
+            >
               <span className="text-sm text-muted-foreground">Status</span>
               <span className="text-sm font-medium">Active</span>
-            </div>
-            <div className="flex justify-between">
+            </Spacing>
+            <Spacing
+              justify="between"
+              direction="horizontal"
+            >
               <span className="text-sm text-muted-foreground">Progress</span>
               <span className="text-sm font-medium">75%</span>
-            </div>
-            <div className="flex justify-between">
+            </Spacing>
+            <Spacing
+              justify="between"
+              direction="horizontal"
+            >
               <span className="text-sm text-muted-foreground">Team</span>
               <span className="text-sm font-medium">8 members</span>
-            </div>
-          </div>
+            </Spacing>
+          </Spacing>
         </CardContent>
-        <CardFooter className="grid grid-cols-2 gap-2">
+        <CardFooter className="grid grid-cols-2 gap-2 border-t">
           <Button>Edit Project</Button>
           <Button variant="outline">Share</Button>
         </CardFooter>
       </Card>
     </div>
   ),
+}
+
+function InteractiveDemo() {
+  const [selected, setSelected] = useState(false)
+  return (
+    <Card
+      interactive
+      selected={selected}
+      onClick={() => setSelected((prev) => !prev)}
+    >
+      <CardHeader>
+        <CardTitle>Interactive Card</CardTitle>
+        <CardDescription>
+          This card is <span className="font-semibold">interactive</span>. It will show pointer and
+          focus styles.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>Click or focus this card to see interactive feedback.</p>
+      </CardContent>
+    </Card>
+  )
+}
+
+export const Interactive: Story = {
+  render: () => <InteractiveDemo />,
+  parameters: {
+    docs: {
+      description: {
+        story: 'This card is interactive. It will show pointer and focus styles.',
+      },
+    },
+  },
 }

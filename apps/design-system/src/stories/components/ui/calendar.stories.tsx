@@ -6,7 +6,7 @@ import * as React from 'react'
 import { Calendar } from '@boilerplate/ui/calendar'
 
 const meta: Meta<typeof Calendar> = {
-  title: 'Components/Data/Calendar',
+  title: 'Components/Data Entry/Calendar',
   component: Calendar,
   parameters: {
     layout: 'centered',

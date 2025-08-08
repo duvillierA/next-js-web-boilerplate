@@ -2,7 +2,7 @@ import { Input } from '@boilerplate/ui/input'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Input> = {
-  title: 'Components/Forms/Input',
+  title: 'Components/Data Entry/Input',
   component: Input,
   parameters: {
     layout: 'centered',
