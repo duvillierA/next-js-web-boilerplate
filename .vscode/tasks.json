@@ -48,9 +48,9 @@
     {
       "label": "Add Shadcn Component",
       "type": "shell",
-      "command": "npx",
+      "command": "npm",
       "args": [
-        "shadcn@latest",
+        "run",
         "add",
         "${input:component}"
       ],

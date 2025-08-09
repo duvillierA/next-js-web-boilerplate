@@ -1,4 +1,27 @@
+---
+description: Storybook creation, when create, edit and refactor design system stories.
+alwaysApply: false
+---
 # Design System Component Organization Guide
+
+When creating stories, follow the following rules:
+
+1. **Primary Function**: Categorize by the component's primary purpose
+2. **User Intent**: Consider what the user is trying to accomplish
+3. **Consistency**: Similar components should be in the same category
+4. **Discoverability**: Categories should be intuitive to find
+
+Create only the stories that are necessary to cover the component.
+
+For each component, create a story that covers the following:
+- Default state
+- Variants (if applicable)
+- Sizes (if applicable)
+- Interactive states (if applicable)
+- Disabled states (if applicable)
+- Error states (if applicable)
+- Loading states (if applicable)
+- Responsive states (if applicable)
 
 ## Category Structure
 
@@ -62,13 +85,6 @@ Components that appear above other content
 Components for text display
 - **Heading** - Hierarchical text headings
 
-## Organization Rules
-
-1. **Primary Function**: Categorize by the component's primary purpose
-2. **User Intent**: Consider what the user is trying to accomplish
-3. **Consistency**: Similar components should be in the same category
-4. **Discoverability**: Categories should be intuitive to find
-
 ## Naming Conventions
 
 - Use PascalCase for component names
@@ -79,5 +95,6 @@ Components for text display
 
 - **Media**: For image, video, and audio components
 - **Charts**: For data visualization components
-- **Advanced Forms**: For complex form patterns
 - **Authentication**: For login/signup components
+- **Blocks**: For block components
+- **Templates**: For Templates

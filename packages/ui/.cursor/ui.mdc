@@ -1,0 +1,122 @@
+---
+description: When import, use, edit ui package components
+alwaysApply: false
+---
+# UI Package Exports
+
+This document explains the export structure of the `@boilerplate/ui` package.
+
+## Export Structure
+
+The package provides both individual component exports and categorized exports.
+
+### Individual Component Exports
+
+Direct access to specific components:
+
+```tsx
+import { Button } from '@boilerplate/ui/button'
+import { Input } from '@boilerplate/ui/input'
+import { Dialog } from '@boilerplate/ui/dialog'
+```
+
+### Categorized Exports
+
+Access to all components in a category:
+
+```tsx
+import { Button, Card, Accordion } from '@boilerplate/ui/interactive'
+import { Input, Select, Checkbox } from '@boilerplate/ui/data-entry'
+import { Dialog, Popover, Tooltip } from '@boilerplate/ui/overlays'
+```
+
+## Available Exports
+
+### Individual Components
+
+- `./accordion` - Accordion component
+- `./alert` - Alert component
+- `./aspect-ratio` - Aspect ratio component
+- `./avatar` - Avatar component
+- `./badge` - Badge component
+- `./breadcrumb` - Breadcrumb component
+- `./button` - Button component
+- `./calendar` - Calendar component
+- `./card` - Card component
+- `./checkbox` - Checkbox component
+- `./control-card` - Control card component
+- `./collapsible` - Collapsible component
+- `./dialog` - Dialog component
+- `./dropdown-menu` - Dropdown menu component
+- `./form` - Form component
+- `./heading` - Heading component
+- `./input` - Input component
+- `./label` - Label component
+- `./layout` - Layout components
+- `./navigation-menu` - Navigation menu component
+- `./popover` - Popover component
+- `./radio-group` - Radio group component
+- `./select` - Select component
+- `./separator` - Separator component
+- `./skeleton` - Skeleton component
+- `./spinner` - Spinner component
+- `./sonner` - Sonner component
+- `./switch` - Switch component
+- `./table` - Table component
+- `./tabs` - Tabs component
+- `./textarea` - Textarea component
+- `./tooltip` - Tooltip component
+- `./hover-card` - Hover card component
+- `./progress` - Progress component
+- `./slider` - Slider component
+
+### Category Exports
+
+- `./data-entry` - Form inputs and data collection
+- `./interactive` - User interaction components
+- `./layout` - Structure and organization
+- `./navigation` - Site navigation and menus
+- `./data-display` - Information presentation
+- `./date-time` - Date and time functionality
+- `./feedback` - User feedback and status
+- `./overlays` - Components above other content
+- `./typography` - Text display components
+
+### Utility Exports
+
+- `./utils` - Utility functions
+- `./globals.css` - Global styles
+- `./postcss.config` - PostCSS configuration
+
+## Usage Examples
+
+### Importing Individual Components
+
+```tsx
+import { Button, buttonVariants } from '@boilerplate/ui/button'
+import { Input } from '@boilerplate/ui/input'
+import { Dialog, DialogContent, DialogTrigger } from '@boilerplate/ui/dialog'
+```
+
+### Importing from Categories
+
+```tsx
+// Interactive components
+import { Button, Card, Accordion } from '@boilerplate/ui/interactive'
+
+// Form components
+import { Input, Select, Checkbox, Switch } from '@boilerplate/ui/data-entry'
+
+// Overlay components
+import { Dialog, Popover, Tooltip, HoverCard } from '@boilerplate/ui/overlays'
+
+// Feedback components
+import { Alert, Badge, Skeleton, Progress } from '@boilerplate/ui/feedback'
+```
+
+### Importing Utilities
+
+```tsx
+import { cn } from '@boilerplate/ui/utils'
+import '@boilerplate/ui/globals.css'
+```

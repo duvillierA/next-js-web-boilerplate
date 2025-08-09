@@ -1,10 +1,7 @@
 ---
-description: This project uses a monorepo architecture with the following structure:
-globs:
-alwaysApply: true
+description: Monorepo architecture, workspace management, apps and packages directory management, file structure, hierarchy
+alwaysApply: false
 ---
-
-
 ## Monorepo Structure
 
 This project uses a monorepo architecture with the following structure:

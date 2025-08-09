@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   transpilePackages: ['@boilerplate/ui'],
+  experimental: {
+    optimizePackageImports: ['@boilerplate/ui'],
+  },
   async rewrites() {
     return [
       {

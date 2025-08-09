@@ -2,8 +2,8 @@
 
 import { useCallback, useState, type ComponentProps, type MouseEvent } from 'react'
 
-import { cn } from '../utils'
-import { Card, CardAction, CardDescription, CardHeader, CardTitle } from './card'
+import { cn } from '../../utils'
+import { Card, CardAction, CardDescription, CardHeader, CardTitle } from '../interactive/card'
 import { Checkbox } from './checkbox'
 import { RadioGroupItem } from './radio-group'
 import { Switch } from './switch'
