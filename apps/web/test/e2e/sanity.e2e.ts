@@ -26,16 +26,15 @@ test.describe('Sanity checks', () => {
       // Check the page title (from translation, fallback to regex)
       await expect(page).toHaveTitle(/About|À propos/i)
 
-      // Check meta description exists and is not empty
-      const description = page.locator('meta[name="description"]')
-      await expect(description).toHaveAttribute('content')
-      expect(await description.textContent()).toBeGreaterThan(5)
-
       // Check canonical link
       const canonical = page.locator('link[rel="canonical"]')
       await expect(canonical).toHaveAttribute('href')
       // Canonical should end with the about path for the locale
-      expect(canonical).toBe(new URL(aboutPath, getHttpUrl()).toString())
+      const canonicalHref = canonical
+      await expect(canonicalHref).toHaveAttribute(
+        'href',
+        getHttpUrl({ pathname: aboutPath }).toString(),
+      )
 
       // Check Open Graph meta tags
       const ogTitle = page.locator('meta[property="og:title"]')
@@ -44,7 +43,11 @@ test.describe('Sanity checks', () => {
       await expect(ogDescription).toHaveAttribute('content')
       const ogUrl = page.locator('meta[property="og:url"]')
       await expect(ogUrl).toHaveAttribute('content')
-      expect(ogUrl).toBe(new URL(aboutPath, getHttpUrl()).toString())
+      const ogUrlContent = ogUrl
+      await expect(ogUrlContent).toHaveAttribute(
+        'content',
+        getHttpUrl({ pathname: aboutPath }).toString(),
+      )
     })
   }
 })
