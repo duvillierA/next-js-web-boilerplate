@@ -36,14 +36,20 @@ boilerplate/
 │   ├── ui/                # Reusable UI components (@boilerplate/ui)
 │   │   ├── src/components/ # Atomic components
 │   │   └── src/utils/      # Utility functions
+│   ├── utils/             # Shared utility functions (@boilerplate/utils)
+│   │   ├── src/metadata/  # Next.js metadata builder utilities
+│   │   ├── src/sitemap/   # Sitemap generation utilities
+│   │   ├── src/timing/    # Timing utilities (sleep, etc.)
+│   │   └── src/url/       # URL building utilities
 │   ├── eslintconfig/      # Shared ESLint configurations (@boilerplate/eslintconfig)
 │   │   ├── base.mjs       # Base ESLint config
 │   │   ├── nextjs.mjs     # Next.js specific config
+│   │   ├── library.mjs     # Library specific config
 │   │   └── react-library.mjs # React library config
 │   ├── testconfig/        # Shared testing configurations (@boilerplate/testconfig)
 │   │   ├── vitest.base.mjs # Base Vitest configuration
-│   │   ├── setup-dom.mjs # Shared dom test setup
-│   │   └── postcss.base.mjs # Shared PostCSS configuration
+│   │   ├── vitest-setup-dom.mjs # Shared dom test setup
+│   │   └── playwright.base.mjs # Shared Playwright configuration
 │   └── tsconfig/          # Shared TypeScript configurations (@boilerplate/tsconfig)
 │       ├── base.json      # Base TypeScript config
 │       ├── nextjs.json    # Next.js specific config
@@ -57,8 +63,9 @@ boilerplate/
 - **Root**: Manages workspace dependencies and Turborepo tasks
 - **apps/web**: Main Next.js application that consumes shared packages
 - **packages/ui**: Reusable UI component library built with shadcn/ui
+- **packages/utils**: Shared utility functions for metadata, sitemap, timing, and URL operations
 - **packages/eslintconfig**: Shared ESLint configurations for consistent code quality
-- **packages/testconfig**: Shared testing configurations (Vitest, PostCSS) for consistent testing setup
+- **packages/testconfig**: Shared testing configurations (Vitest, Playwright) for consistent testing setup
 - **packages/tsconfig**: Shared TypeScript configurations for type safety
 
 ### Turborepo Tasks
