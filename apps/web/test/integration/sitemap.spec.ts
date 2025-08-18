@@ -1,6 +1,6 @@
 import { routing } from '@/lib/i18n/routing'
 import { expect, test } from '@playwright/test'
-import { resolve } from 'node:url'
+import { join } from 'node:path'
 
 const defaultLocale = routing.defaultLocale
 const aboutPathnames = routing.pathnames['/about']
@@ -32,7 +32,7 @@ test.describe('Sitemap', () => {
     expect(body).toContain(`<loc>${origin}/</loc>`)
     for (const locale of routing.locales) {
       const pathname = locale === defaultLocale ? '/' : `/${locale}`
-      const href = resolve(origin, pathname)
+      const href = new URL(pathname, origin).toString()
       const text = `<xhtml:link rel="alternate" hreflang="${locale}" href="${href}" />`
       expect(body).toContain(text)
     }
@@ -49,7 +49,8 @@ test.describe('Sitemap', () => {
     expect(body).toContain(`<loc>${origin}/about</loc>`)
     for (const locale of routing.locales) {
       const prefix = locale === defaultLocale ? '' : `/${locale}`
-      const href = resolve(origin, prefix, aboutPathnames[locale])
+      const href = new URL(join(prefix, aboutPathnames[locale]), origin).toString()
+      console.log(href)
       const text = `<xhtml:link rel="alternate" hreflang="${locale}" href="${href}" />`
       expect(body).toContain(text)
     }
