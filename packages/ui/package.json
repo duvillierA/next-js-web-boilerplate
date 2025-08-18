@@ -19,8 +19,7 @@
     "test:coverage": "vitest run --coverage",
     "test:node": "vitest run --project=node",
     "test:dom": "vitest run --project=dom",
-    "add": "node scripts/add-component.js",
-    "migrate": "node scripts/migrate-to-categories.js"
+    "add": "node scripts/add-component.mjs"
   },
   "exports": {
     "./accordion": "./src/components/interactive/accordion.tsx",

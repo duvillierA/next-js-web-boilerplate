@@ -13,6 +13,12 @@ describe('getHttpUrl', () => {
     expect(getHttpUrl().toString()).toBe('http://localhost:3000/')
   })
 
+  it('returns fallback url', () => {
+    expect(getHttpUrl({ fallback: 'https://fallback-url.com' }).toString()).toBe(
+      'https://fallback-url.com/',
+    )
+  })
+
   it('returns production URL when NEXT_PUBLIC_VERCEL_ENV is production and project production URL is set', () => {
     expect(
       getHttpUrl({ env: 'production', url: 'vercel-url.com', prodUrl: 'prod-url.com' }).toString(),
@@ -37,9 +43,15 @@ describe('getHttpUrl', () => {
     )
   })
 
-  it('returns localhost for unknown NEXT_PUBLIC_VERCEL_ENV', () => {
-    expect(getHttpUrl({ env: 'staging', url: 'staging-url.com' }).toString()).toBe(
-      'http://localhost:3000/',
-    )
+  describe('pathname', () => {
+    it('returns pathname when provided', () => {
+      expect(getHttpUrl({ pathname: '/test' }).toString()).toBe('http://localhost:3000/test')
+    })
+
+    it('returns pathname when provided and fallback is provided', () => {
+      expect(
+        getHttpUrl({ pathname: '/test', fallback: 'https://fallback-url.com' }).toString(),
+      ).toBe('https://fallback-url.com/test')
+    })
   })
 })

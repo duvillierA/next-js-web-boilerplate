@@ -1,10 +1,9 @@
 import { BaseLayout } from '@/components/layouts/base'
 import { RootLayout } from '@/components/layouts/root'
 import { config } from '@/config'
-import { getPathname } from '@/lib/i18n/navigation'
 import { routing } from '@/lib/i18n/routing'
-import { getHttpUrl } from '@/lib/utils'
 
+import { generateBaseMetadata } from '@/lib/utils/metadata'
 import { cn } from '@boilerplate/ui/utils'
 import type { Metadata } from 'next'
 import { hasLocale } from 'next-intl'
@@ -22,6 +21,10 @@ const robotoMono = Roboto_Mono({
   subsets: ['latin'],
 })
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }))
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -36,30 +39,12 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'Layout' })
   const title = t('title')
   const description = t('description')
-  const siteName = config.NEXT_PUBLIC_APP_NAME
-  return {
-    metadataBase: getHttpUrl(),
-    title: {
-      default: title,
-      template: `%s | ${siteName}`,
-    },
-    applicationName: siteName,
+
+  return generateBaseMetadata({
+    locale,
+    title,
     description,
-    openGraph: {
-      url: getPathname({ locale, href: '/' }),
-      type: 'website',
-      siteName: siteName,
-      locale: locale,
-      images: {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: siteName,
-      },
-      description,
-      title,
-    },
-  }
+  })
 }
 
 export default async function AppRootLayout({

@@ -46,8 +46,11 @@
   "Common": {
     "loading": "Chargement...",
     "error": "Une erreur s'est produite",
-    "notFound": "Page non trouvée",
     "backToHome": "Retour à l'accueil"
+  },
+  "NotFound": {
+    "title": "Page non trouvée",
+    "description": "La page que vous cherchez n'existe pas."
   },
   "Error": {
     "title": "Erreur",

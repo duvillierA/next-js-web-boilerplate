@@ -21,6 +21,11 @@ export function createBaseConfig({
     test: {
       env: loadEnv('', process.cwd(), ''),
       globals: true,
+      server: {
+        deps: {
+          inline: ['next-intl'],
+        },
+      },
       coverage: {
         provider: 'v8',
         include: ['src/**/*'],

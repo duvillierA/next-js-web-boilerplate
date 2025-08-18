@@ -1,7 +1,29 @@
-import { useTranslations } from 'next-intl'
+import type { Locale } from '@/lib/i18n/types'
+import { generateSeoMetadata } from '@/lib/utils/metadata'
+import type { Metadata } from 'next'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 
-export default function AboutPage() {
-  const t = useTranslations('AboutPage')
+interface AboutPageProps {
+  params: Promise<{ locale: Locale }>
+}
+
+export async function generateMetadata({ params }: AboutPageProps): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'AboutPage' })
+
+  return generateSeoMetadata({
+    locale,
+    pathname: '/about',
+    title: t('title'),
+    description: t('description'),
+  })
+}
+
+export default async function AboutPage({ params }: AboutPageProps) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
+  const t = await getTranslations({ locale, namespace: 'AboutPage' })
 
   return (
     <div>

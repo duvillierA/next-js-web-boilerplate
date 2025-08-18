@@ -1,11 +1,16 @@
 import { AsyncCard, AsyncCardSkeleton } from '@/components/common/async'
 import { TrackingButton } from '@/components/common/tracking/button'
+import type { Locale } from '@/lib/i18n/types'
 import { Badge } from '@boilerplate/ui/badge'
 import { Card, CardAction, CardDescription, CardHeader, CardTitle } from '@boilerplate/ui/card'
 import { useTranslations } from 'next-intl'
-import { Suspense } from 'react'
+import { setRequestLocale } from 'next-intl/server'
+import { Suspense, use } from 'react'
 
-export default function Home() {
+export default function Home({ params }: { params: Promise<{ locale: Locale }> }) {
+  const { locale } = use(params)
+  setRequestLocale(locale)
+
   const t = useTranslations('HomePage')
 
   return (

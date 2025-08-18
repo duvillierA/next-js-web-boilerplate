@@ -37,7 +37,7 @@ const meta: Meta<typeof Accordion> = {
 }
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof Accordion>
 
 export const Default: Story = {
   args: {

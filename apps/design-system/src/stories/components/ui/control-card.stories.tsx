@@ -114,7 +114,7 @@ function RadioGroupDemo(args: ControlCardProps) {
 }
 
 export const Radio: Story = {
-  render: (args) => <RadioGroupDemo args={args} />,
+  render: (args) => <RadioGroupDemo {...(args as ControlCardProps)} />,
   parameters: {
     docs: {
       description: {
