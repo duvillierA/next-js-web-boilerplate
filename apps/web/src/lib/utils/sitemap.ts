@@ -1,25 +1,16 @@
 import { getPathname } from '@/lib/i18n/navigation'
 import { routing } from '@/lib/i18n/routing'
 import type { Locale } from '@/lib/i18n/types'
-import { getHttpUrl } from '@/lib/utils'
-import type { MetadataRoute } from 'next'
+import { getHttpUrl } from '@/lib/utils/url'
+import { SitemapBuilder } from '@boilerplate/utils'
 
 type Href = Parameters<typeof getPathname>[0]['href']
 
-export function getStaticEntries(
-  href: Href,
-  ...config: Omit<MetadataRoute.Sitemap, 'url' | 'alternates'>
-) {
-  return {
-    url: getUrl(href, routing.defaultLocale),
-    alternates: {
-      languages: Object.fromEntries(routing.locales.map((cur) => [cur, getUrl(href, cur)])),
-    },
-    ...config,
-  }
-}
+const sitemapBuilder = new SitemapBuilder<Locale, Href>({
+  baseUrl: getHttpUrl(),
+  buildPathname: ({ locale, href }) => getPathname({ locale, href }),
+  defaultLocale: routing.defaultLocale,
+  locales: routing.locales,
+})
 
-function getUrl(href: Href, locale: Locale) {
-  const pathname = getPathname({ locale, href })
-  return getHttpUrl({ pathname }).toString()
-}
+export const getStaticEntries = sitemapBuilder.getStaticEntries.bind(sitemapBuilder)

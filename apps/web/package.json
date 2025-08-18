@@ -21,6 +21,7 @@
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {
+        "@boilerplate/utils": "*",
         "@next/third-parties": "^15.4.1",
         "next": "15.4.1",
         "next-intl": "^4.3.4",

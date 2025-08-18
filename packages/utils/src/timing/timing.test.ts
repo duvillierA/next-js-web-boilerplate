@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { sleep } from '../timing'
+import { sleep } from './index'
 
 describe('utils', () => {
   describe('sleep', () => {

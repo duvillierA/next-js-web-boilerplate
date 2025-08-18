@@ -5,7 +5,8 @@
   "exports": {
     "./base": "./base.mjs",
     "./nextjs": "./nextjs.mjs",
-    "./react-library": "./react-library.mjs"
+    "./react-library": "./react-library.mjs",
+    "./library": "./library.mjs"
   },
   "dependencies": {
     "@eslint/eslintrc": "^3",

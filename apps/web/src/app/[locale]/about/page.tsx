@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: AboutPageProps): Promise<Meta
 
   return generateSeoMetadata({
     locale,
-    pathname: '/about',
+    href: '/about',
     title: t('title'),
     description: t('description'),
   })

@@ -25,9 +25,9 @@ const postHogRewrite = [
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
-  transpilePackages: ['@boilerplate/ui'],
+  transpilePackages: ['@boilerplate/ui', '@boilerplate/utils'],
   experimental: {
-    optimizePackageImports: ['@boilerplate/ui'],
+    optimizePackageImports: ['@boilerplate/ui', '@boilerplate/utils'],
   },
   async rewrites() {
     return [...postHogRewrite]

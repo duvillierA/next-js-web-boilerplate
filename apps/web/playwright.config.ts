@@ -8,4 +8,5 @@ export default createPlaywrightConfig({
   baseURL: `http://localhost:${config.PORT}`,
   webServerCommand: 'npm run start',
   isCI: !!config.CI,
+  timeout: 10000,
 })

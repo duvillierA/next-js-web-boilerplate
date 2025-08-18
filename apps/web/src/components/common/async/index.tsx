@@ -1,8 +1,8 @@
 'use server'
 
-import { sleep } from '@/lib/utils'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@boilerplate/ui/card'
 import { Skeleton } from '@boilerplate/ui/skeleton'
+import { sleep } from '@boilerplate/utils'
 
 export const AsyncCard = async () => {
   await sleep(1000)
