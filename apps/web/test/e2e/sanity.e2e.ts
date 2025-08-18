@@ -29,7 +29,7 @@ test.describe('Sanity checks', () => {
       // Check meta description exists and is not empty
       const description = page.locator('meta[name="description"]')
       await expect(description).toHaveAttribute('content')
-      expect(description?.length).toBeGreaterThan(5)
+      expect(await description.textContent()).toBeGreaterThan(5)
 
       // Check canonical link
       const canonical = page.locator('link[rel="canonical"]')
