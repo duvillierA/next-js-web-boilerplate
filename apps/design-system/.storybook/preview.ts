@@ -1,6 +1,7 @@
 import { Toaster } from '@boilerplate/ui/sonner'
 import { withThemeByClassName } from '@storybook/addon-themes'
 import type { Preview, ReactRenderer } from '@storybook/nextjs-vite'
+import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import React from 'react'
 import '../src/styles/globals.css'
 
@@ -30,10 +31,16 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => {
-      return React.createElement('div', null, [
-        React.createElement(Story, { key: 'story' }),
-        React.createElement(Toaster, { key: 'toaster' }),
-      ])
+      return React.createElement(
+        NextThemesProvider,
+        { attribute: 'class', defaultTheme: 'light', enableSystem: false },
+        [
+          React.createElement('div', { key: 'wrapper' }, [
+            React.createElement(Story, { key: 'story' }),
+            React.createElement(Toaster, { key: 'toaster' }),
+          ]),
+        ],
+      )
     },
     withThemeByClassName<ReactRenderer>({
       themes: {
