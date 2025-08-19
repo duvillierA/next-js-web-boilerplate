@@ -1,11 +1,11 @@
 import { getHttpUrl } from '@/lib/utils/url'
-import { expect, test } from '@playwright/test'
-const locales = ['en', 'fr']
+import { expect, test } from '../setup/fixtures'
+const locales = ['en', 'fr'] as const
 
 test.describe('Sanity checks', () => {
-  test('should render the home page correctly', async ({ page }) => {
+  test('should render the home page correctly', async ({ page, ctx }) => {
     // Navigate to home page and verify status
-    const response = await page.goto('/')
+    const response = await ctx.goToKnownPage(page, '/')
     expect(response?.status()).toBe(200)
 
     // Verify page title
@@ -17,9 +17,9 @@ test.describe('Sanity checks', () => {
   })
 
   for (const locale of locales) {
-    test(`should render the ${locale} about page correctly`, async ({ page }) => {
+    test(`should render the ${locale} about page correctly`, async ({ page, ctx }) => {
       // Visit the about page for the given locale
-      const aboutPath = locale === 'en' ? '/about' : `/${locale}/a-propos`
+      const aboutPath = ctx.getKnownPathname('/about', locale)
       const response = await page.goto(aboutPath)
       expect(response?.status()).toBe(200)
 

@@ -1,10 +1,9 @@
 import { routing } from '@/lib/i18n/routing'
-import { expect, test } from '@playwright/test'
 import { join } from 'node:path'
+import { expect, test } from '../setup/fixtures'
 
 const defaultLocale = routing.defaultLocale
 const aboutPathnames = routing.pathnames['/about']
-const origin = 'http://localhost:3000'
 
 test.describe('Sitemap', () => {
   test('should serve sitemap.xml with correct content type and structure', async ({ request }) => {
@@ -21,7 +20,8 @@ test.describe('Sitemap', () => {
     expect(body).toMatch(/<url>[\s\S]*<\/url>/)
   })
 
-  test('should serve sitemap.xml with index page structure', async ({ request }) => {
+  test('should serve sitemap.xml with index page structure', async ({ request, ctx }) => {
+    const origin = ctx.serverUrl
     const response = await request.get('/sitemap.xml')
     expect(response.status()).toBe(200)
     expect(response.headers()['content-type']).toContain('application/xml')
@@ -38,7 +38,8 @@ test.describe('Sitemap', () => {
     }
   })
 
-  test('should serve sitemap.xml with about page structure', async ({ request }) => {
+  test('should serve sitemap.xml with about page structure', async ({ request, ctx }) => {
+    const origin = ctx.serverUrl
     const response = await request.get('/sitemap.xml')
     expect(response.status()).toBe(200)
     expect(response.headers()['content-type']).toContain('application/xml')

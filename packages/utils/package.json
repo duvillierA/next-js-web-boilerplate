@@ -8,10 +8,11 @@
   },
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
-    "lint": "eslint .",
+    "coverage": "vitest run --coverage",
     "format": "eslint . --fix",
-    "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "lint": "eslint .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@boilerplate/eslintconfig": "*",

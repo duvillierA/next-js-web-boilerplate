@@ -23,21 +23,21 @@ export class HttpUrlBuilder {
   }
 
   public getHttpUrl({ pathname = '' }: { pathname?: string } = {}): URL {
-    let base: string
+    let base: string | URL
     switch (this.vercelEnv) {
       case 'production':
         base = this.prodUrl
           ? `https://${this.prodUrl}`
           : this.url
             ? `https://${this.url}`
-            : this.fallback.toString()
+            : this.fallback
         break
       case 'development':
       case 'preview':
-        base = this.url ? `https://${this.url}` : this.fallback.toString()
+        base = this.url ? `https://${this.url}` : this.fallback
         break
       default:
-        base = this.fallback.toString()
+        base = this.fallback
     }
     return HttpUrlBuilder.buildHttpUrl({ base, pathname })
   }
