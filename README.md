@@ -89,9 +89,10 @@ npm install
 
 After running `npm install`, the `prepare` script will automatically:
 - Set up Git hooks with Husky (`husky install`)
-- Download browser binaries for Playwright (`playwright install`)
 
 No additional setup is required for these tools.
+
+> **Note**: If you need to install Playwright browsers manually, run `npx playwright install` or `npx playwright install --with-deps` on linux
 
 ## Monorepo Commands
 

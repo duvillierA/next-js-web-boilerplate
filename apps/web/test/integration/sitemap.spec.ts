@@ -51,7 +51,6 @@ test.describe('Sitemap', () => {
     for (const locale of routing.locales) {
       const prefix = locale === defaultLocale ? '' : `/${locale}`
       const href = new URL(join(prefix, aboutPathnames[locale]), origin).toString()
-      console.log(href)
       const text = `<xhtml:link rel="alternate" hreflang="${locale}" href="${href}" />`
       expect(body).toContain(text)
     }
