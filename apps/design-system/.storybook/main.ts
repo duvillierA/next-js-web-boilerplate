@@ -25,18 +25,15 @@ const config: StorybookConfig = {
   viteFinal: async (config) => {
     config.ssr = {
       ...(config.ssr ?? {}),
-      noExternal: [
-        /^@radix-ui\/.*/,
-        '@boilerplate/ui',
-        'sonner',
-      ],
+      noExternal: [/^@radix-ui\/.*/, '@boilerplate/ui', 'sonner'],
     }
 
     const stripUseClientDirective = {
       name: 'strip-use-client-directive',
       enforce: 'pre',
       transform(code: string, id: string) {
-        const isScript = id.endsWith('.tsx') || id.endsWith('.jsx') || id.endsWith('.mjs') || id.endsWith('.js')
+        const isScript =
+          id.endsWith('.tsx') || id.endsWith('.jsx') || id.endsWith('.mjs') || id.endsWith('.js')
         if (!isScript) return null
         const pattern = /^\s*(["'])use client\1;?\s*/
         if (pattern.test(code)) {
