@@ -85,7 +85,7 @@ function ControlCard({
       // Call the original onClick if provided
       onClick?.(event)
     },
-    [disabled, controlKind, isChecked, handleCheckedChange, onClick],
+    [disabled, isChecked, handleCheckedChange, onClick],
   )
 
   // Render the appropriate control based on type

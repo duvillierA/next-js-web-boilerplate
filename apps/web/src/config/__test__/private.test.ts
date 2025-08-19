@@ -36,9 +36,9 @@ describe('privateConfig', () => {
     it('should parse CI as number when provided', () => {
       const config = privateConfigBuilder({
         ...process.env,
-        CI: '1',
+        CI: 'true',
       })
-      expect(config.CI).toBe(1)
+      expect(config.CI).toBe(true)
     })
   })
 })
