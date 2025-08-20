@@ -120,22 +120,64 @@ You are an expert in TypeScript 5, React 19, Node.js 22, Next.js 15 App Router, 
       - ui/
         - src/
           - components/
-            - button/
+            - example/
               - index.tsx
-              - button.test.tsx
+              - example.test.tsx
+      - utils/
+        - src/
+          - utils/
+            - index.ts
+            - example/
+              - index.ts
+              - example.test.ts
+          - ...
     - apps/
       - web/
         - src/
           - app/
             - layout.tsx
             - page.tsx
-          - lib/
-            - utils.ts
-            - utils.test.ts
           - components/
-            - header/
-              - index.tsx
-              - header.test.tsx
+            - common/
+              - example/
+                - index.tsx
+                - example.test.tsx
+              - ...
+            - layout/
+              - example/
+                - index.tsx
+                - example.test.tsx
+              - ...
+            - template/
+              - example/
+                - index.tsx
+                - example.test.tsx
+              - ...
+            - page/
+              - example/
+                - index.tsx
+                - example.test.tsx
+              - ...
+            - module/
+              - example/
+                - index.tsx
+                - example.test.tsx
+              - ...
+          -hooks/
+            - example/
+              - index.ts
+              - example.test.ts
+            - ...
+          -lib/
+            - i18n/
+              - index.ts
+              - i18n.test.ts
+            - utils/
+              - index.ts
+              - utils.test.ts
+          - styles/
+            - globals.css
+          - types/
         - test/
           - e2e/
             - sanity.e2e.ts

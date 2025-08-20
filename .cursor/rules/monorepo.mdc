@@ -1,5 +1,5 @@
 ---
-description: Monorepo architecture, workspace management, apps and packages directory management, file structure, hierarchy
+description: Monorepo architecture, workspace management, apps and packages directory management, file structure, file hierarchy
 alwaysApply: false
 ---
 ## Monorepo Structure
@@ -39,28 +39,39 @@ The monorepo structure follows these key principles:
 boilerplate/
 ├── apps/                   # Application packages
 │   ├── design-system/      # Storybook and design system documentation app (colors/typography/ui/templates/etc)
+│   │   ├── .storybook/     # Storybook configuration
+│   │   ├── public/         # Static assets for design system
+│   │   ├── src/            # Source code for design system
+│   │   │   ├── public/     # Static assets for design system
+│   │   │   ├── stories/    # Documentation pages (MDX, guides, etc)
+│   │   │   ├── styles/     # Theme definitions (colors, typography, etc)
 │   └── web/                # Next.js web application
 │       ├── src/            # Application source code
 │       ├── public/         # Static assets
 │       └── test/           # E2E and integration tests
-├── packages/               # Shared packages
-│   ├── ui/                # Reusable UI components (@boilerplate/ui)
-│   │   ├── src/components/ # shadcn/ui components
-│   │   └── src/utils/      # Utility functions
-│   │   └── src/styles/      # Global and shared styles (Tailwind, CSS variables, themes)
-│   │   └── src/hooks/       # Shared hooks
-│   ├── testconfig/         # Shared test configurations (@boilerplate/testconfig)
-│   │   ├── vitest.config.ts    # Vitest configuration for unit/integration tests
-│   │   ├── playwright.config.ts # Playwright configuration for e2e tests
-│   │   └── jest.config.ts      # Jest configuration (if needed for legacy tests)
-│   ├── eslintconfig/      # Shared ESLint configurations (@boilerplate/eslintconfig)
-│   │   ├── base.mjs       # Base ESLint config
-│   │   ├── nextjs.mjs     # Next.js specific config
-│   │   └── react-library.mjs # React library config
-│   └── tsconfig/          # Shared TypeScript configurations (@boilerplate/tsconfig)
-│       ├── base.json      # Base TypeScript config
-│       ├── nextjs.json    # Next.js specific config
-│       └── react-library.json # React library config
+├── packages/                 # Shared packages
+│   ├── ui/                   # Reusable UI components (@boilerplate/ui)
+│   │   ├── src/
+│   │   │   ├── components/   # shadcn/ui components
+│   │   │   ├── utils/        # Utility functions
+│   │   │   ├── styles/       # Global and shared styles (Tailwind, CSS variables, themes)
+│   │   │   └── hooks/        # Shared hooks
+│   ├── testconfig/           # Shared test configurations (@boilerplate/testconfig)
+│   │   ├── vitest.config.ts      # Vitest configuration for unit/integration tests
+│   │   ├── playwright.config.ts  # Playwright configuration for e2e tests
+│   │   └── jest.config.ts        # Jest configuration (if needed for legacy tests)
+│   ├── eslintconfig/         # Shared ESLint configurations (@boilerplate/eslintconfig)
+│   │   ├── base.mjs              # Base ESLint config
+│   │   ├── nextjs.mjs            # Next.js specific config
+│   │   └── react-library.mjs     # React library config
+│   ├── tsconfig/             # Shared TypeScript configurations (@boilerplate/tsconfig)
+│   │   ├── base.json             # Base TypeScript config
+│   │   ├── nextjs.json           # Next.js specific config
+│   │   └── react-library.json    # React library config
+│   └── utils/                # Shared utility functions (@boilerplate/utils)
+│       ├── src/                  # Utility source code
+├── .github/                # GitHub Actions workflows
+│   ├── workflows/         # Workflow files
 ├── package.json           # Root package.json with workspaces
 └── turbo.json            # Turborepo configuration
 ```
