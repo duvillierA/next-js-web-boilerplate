@@ -49,15 +49,15 @@ jobs:
             ${{ runner.os }}-playwright-${{ hashFiles('**/playwright.config.ts') }}
             ${{ runner.os }}-playwright-
 
-      - name: Setup Playwright browsers
+      - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
         working-directory: apps/web
-        shell: bash
-        run: |
-          if [ "${{ steps.playwright-cache.outputs.cache-hit }}" = "true" ]; then
-            npx playwright install-deps
-          else
-            npx playwright install --with-deps chromium webkit
-          fi
+        run: npx playwright install --with-deps --only-shell chromium webkit
+
+      - name: Install Playwright OS dependencies
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        working-directory: apps/web
+        run: npx playwright install-deps
 
       - name: lint
         run: npm run lint
