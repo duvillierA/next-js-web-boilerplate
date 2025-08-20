@@ -16,6 +16,7 @@ const analyticsConfigSchema = z.object({
 
 const publicBaseConfigSchema = z.object({
   NEXT_PUBLIC_APP_NAME: z.string().default('My App'),
+  NEXT_PUBLIC_CDN_URL: z.string().optional(),
 })
 
 const publicConfigSchema = z.object({
@@ -31,6 +32,7 @@ export const publicConfigBuilder = (env: PublicConfigBuilderProps) => {
 
 export const PUBLIC_DEFAULT_CONFIG: PublicConfigBuilderProps = {
   NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME,
+  NEXT_PUBLIC_CDN_URL: process.env.NEXT_PUBLIC_CDN_URL,
   NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID,
   NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID,
   NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,

@@ -6,6 +6,7 @@ const httpUrl = new HttpUrlBuilder({
   vercelEnv: config.NEXT_PUBLIC_VERCEL_ENV,
   url: config.NEXT_PUBLIC_VERCEL_URL,
   prodUrl: config.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL,
+  cdnUrl: config.NEXT_PUBLIC_CDN_URL,
 })
 
 export const getHttpUrl = httpUrl.getHttpUrl.bind(httpUrl)

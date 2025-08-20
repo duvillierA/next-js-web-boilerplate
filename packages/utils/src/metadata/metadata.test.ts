@@ -7,9 +7,16 @@ describe('MetadataBuilder', () => {
   const config = {
     siteName: 'TestSite',
     baseUrl: new URL('https://example.com'),
-    baseOgImageUrl: '/og-image.png',
+    openGraph: {
+      images: {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'TestSite',
+      },
+    },
     buildPathname,
-  } as const
+  } satisfies MetadataBuilder<string, string>['config']
 
   const builder = new MetadataBuilder(config)
 
@@ -39,12 +46,7 @@ describe('MetadataBuilder', () => {
         type: 'website',
         siteName: 'TestSite',
         locale,
-        images: {
-          url: '/og-image.png',
-          width: 1200,
-          height: 630,
-          alt: 'TestSite',
-        },
+        images: config.openGraph?.images,
         description: 'Welcome to the homepage',
         title: 'Home',
       })
@@ -87,6 +89,7 @@ describe('MetadataBuilder', () => {
       const result = builder.getSeoMetadata({
         locale: 'en',
         href: '/private',
+        title: 'Private',
         noIndex: true,
       })
 
@@ -94,17 +97,6 @@ describe('MetadataBuilder', () => {
         index: false,
         follow: false,
       })
-    })
-
-    it('should not include title or description if not provided', () => {
-      const result = builder.getSeoMetadata({
-        locale: 'en',
-        href: '/no-title-desc',
-      })
-
-      expect(result.title).toBeUndefined()
-      expect(result.description).toBeUndefined()
-      expect(result.openGraph).toBeUndefined()
     })
   })
 })

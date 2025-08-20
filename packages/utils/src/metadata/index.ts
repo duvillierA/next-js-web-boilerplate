@@ -26,8 +26,8 @@ export class MetadataBuilder<TLocale extends string, THref> {
     private readonly config: {
       siteName: string
       baseUrl: URL
-      baseOgImageUrl: `/${string}`
       buildPathname: ({ locale, href }: { locale: TLocale; href: THref }) => string
+      openGraph?: Metadata['openGraph']
     },
   ) {}
 
@@ -63,6 +63,7 @@ export class MetadataBuilder<TLocale extends string, THref> {
     title: string
     description: string
   }): Metadata {
+    const canonicalUrl = this.config.buildPathname({ locale, href: '/' as THref })
     return {
       metadataBase: this.config.baseUrl,
       title: {
@@ -70,21 +71,16 @@ export class MetadataBuilder<TLocale extends string, THref> {
         template: `%s | ${this.config.siteName}`,
       },
       alternates: {
-        canonical: this.config.buildPathname({ locale, href: '/' as THref }),
+        canonical: canonicalUrl,
       },
       applicationName: this.config.siteName,
       description,
       openGraph: {
-        url: this.config.buildPathname({ locale, href: '/' as THref }),
+        ...this.config.openGraph,
+        url: canonicalUrl,
         type: 'website',
         siteName: this.config.siteName,
         locale,
-        images: {
-          url: this.config.baseOgImageUrl,
-          width: 1200,
-          height: 630,
-          alt: this.config.siteName,
-        },
         description,
         title,
       },
@@ -124,36 +120,27 @@ export class MetadataBuilder<TLocale extends string, THref> {
   }: {
     locale: TLocale
     href: THref
-    title?: string
+    title: string
     description?: string
     noIndex?: boolean
   }): Metadata {
-    const metadata: Metadata = {
+    const canonicalUrl = this.config.buildPathname({ locale, href })
+    return {
+      title,
+      description,
       alternates: {
-        canonical: this.config.buildPathname({ locale, href }),
+        canonical: canonicalUrl,
+      },
+      openGraph: {
+        ...this.config.openGraph,
+        url: canonicalUrl,
+        description,
+        title,
       },
       robots: {
         index: !noIndex,
         follow: !noIndex,
       },
     }
-
-    // Add title if provided
-    if (title) {
-      metadata.title = title
-    }
-
-    // Add description if provided
-    if (description) {
-      metadata.description = description
-      metadata.openGraph = {
-        ...metadata.openGraph,
-        url: this.config.buildPathname({ locale, href }),
-        description,
-        title,
-      }
-    }
-
-    return metadata
   }
 }

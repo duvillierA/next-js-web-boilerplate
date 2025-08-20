@@ -7,7 +7,6 @@ import { getHttpUrl } from './url'
 type Href = Parameters<typeof getPathname>[0]['href']
 
 const metadata = new MetadataBuilder<Locale, Href>({
-  baseOgImageUrl: '/og-image.jpg',
   baseUrl: getHttpUrl(),
   buildPathname: ({ locale, href }) => getPathname({ locale, href }),
   siteName: config.NEXT_PUBLIC_APP_NAME,

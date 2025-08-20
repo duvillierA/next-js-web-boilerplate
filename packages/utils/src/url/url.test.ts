@@ -111,4 +111,62 @@ describe('HttpUrl', () => {
       expect(url.toString()).toBe('http://localhost:7000/')
     })
   })
+
+  describe('getCDNUrl', () => {
+    it('should return a CDN URL in production', () => {
+      const httpUrl = new HttpUrlBuilder({
+        fallback: 'http://localhost:3000',
+        vercelEnv: 'production',
+        cdnUrl: 'https://cdn.example.com',
+      })
+      const url = httpUrl.getCDNUrl()
+      expect(url?.toString()).toBe('https://cdn.example.com/')
+    })
+    it('should return a CDN URL in production with pathname', () => {
+      const httpUrl = new HttpUrlBuilder({
+        fallback: 'http://localhost:3000',
+        vercelEnv: 'production',
+        cdnUrl: 'https://cdn.example.com',
+      })
+      const url = httpUrl.getCDNUrl({ pathname: '/assets/logo.png' })
+      expect(url?.toString()).toBe('https://cdn.example.com/assets/logo.png')
+    })
+
+    it('should return null if cdnUrl is not set', () => {
+      const httpUrl = new HttpUrlBuilder({
+        fallback: 'http://localhost:3000',
+        vercelEnv: 'production',
+      })
+      const url = httpUrl.getCDNUrl()
+      expect(url).toBeNull()
+    })
+
+    it('should return null in development', () => {
+      const httpUrl = new HttpUrlBuilder({
+        fallback: 'http://localhost:3000',
+        vercelEnv: 'development',
+        cdnUrl: 'https://cdn.example.com',
+      })
+      const url = httpUrl.getCDNUrl()
+      expect(url).toBeNull()
+    })
+
+    it('should return null if vercelEnv is not set', () => {
+      const httpUrl = new HttpUrlBuilder({
+        fallback: 'http://localhost:3000',
+      })
+      const url = httpUrl.getCDNUrl()
+      expect(url).toBeNull()
+    })
+
+    it('should return null if vercelEnv is unknown', () => {
+      const httpUrl = new HttpUrlBuilder({
+        fallback: 'http://localhost:3000',
+        // @ts-expect-error: testing unknown env
+        vercelEnv: 'staging',
+      })
+      const url = httpUrl.getCDNUrl()
+      expect(url).toBeNull()
+    })
+  })
 })
