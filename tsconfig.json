@@ -1,3 +1,6 @@
 {
   "extends": "@boilerplate/tsconfig/base.json",
+  "compilerOptions": {
+    "noEmit": true
+  }
 }

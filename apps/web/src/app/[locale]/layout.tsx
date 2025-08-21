@@ -3,23 +3,13 @@ import { RootLayout } from '@/components/layouts/root'
 import { config } from '@/config'
 import { routing } from '@/lib/i18n/routing'
 
+import { fontMono, fontSans } from '@/lib/fonts'
 import { generateBaseMetadata } from '@/lib/utils/metadata'
 import { cn } from '@boilerplate/ui/utils'
 import type { Metadata } from 'next'
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
-import { Roboto, Roboto_Mono } from 'next/font/google'
 import { notFound } from 'next/navigation'
-
-const roboto = Roboto({
-  variable: '--font-roboto',
-  subsets: ['latin'],
-})
-
-const robotoMono = Roboto_Mono({
-  variable: '--font-roboto-mono',
-  subsets: ['latin'],
-})
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -66,7 +56,7 @@ export default async function AppRootLayout({
   return (
     <RootLayout
       lang={locale}
-      className={cn(roboto.variable, robotoMono.variable)}
+      className={cn(fontSans.variable, fontMono.variable)}
       googleAnalyticsId={config.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
       googleTagManagerId={config.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}
     >
