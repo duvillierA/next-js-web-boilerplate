@@ -2,6 +2,10 @@
   "name": "@boilerplate/testconfig",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "format": "eslint . --fix",
+    "lint": "eslint ."
+  },
   "files": [
     "vitest.base.mjs",
     "vitest-setup-dom.mjs",
@@ -11,5 +15,8 @@
     "./vitest-base": "./vitest.base.mjs",
     "./vitest-setup-dom": "./vitest-setup-dom.mjs",
     "./playwright-base": "./playwright.base.mjs"
+  },
+  "devDependencies": {
+    "@boilerplate/eslintconfig": "*"
   }
 } 

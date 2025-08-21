@@ -8,6 +8,10 @@
     "./react-library": "./react-library.mjs",
     "./library": "./library.mjs"
   },
+  "scripts": {
+    "format": "eslint . --fix",
+    "lint": "eslint ."
+  },
   "dependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",

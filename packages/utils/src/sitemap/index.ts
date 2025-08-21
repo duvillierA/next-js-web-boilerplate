@@ -13,7 +13,7 @@ export class SitemapBuilder<TLocale extends string, THref> {
   /**
    * SitemapBuilder helps generate sitemap entries for static and localized routes.
    *
-   * @template TLocale - The type representing supported locales (usually a string union).
+   * @template TLocale - The type representing supportedlocales (usually a string union).
    * @template THref - The type representing the href/path structure.
    *
    * @example

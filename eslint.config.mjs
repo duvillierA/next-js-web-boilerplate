@@ -1,4 +1,3 @@
-
 import eslintConfigBase from '@boilerplate/eslintconfig/base'
 
-export default eslintConfigBase
+export default [...eslintConfigBase]
