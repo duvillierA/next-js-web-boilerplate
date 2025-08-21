@@ -1,18 +1,5 @@
+import { analyticsConfigSchema, vercelConfigSchema } from '@boilerplate/utils'
 import { z } from 'zod'
-
-const vercelConfigSchema = z.object({
-  NEXT_PUBLIC_VERCEL_ENV: z.enum(['development', 'production', 'preview']).optional(),
-  NEXT_PUBLIC_VERCEL_URL: z.string().endsWith('.vercel.app').optional(),
-  NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: z.string().optional(),
-  NEXT_PUBLIC_VERCEL_BRANCH_URL: z.string().endsWith('.vercel.app').optional(),
-})
-
-const analyticsConfigSchema = z.object({
-  NEXT_PUBLIC_POSTHOG_KEY: z.string().optional(),
-  NEXT_PUBLIC_POSTHOG_HOST: z.string().default('https://eu.i.posthog.com'),
-  NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: z.string().optional(),
-  NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: z.string().optional(),
-})
 
 const publicBaseConfigSchema = z.object({
   NEXT_PUBLIC_APP_NAME: z.string().default('My App'),

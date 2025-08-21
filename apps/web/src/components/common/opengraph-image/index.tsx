@@ -3,9 +3,14 @@ import React from 'react'
 type OpenGraphImageProps = {
   title: string
   fontSize?: number
+  fontFamily?: string
 }
 
-export const OpenGraphImage: React.FC<OpenGraphImageProps> = ({ title, fontSize = 128 }) => (
+export const OpenGraphImage: React.FC<OpenGraphImageProps> = ({
+  title,
+  fontSize = 128,
+  fontFamily,
+}) => (
   <div
     style={{
       fontSize,
@@ -16,6 +21,7 @@ export const OpenGraphImage: React.FC<OpenGraphImageProps> = ({ title, fontSize 
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+      fontFamily,
     }}
   >
     {title}

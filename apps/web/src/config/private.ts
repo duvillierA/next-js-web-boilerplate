@@ -1,13 +1,7 @@
-import { z } from 'zod'
-
-const privateConfigSchema = z.object({
-  PORT: z.coerce.number().default(3000),
-  NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
-  CI: z.coerce.boolean().optional(),
-})
+import { serverConfigSchema } from '@boilerplate/utils'
 
 export const privateConfigBuilder = (env: NodeJS.ProcessEnv) => {
-  return privateConfigSchema.parse(env)
+  return serverConfigSchema.parse(env)
 }
 
 export const privateConfig = privateConfigBuilder(process.env)
