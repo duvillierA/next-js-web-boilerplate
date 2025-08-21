@@ -1,11 +1,12 @@
 import { ThemeProvider } from '@/components/common/theme'
+import type { Locale } from '@/lib/i18n/types'
 import { Toaster } from '@boilerplate/ui/sonner'
 import { cn } from '@boilerplate/ui/utils'
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import { NextIntlClientProvider } from 'next-intl'
 
 type RootLayoutProps = React.ComponentProps<'body'> & {
-  lang?: string
+  lang?: Locale
   googleTagManagerId?: string
   googleAnalyticsId?: string
 }

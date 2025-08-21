@@ -1,5 +1,7 @@
 import type { Locale } from '@/lib/i18n/types'
 import { generateSeoMetadata } from '@/lib/utils/metadata'
+import { H1 } from '@boilerplate/ui/heading'
+import { Spacing } from '@boilerplate/ui/layout'
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 
@@ -26,9 +28,9 @@ export default async function AboutPage({ params }: AboutPageProps) {
   const t = await getTranslations({ locale, namespace: 'AboutPage' })
 
   return (
-    <div>
-      <h1>{t('title')}</h1>
+    <Spacing>
+      <H1>{t('title')}</H1>
       <p className="mb-8 text-lg text-muted-foreground">{t('description')}</p>
-    </div>
+    </Spacing>
   )
 }

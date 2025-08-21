@@ -11,6 +11,10 @@ const spacingVariants = cva('flex', {
       lg: 'gap-6',
       xl: 'gap-8',
     },
+    wrap: {
+      true: 'flex-wrap',
+      false: 'flex-nowrap',
+    },
     direction: {
       horizontal: 'flex-row',
       vertical: 'flex-col',
@@ -61,13 +65,14 @@ export function Spacing({
   className,
   gap,
   direction,
+  wrap,
   asChild,
   ...props
 }: SpacingProps) {
   const Comp = asChild ? Slot : 'div'
   return (
     <Comp
-      className={cn(spacingVariants({ gap, direction, align, justify }), className)}
+      className={cn(spacingVariants({ gap, direction, align, justify, wrap }), className)}
       {...props}
     >
       {children}
@@ -114,27 +119,27 @@ const gridSpacingVariants = cva('grid', {
     {
       responsive: true,
       cols: 2,
-      class: 'grid-cols-1 md:grid-cols-2',
+      class: 'grid-cols-1 lg:grid-cols-2',
     },
     {
       responsive: true,
       cols: 3,
-      class: 'grid-cols-1 md:grid-cols-3',
+      class: 'grid-cols-1 lg:grid-cols-3',
     },
     {
       responsive: true,
       cols: 4,
-      class: 'grid-cols-1 md:grid-cols-4',
+      class: 'grid-cols-1 lg:grid-cols-4',
     },
     {
       responsive: true,
       cols: 5,
-      class: 'grid-cols-1 md:grid-cols-5',
+      class: 'grid-cols-1 lg:grid-cols-5',
     },
     {
       responsive: true,
       cols: 6,
-      class: 'grid-cols-1 md:grid-cols-6',
+      class: 'grid-cols-1 lg:grid-cols-6',
     },
   ],
   defaultVariants: {
