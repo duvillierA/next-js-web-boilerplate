@@ -1,2 +1,5 @@
 export { AspectRatio } from './aspect-ratio'
+export { Container } from './container'
+export { Grid } from './grid'
 export { Separator } from './separator'
+export { Stack } from './stack'

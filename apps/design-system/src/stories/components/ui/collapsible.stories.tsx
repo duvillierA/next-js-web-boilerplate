@@ -1,6 +1,6 @@
 import { Button } from '@boilerplate/ui/button'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@boilerplate/ui/collapsible'
-import { Spacing } from '@boilerplate/ui/layout'
+import { Stack } from '@boilerplate/ui/layout'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { ChevronDown, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
@@ -32,7 +32,7 @@ function DefaultCollapsible() {
       onOpenChange={setIsOpen}
       className="w-[350px] space-y-2"
     >
-      <Spacing
+      <Stack
         direction="horizontal"
         align="center"
         justify="between"
@@ -46,7 +46,7 @@ function DefaultCollapsible() {
             {isOpen ? <ChevronDown className="size-4" /> : <ChevronRight className="size-4" />}
           </Button>
         </CollapsibleTrigger>
-      </Spacing>
+      </Stack>
       <div className="rounded-md border px-4 py-3 font-mono text-sm">@radix-ui/primitives</div>
       <CollapsibleContent className="space-y-2">
         <div className="rounded-md border px-4 py-3 font-mono text-sm">@radix-ui/colors</div>

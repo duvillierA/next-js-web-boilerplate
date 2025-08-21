@@ -14,7 +14,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@boilerplate/ui/dropdown-menu'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { CreditCard, LogOut, Settings, User } from 'lucide-react'
 
 const meta: Meta<typeof DropdownMenu> = {

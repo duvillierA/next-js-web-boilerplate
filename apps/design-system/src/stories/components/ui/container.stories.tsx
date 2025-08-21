@@ -1,6 +1,6 @@
 import { Container } from '@boilerplate/ui/layout'
 import { cn } from '@boilerplate/ui/utils'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Container> = {
   title: 'Components/Layout/Container',

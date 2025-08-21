@@ -1,6 +1,6 @@
 import { Checkbox } from '@boilerplate/ui/checkbox'
 import { Label } from '@boilerplate/ui/label'
-import { Spacing } from '@boilerplate/ui/layout'
+import { Stack } from '@boilerplate/ui/layout'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof Checkbox> = {
@@ -65,7 +65,7 @@ export const DisabledChecked: Story = {
 
 export const WithLabel: Story = {
   render: () => (
-    <Spacing
+    <Stack
       direction="horizontal"
       gap="sm"
     >
@@ -76,21 +76,21 @@ export const WithLabel: Story = {
       >
         Accept terms and conditions
       </Label>
-    </Spacing>
+    </Stack>
   ),
 }
 
 export const Multiple: Story = {
   render: () => (
     <div className="space-y-3">
-      <Spacing
+      <Stack
         direction="horizontal"
         gap="sm"
       >
         <Checkbox id="option1" />
         <Label htmlFor="option1">Option 1</Label>
-      </Spacing>
-      <Spacing
+      </Stack>
+      <Stack
         direction="horizontal"
         gap="sm"
       >
@@ -99,8 +99,8 @@ export const Multiple: Story = {
           defaultChecked
         />
         <Label htmlFor="option2">Option 2</Label>
-      </Spacing>
-      <Spacing
+      </Stack>
+      <Stack
         direction="horizontal"
         gap="sm"
       >
@@ -109,27 +109,27 @@ export const Multiple: Story = {
           disabled
         />
         <Label htmlFor="option3">Option 3 (Disabled)</Label>
-      </Spacing>
+      </Stack>
     </div>
   ),
 }
 
 export const WithDescription: Story = {
   render: () => (
-    <Spacing
+    <Stack
       direction="horizontal"
       gap="sm"
     >
       <Checkbox id="notifications" />
-      <Spacing
+      <Stack
         align="baseline"
         direction="vertical"
         gap="xs"
       >
         <Label htmlFor="notifications">Email notifications</Label>
         <p className="text-sm text-muted-foreground">Receive emails about your account activity.</p>
-      </Spacing>
-    </Spacing>
+      </Stack>
+    </Stack>
   ),
 }
 

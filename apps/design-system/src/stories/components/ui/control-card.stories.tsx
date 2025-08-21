@@ -1,5 +1,5 @@
 import { CheckboxCard, ControlCardProps, RadioCard, SwitchCard } from '@boilerplate/ui/control-card'
-import { GridSpacing } from '@boilerplate/ui/layout'
+import { Grid } from '@boilerplate/ui/layout'
 import { RadioGroup } from '@boilerplate/ui/radio-group'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { useState } from 'react'
@@ -34,7 +34,7 @@ type Story = StoryObj
 
 export const Checkbox: Story = {
   render: (args) => (
-    <GridSpacing
+    <Grid
       cols={3}
       responsive
     >
@@ -58,7 +58,7 @@ export const Checkbox: Story = {
       >
         By checking this box, you agree to our terms and conditions.
       </CheckboxCard>
-    </GridSpacing>
+    </Grid>
   ),
   parameters: {
     docs: {
@@ -73,7 +73,7 @@ function RadioGroupDemo(args: ControlCardProps) {
   const [value, setValue] = useState('option1')
   return (
     <RadioGroup>
-      <GridSpacing
+      <Grid
         cols={3}
         responsive
       >
@@ -108,7 +108,7 @@ function RadioGroupDemo(args: ControlCardProps) {
         >
           Select this option to choose Option 3.
         </RadioCard>
-      </GridSpacing>
+      </Grid>
     </RadioGroup>
   )
 }
@@ -126,7 +126,7 @@ export const Radio: Story = {
 
 export const Switch: Story = {
   render: (args) => (
-    <GridSpacing
+    <Grid
       cols={3}
       responsive
     >
@@ -144,7 +144,7 @@ export const Switch: Story = {
         disabled
         {...args}
       />
-    </GridSpacing>
+    </Grid>
   ),
   parameters: {
     docs: {

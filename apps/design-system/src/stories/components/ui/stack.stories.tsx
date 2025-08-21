@@ -1,10 +1,10 @@
 import { Button } from '@boilerplate/ui/button'
-import { Spacing } from '@boilerplate/ui/layout'
-import type { Meta, StoryObj } from '@storybook/react'
+import { Stack } from '@boilerplate/ui/layout'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
-const meta: Meta<typeof Spacing> = {
-  title: 'Components/Layout/Spacing',
-  component: Spacing,
+const meta: Meta<typeof Stack> = {
+  title: 'Components/Layout/Stack',
+  component: Stack,
   tags: ['autodocs'],
   argTypes: {
     gap: {
@@ -29,14 +29,14 @@ const meta: Meta<typeof Spacing> = {
     docs: {
       description: {
         component:
-          'Spacing provides a flex container with configurable gap and direction for consistent spacing between children.',
+          'Stack provides a flex container with configurable gap and direction for consistent spacing between children.',
       },
     },
   },
 }
 export default meta
 
-type Story = StoryObj<typeof Spacing>
+type Story = StoryObj<typeof Stack>
 
 export const Default: Story = {
   args: {

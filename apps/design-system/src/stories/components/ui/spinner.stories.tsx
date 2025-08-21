@@ -1,5 +1,5 @@
 import { Spinner } from '@boilerplate/ui/spinner'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { Loader, RefreshCw } from 'lucide-react'
 
 const meta: Meta<typeof Spinner> = {

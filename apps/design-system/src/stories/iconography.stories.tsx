@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import * as LucideIcons from 'lucide-react'
 
 // Option 1: Use a curated list (current approach)

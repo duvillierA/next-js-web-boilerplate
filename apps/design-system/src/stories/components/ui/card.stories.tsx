@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@boilerplate/ui/card'
-import { Spacing } from '@boilerplate/ui/layout'
+import { Stack } from '@boilerplate/ui/layout'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { useState } from 'react'
 
@@ -137,29 +137,29 @@ export const ComplexLayout: Story = {
           </CardAction>
         </CardHeader>
         <CardContent>
-          <Spacing gap="sm">
-            <Spacing
+          <Stack gap="sm">
+            <Stack
               justify="between"
               direction="horizontal"
             >
               <span className="text-sm text-muted-foreground">Status</span>
               <span className="text-sm font-medium">Active</span>
-            </Spacing>
-            <Spacing
+            </Stack>
+            <Stack
               justify="between"
               direction="horizontal"
             >
               <span className="text-sm text-muted-foreground">Progress</span>
               <span className="text-sm font-medium">75%</span>
-            </Spacing>
-            <Spacing
+            </Stack>
+            <Stack
               justify="between"
               direction="horizontal"
             >
               <span className="text-sm text-muted-foreground">Team</span>
               <span className="text-sm font-medium">8 members</span>
-            </Spacing>
-          </Spacing>
+            </Stack>
+          </Stack>
         </CardContent>
         <CardFooter className="grid grid-cols-2 gap-2 border-t">
           <Button>Edit Project</Button>

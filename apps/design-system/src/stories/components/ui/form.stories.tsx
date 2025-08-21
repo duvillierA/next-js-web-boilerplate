@@ -35,7 +35,7 @@ import { CalendarIcon } from 'lucide-react'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import { toast } from 'sonner'
 
-import { Spacing } from '@boilerplate/ui/layout'
+import { Stack } from '@boilerplate/ui/layout'
 import { RadioGroup, RadioGroupItem } from '@boilerplate/ui/radio-group'
 import { Separator } from '@boilerplate/ui/separator'
 import { Spinner } from '@boilerplate/ui/spinner'
@@ -210,7 +210,7 @@ function FormComponentsDemo() {
                 control={form.control}
                 name="acceptTerms"
                 render={({ field }) => (
-                  <Spacing
+                  <Stack
                     direction="horizontal"
                     gap="sm"
                     asChild
@@ -225,7 +225,7 @@ function FormComponentsDemo() {
                       <FormLabel>Accept terms and conditions</FormLabel>
                       <FormMessage />
                     </FormItem>
-                  </Spacing>
+                  </Stack>
                 )}
               />
 
@@ -234,7 +234,7 @@ function FormComponentsDemo() {
                 control={form.control}
                 name="notifications"
                 render={({ field }) => (
-                  <Spacing
+                  <Stack
                     direction="horizontal"
                     gap="sm"
                     asChild
@@ -249,7 +249,7 @@ function FormComponentsDemo() {
                       <FormLabel>Enable notifications</FormLabel>
                       <FormMessage />
                     </FormItem>
-                  </Spacing>
+                  </Stack>
                 )}
               />
 
@@ -264,7 +264,7 @@ function FormComponentsDemo() {
                         onValueChange={field.onChange}
                         value={field.value}
                       >
-                        <Spacing
+                        <Stack
                           direction="horizontal"
                           gap="sm"
                         >
@@ -278,8 +278,8 @@ function FormComponentsDemo() {
                           >
                             Option 1
                           </FormLabel>
-                        </Spacing>
-                        <Spacing
+                        </Stack>
+                        <Stack
                           direction="horizontal"
                           gap="sm"
                         >
@@ -293,8 +293,8 @@ function FormComponentsDemo() {
                           >
                             Option 2
                           </FormLabel>
-                        </Spacing>
-                        <Spacing
+                        </Stack>
+                        <Stack
                           direction="horizontal"
                           gap="sm"
                         >
@@ -308,7 +308,7 @@ function FormComponentsDemo() {
                           >
                             Option 3
                           </FormLabel>
-                        </Spacing>
+                        </Stack>
                       </RadioGroup>
                     </FormControl>
                     <FormMessage />

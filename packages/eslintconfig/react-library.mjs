@@ -5,6 +5,9 @@ import tseslint from 'typescript-eslint'
 import baseConfig from './base.mjs'
 
 const eslintConfig = [
+  {
+    ignores: ['storybook-static/**', '.storybook-static/**'],
+  },
   ...tseslint.configs.recommended,
   {
     files: ['**/*.{ts,tsx}'],

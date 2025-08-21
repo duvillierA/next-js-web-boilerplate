@@ -1,5 +1,5 @@
 import { Label } from '@boilerplate/ui/label'
-import { Spacing } from '@boilerplate/ui/layout'
+import { Stack } from '@boilerplate/ui/layout'
 import { RadioGroup, RadioGroupItem } from '@boilerplate/ui/radio-group'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: () => (
     <RadioGroup defaultValue="option1">
-      <Spacing
+      <Stack
         direction="horizontal"
         gap="sm"
       >
@@ -27,8 +27,8 @@ export const Default: Story = {
           id="option1"
         />
         <Label htmlFor="option1">Option 1</Label>
-      </Spacing>
-      <Spacing
+      </Stack>
+      <Stack
         direction="horizontal"
         gap="sm"
       >
@@ -37,8 +37,8 @@ export const Default: Story = {
           id="option2"
         />
         <Label htmlFor="option2">Option 2</Label>
-      </Spacing>
-      <Spacing
+      </Stack>
+      <Stack
         direction="horizontal"
         gap="sm"
       >
@@ -47,7 +47,7 @@ export const Default: Story = {
           id="option3"
         />
         <Label htmlFor="option3">Option 3</Label>
-      </Spacing>
+      </Stack>
     </RadioGroup>
   ),
   parameters: {

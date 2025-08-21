@@ -1,6 +1,6 @@
 'use client'
 
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 import { Button } from '@boilerplate/ui/button'
 import { Input } from '@boilerplate/ui/input'

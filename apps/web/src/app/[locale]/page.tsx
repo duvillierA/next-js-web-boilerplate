@@ -3,7 +3,7 @@ import { TrackingButton } from '@/components/common/tracking/button'
 import type { Locale } from '@/lib/i18n/types'
 import { Badge } from '@boilerplate/ui/badge'
 import { Card, CardAction, CardDescription, CardHeader, CardTitle } from '@boilerplate/ui/card'
-import { GridSpacing, Spacing } from '@boilerplate/ui/layout'
+import { Grid, Stack } from '@boilerplate/ui/layout'
 import { H2 } from '@boilerplate/ui/typography'
 import { useTranslations } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
@@ -16,17 +16,17 @@ export default function Home({ params }: { params: Promise<{ locale: Locale }> }
   const t = useTranslations('HomePage')
 
   return (
-    <Spacing
+    <Stack
       direction="vertical"
       gap="lg"
     >
-      <Spacing
+      <Stack
         gap="sm"
         asChild
       >
         <section>
           <H2 className="mb-2">{t('features.title')}</H2>
-          <Spacing
+          <Stack
             direction="horizontal"
             gap="sm"
             wrap
@@ -39,17 +39,17 @@ export default function Home({ params }: { params: Promise<{ locale: Locale }> }
             <Badge variant="secondary">Playwright</Badge>
             <Badge variant="secondary">ESLint 9</Badge>
             <Badge variant="secondary">PostHog</Badge>
-          </Spacing>
+          </Stack>
         </section>
-      </Spacing>
+      </Stack>
 
-      <Spacing
+      <Stack
         gap="sm"
         asChild
       >
         <section>
           <H2 className="mb-2">Examples</H2>
-          <GridSpacing
+          <Grid
             cols={2}
             responsive
           >
@@ -70,26 +70,26 @@ export default function Home({ params }: { params: Promise<{ locale: Locale }> }
                 </CardAction>
               </CardHeader>
             </Card>
-          </GridSpacing>
+          </Grid>
         </section>
-      </Spacing>
+      </Stack>
 
-      <Spacing
+      <Stack
         gap="sm"
         asChild
       >
         <section>
           <H2 className="mb-2">Suspense</H2>
-          <GridSpacing
+          <Grid
             cols={3}
             responsive
           >
             <Suspense fallback={<AsyncCardSkeleton count={3} />}>
               <AsyncCard />
             </Suspense>
-          </GridSpacing>
+          </Grid>
         </section>
-      </Spacing>
-    </Spacing>
+      </Stack>
+    </Stack>
   )
 }

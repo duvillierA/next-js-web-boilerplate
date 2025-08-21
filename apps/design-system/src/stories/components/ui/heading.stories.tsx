@@ -1,5 +1,5 @@
 import { H1, H2, H3, H4, H5, H6 } from '@boilerplate/ui/heading'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta<typeof H1> = {
   title: 'Components/Typography/Heading',
