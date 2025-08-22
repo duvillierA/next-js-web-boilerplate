@@ -5,15 +5,36 @@ import { cva, type VariantProps } from 'class-variance-authority'
 const stackVariants = cva('flex', {
   variants: {
     gap: {
+      none: 'gap-0',
       xs: 'gap-1',
       sm: 'gap-2',
       md: 'gap-4',
       lg: 'gap-6',
       xl: 'gap-8',
     },
+    gapX: {
+      none: 'gap-x-0',
+      xs: 'gap-x-1',
+      sm: 'gap-x-2',
+      md: 'gap-x-4',
+      lg: 'gap-x-6',
+      xl: 'gap-x-8',
+    },
+    gapY: {
+      none: 'gap-y-0',
+      xs: 'gap-y-1',
+      sm: 'gap-y-2',
+      md: 'gap-y-4',
+      lg: 'gap-y-6',
+      xl: 'gap-y-8',
+    },
     wrap: {
       true: 'flex-wrap',
       false: 'flex-nowrap',
+    },
+    display: {
+      inline: 'inline-flex',
+      flex: 'flex',
     },
     direction: {
       horizontal: 'flex-row',
@@ -38,6 +59,7 @@ const stackVariants = cva('flex', {
   defaultVariants: {
     gap: 'md',
     direction: 'vertical',
+    display: 'flex',
   },
 })
 
@@ -64,7 +86,10 @@ export function Stack({
   children,
   className,
   gap,
+  gapX,
+  gapY,
   direction,
+  display,
   wrap,
   asChild,
   ...props
@@ -72,7 +97,10 @@ export function Stack({
   const Comp = asChild ? Slot : 'div'
   return (
     <Comp
-      className={cn(stackVariants({ gap, direction, align, justify, wrap }), className)}
+      className={cn(
+        stackVariants({ gap, display, gapX, gapY, direction, align, justify, wrap }),
+        className,
+      )}
       {...props}
     >
       {children}

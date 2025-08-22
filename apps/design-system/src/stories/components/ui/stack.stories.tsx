@@ -9,7 +9,7 @@ const meta: Meta<typeof Stack> = {
   argTypes: {
     gap: {
       control: { type: 'select' },
-      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+      options: ['none', 'xs', 'sm', 'md', 'lg', 'xl'],
     },
     direction: {
       control: { type: 'radio' },
@@ -22,6 +22,21 @@ const meta: Meta<typeof Stack> = {
     justify: {
       control: { type: 'select' },
       options: ['start', 'center', 'end', 'between', 'around', 'evenly'],
+    },
+    gapX: {
+      control: { type: 'select' },
+      options: ['none', 'xs', 'sm', 'md', 'lg', 'xl'],
+    },
+    gapY: {
+      control: { type: 'select' },
+      options: ['none', 'xs', 'sm', 'md', 'lg', 'xl'],
+    },
+    display: {
+      control: { type: 'select' },
+      options: ['inline-flex', 'flex'],
+    },
+    wrap: {
+      control: { type: 'boolean' },
     },
   },
   parameters: {
@@ -66,34 +81,6 @@ export const Default: Story = {
 export const Horizontal: Story = {
   args: {
     direction: 'horizontal',
-    gap: 'lg',
-    children: [
-      <Button
-        key="1"
-        variant="default"
-      >
-        Button 1
-      </Button>,
-      <Button
-        key="2"
-        variant="secondary"
-      >
-        Button 2
-      </Button>,
-      <Button
-        key="3"
-        variant="outline"
-      >
-        Button 3
-      </Button>,
-    ],
-  },
-}
-
-export const CustomGap: Story = {
-  args: {
-    direction: 'horizontal',
-    gap: 'xl',
     children: [
       <Button
         key="1"
