@@ -33,10 +33,7 @@ function SimpleDialog() {
   const [open, setOpen] = useState(false)
 
   return (
-    <Dialog
-      open={open}
-      onOpenChange={setOpen}
-    >
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button variant="outline">Open Dialog</Button>
       </DialogTrigger>
@@ -49,10 +46,7 @@ function SimpleDialog() {
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
-            <label
-              htmlFor="name"
-              className="text-right"
-            >
+            <label htmlFor="name" className="text-right">
               Name
             </label>
             <input
@@ -62,10 +56,7 @@ function SimpleDialog() {
             />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
-            <label
-              htmlFor="username"
-              className="text-right"
-            >
+            <label htmlFor="username" className="text-right">
               Username
             </label>
             <input
@@ -87,10 +78,7 @@ function AlertDialog() {
   const [open, setOpen] = useState(false)
 
   return (
-    <Dialog
-      open={open}
-      onOpenChange={setOpen}
-    >
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button variant="destructive">Delete Account</Button>
       </DialogTrigger>
@@ -103,16 +91,10 @@ function AlertDialog() {
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button
-            variant="outline"
-            onClick={() => setOpen(false)}
-          >
+          <Button variant="outline" onClick={() => setOpen(false)}>
             Cancel
           </Button>
-          <Button
-            variant="destructive"
-            onClick={() => setOpen(false)}
-          >
+          <Button variant="destructive" onClick={() => setOpen(false)}>
             Delete Account
           </Button>
         </DialogFooter>
@@ -125,10 +107,7 @@ function ConfirmationDialog() {
   const [open, setOpen] = useState(false)
 
   return (
-    <Dialog
-      open={open}
-      onOpenChange={setOpen}
-    >
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button>Confirm Action</Button>
       </DialogTrigger>
@@ -141,10 +120,7 @@ function ConfirmationDialog() {
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button
-            variant="outline"
-            onClick={() => setOpen(false)}
-          >
+          <Button variant="outline" onClick={() => setOpen(false)}>
             Cancel
           </Button>
           <Button onClick={() => setOpen(false)}>Confirm</Button>
@@ -158,10 +134,7 @@ function LargeDialog() {
   const [open, setOpen] = useState(false)
 
   return (
-    <Dialog
-      open={open}
-      onOpenChange={setOpen}
-    >
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button variant="outline">Open Large Dialog</Button>
       </DialogTrigger>
@@ -195,10 +168,7 @@ function LargeDialog() {
           </div>
         </div>
         <DialogFooter>
-          <Button
-            variant="outline"
-            onClick={() => setOpen(false)}
-          >
+          <Button variant="outline" onClick={() => setOpen(false)}>
             Cancel
           </Button>
           <Button onClick={() => setOpen(false)}>Save Changes</Button>

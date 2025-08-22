@@ -33,10 +33,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: (args) => (
-    <Card
-      className="w-[350px]"
-      {...args}
-    >
+    <Card className="w-[350px]" {...args}>
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
         <CardDescription>Card Description</CardDescription>
@@ -56,18 +53,12 @@ export const Default: Story = {
 
 export const WithAction: Story = {
   render: (args) => (
-    <Card
-      className="w-[350px]"
-      {...args}
-    >
+    <Card className="w-[350px]" {...args}>
       <CardHeader>
         <CardTitle>Card with Action</CardTitle>
         <CardDescription>This card has an action button in the header</CardDescription>
         <CardAction>
-          <Button
-            variant="outline"
-            size="sm"
-          >
+          <Button variant="outline" size="sm">
             Action
           </Button>
         </CardAction>
@@ -81,10 +72,7 @@ export const WithAction: Story = {
 
 export const ContentOnly: Story = {
   render: (args) => (
-    <Card
-      className="w-[350px]"
-      {...args}
-    >
+    <Card className="w-[350px]" {...args}>
       <CardContent>
         <p>This card only has content, no header or footer.</p>
       </CardContent>
@@ -105,10 +93,7 @@ export const HeaderOnly: Story = {
 
 export const FooterOnly: Story = {
   render: (args) => (
-    <Card
-      className="w-[350px]"
-      {...args}
-    >
+    <Card className="w-[350px]" {...args}>
       <CardContent>
         <p>This card has content and footer but no header.</p>
       </CardContent>
@@ -128,34 +113,22 @@ export const ComplexLayout: Story = {
           <CardTitle>Project Alpha</CardTitle>
           <CardDescription>An innovative project with cutting-edge technology</CardDescription>
           <CardAction>
-            <Button
-              variant="outline"
-              size="sm"
-            >
+            <Button variant="outline" size="sm">
               View
             </Button>
           </CardAction>
         </CardHeader>
         <CardContent>
           <Stack gap="sm">
-            <Stack
-              justify="between"
-              direction="horizontal"
-            >
+            <Stack justify="between" direction="horizontal">
               <span className="text-sm text-muted-foreground">Status</span>
               <span className="text-sm font-medium">Active</span>
             </Stack>
-            <Stack
-              justify="between"
-              direction="horizontal"
-            >
+            <Stack justify="between" direction="horizontal">
               <span className="text-sm text-muted-foreground">Progress</span>
               <span className="text-sm font-medium">75%</span>
             </Stack>
-            <Stack
-              justify="between"
-              direction="horizontal"
-            >
+            <Stack justify="between" direction="horizontal">
               <span className="text-sm text-muted-foreground">Team</span>
               <span className="text-sm font-medium">8 members</span>
             </Stack>
@@ -173,11 +146,7 @@ export const ComplexLayout: Story = {
 function InteractiveDemo() {
   const [selected, setSelected] = useState(false)
   return (
-    <Card
-      interactive
-      selected={selected}
-      onClick={() => setSelected((prev) => !prev)}
-    >
+    <Card interactive selected={selected} onClick={() => setSelected((prev) => !prev)}>
       <CardHeader>
         <CardTitle>Interactive Card</CardTitle>
         <CardDescription>

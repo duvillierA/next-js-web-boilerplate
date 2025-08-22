@@ -34,28 +34,14 @@ type Story = StoryObj
 
 export const Checkbox: Story = {
   render: (args) => (
-    <Grid
-      cols={3}
-      responsive
-    >
-      <CheckboxCard
-        label="Enable notifications"
-        defaultChecked
-        {...args}
-      >
+    <Grid cols={3} responsive>
+      <CheckboxCard label="Enable notifications" defaultChecked {...args}>
         Enable or disable notifications for your account.
       </CheckboxCard>
-      <CheckboxCard
-        label="Subscribe to newsletter"
-        {...args}
-      >
+      <CheckboxCard label="Subscribe to newsletter" {...args}>
         Subscribe to our newsletter to receive updates about our products and services.
       </CheckboxCard>
-      <CheckboxCard
-        label="Accept terms and conditions"
-        disabled
-        {...args}
-      >
+      <CheckboxCard label="Accept terms and conditions" disabled {...args}>
         By checking this box, you agree to our terms and conditions.
       </CheckboxCard>
     </Grid>
@@ -73,10 +59,7 @@ function RadioGroupDemo(args: ControlCardProps) {
   const [value, setValue] = useState('option1')
   return (
     <RadioGroup>
-      <Grid
-        cols={3}
-        responsive
-      >
+      <Grid cols={3} responsive>
         <RadioCard
           label="Option 1"
           value="option1"
@@ -126,24 +109,10 @@ export const Radio: Story = {
 
 export const Switch: Story = {
   render: (args) => (
-    <Grid
-      cols={3}
-      responsive
-    >
-      <SwitchCard
-        label="Dark mode"
-        defaultChecked
-        {...args}
-      />
-      <SwitchCard
-        label="Auto-update"
-        {...args}
-      />
-      <SwitchCard
-        label="Experimental features"
-        disabled
-        {...args}
-      />
+    <Grid cols={3} responsive>
+      <SwitchCard label="Dark mode" defaultChecked {...args} />
+      <SwitchCard label="Auto-update" {...args} />
+      <SwitchCard label="Experimental features" disabled {...args} />
     </Grid>
   ),
   parameters: {

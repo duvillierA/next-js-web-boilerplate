@@ -73,10 +73,7 @@ export const Iconography: Story = {
         const Icon = LucideIcons[iconName]
         if (!Icon) return null
         return (
-          <div
-            key={iconName}
-            className="flex flex-col items-center gap-2"
-          >
+          <div key={iconName} className="flex flex-col items-center gap-2">
             <Icon />
             <span className="text-center text-xs break-all">{iconName}</span>
           </div>

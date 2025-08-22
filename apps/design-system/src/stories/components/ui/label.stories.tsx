@@ -37,11 +37,7 @@ export const WithInput: Story = {
   render: () => (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <Label htmlFor="email">Email</Label>
-      <Input
-        type="email"
-        id="email"
-        placeholder="m@example.com"
-      />
+      <Input type="email" id="email" placeholder="m@example.com" />
     </div>
   ),
 }
@@ -61,11 +57,7 @@ export const Required: Story = {
       <Label htmlFor="username">
         Username <span className="text-destructive">*</span>
       </Label>
-      <Input
-        id="username"
-        required
-        placeholder="Enter your username"
-      />
+      <Input id="username" required placeholder="Enter your username" />
     </div>
   ),
 }
@@ -74,10 +66,7 @@ export const WithDescription: Story = {
   render: () => (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <Label htmlFor="username">Username</Label>
-      <Input
-        id="username"
-        placeholder="Enter your username"
-      />
+      <Input id="username" placeholder="Enter your username" />
       <p className="text-sm text-muted-foreground">
         This is your public display name. It will be visible to other users.
       </p>
@@ -88,17 +77,10 @@ export const WithDescription: Story = {
 export const Disabled: Story = {
   render: () => (
     <div className="grid w-full max-w-sm items-center gap-1.5">
-      <Label
-        htmlFor="disabled-input"
-        className="text-muted-foreground"
-      >
+      <Label htmlFor="disabled-input" className="text-muted-foreground">
         Disabled Input
       </Label>
-      <Input
-        id="disabled-input"
-        disabled
-        placeholder="This input is disabled"
-      />
+      <Input id="disabled-input" disabled placeholder="This input is disabled" />
     </div>
   ),
 }
@@ -108,25 +90,15 @@ export const MultipleInputs: Story = {
     <div className="grid w-full max-w-sm items-center gap-4">
       <div className="grid gap-1.5">
         <Label htmlFor="first-name">First Name</Label>
-        <Input
-          id="first-name"
-          placeholder="John"
-        />
+        <Input id="first-name" placeholder="John" />
       </div>
       <div className="grid gap-1.5">
         <Label htmlFor="last-name">Last Name</Label>
-        <Input
-          id="last-name"
-          placeholder="Doe"
-        />
+        <Input id="last-name" placeholder="Doe" />
       </div>
       <div className="grid gap-1.5">
         <Label htmlFor="email">Email</Label>
-        <Input
-          id="email"
-          type="email"
-          placeholder="john@example.com"
-        />
+        <Input id="email" type="email" placeholder="john@example.com" />
       </div>
     </div>
   ),
@@ -135,10 +107,7 @@ export const MultipleInputs: Story = {
 export const WithError: Story = {
   render: () => (
     <div className="grid w-full max-w-sm items-center gap-1.5">
-      <Label
-        htmlFor="email"
-        className="text-destructive"
-      >
+      <Label htmlFor="email" className="text-destructive">
         Email
       </Label>
       <Input
@@ -160,10 +129,7 @@ export const LongText: Story = {
         This is a very long label text that demonstrates how the label component handles extended
         content and wraps appropriately
       </Label>
-      <Input
-        id="long-label"
-        placeholder="Input with long label"
-      />
+      <Input id="long-label" placeholder="Input with long label" />
     </div>
   ),
 }

@@ -45,10 +45,7 @@ export const WithIcon: Story = {
   render: () => (
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
-        >
+        <Button variant="ghost" size="icon">
           <Info className="h-4 w-4" />
         </Button>
       </TooltipTrigger>
@@ -132,10 +129,7 @@ export const Disabled: Story = {
   render: () => (
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button
-          variant="outline"
-          disabled
-        >
+        <Button variant="outline" disabled>
           Disabled button
         </Button>
       </TooltipTrigger>
@@ -150,10 +144,7 @@ export const FormFieldHelp: Story = {
   render: () => (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <div className="flex items-center gap-2">
-        <label
-          htmlFor="email"
-          className="text-sm font-medium"
-        >
+        <label htmlFor="email" className="text-sm font-medium">
           Email
         </label>
         <Tooltip>

@@ -80,17 +80,11 @@ export const MultipleSwitches: Story = {
         <Label htmlFor="notifications">Push notifications</Label>
       </div>
       <div className="flex items-center space-x-2">
-        <Switch
-          id="marketing"
-          defaultChecked
-        />
+        <Switch id="marketing" defaultChecked />
         <Label htmlFor="marketing">Marketing emails</Label>
       </div>
       <div className="flex items-center space-x-2">
-        <Switch
-          id="updates"
-          disabled
-        />
+        <Switch id="updates" disabled />
         <Label htmlFor="updates">System updates</Label>
       </div>
     </div>
@@ -118,11 +112,7 @@ function ControlledSwitch() {
 
   return (
     <div className="flex items-center space-x-2">
-      <Switch
-        id="controlled"
-        checked={checked}
-        onCheckedChange={setChecked}
-      />
+      <Switch id="controlled" checked={checked} onCheckedChange={setChecked} />
       <Label htmlFor="controlled">Controlled switch: {checked ? 'On' : 'Off'}</Label>
     </div>
   )
@@ -135,14 +125,8 @@ export const Controlled: Story = {
 export const Large: Story = {
   render: () => (
     <div className="flex items-center space-x-2">
-      <Switch
-        id="large-switch"
-        className="h-6 w-11"
-      />
-      <Label
-        htmlFor="large-switch"
-        className="text-lg"
-      >
+      <Switch id="large-switch" className="h-6 w-11" />
+      <Label htmlFor="large-switch" className="text-lg">
         Large switch
       </Label>
     </div>
@@ -152,14 +136,8 @@ export const Large: Story = {
 export const Small: Story = {
   render: () => (
     <div className="flex items-center space-x-2">
-      <Switch
-        id="small-switch"
-        className="h-4 w-7"
-      />
-      <Label
-        htmlFor="small-switch"
-        className="text-sm"
-      >
+      <Switch id="small-switch" className="h-4 w-7" />
+      <Label htmlFor="small-switch" className="text-sm">
         Small switch
       </Label>
     </div>
@@ -183,20 +161,14 @@ export const SettingsPanel: Story = {
             <Label htmlFor="marketing">Marketing emails</Label>
             <p className="text-sm text-muted-foreground">Receive marketing emails</p>
           </div>
-          <Switch
-            id="marketing"
-            defaultChecked
-          />
+          <Switch id="marketing" defaultChecked />
         </div>
         <div className="flex items-center justify-between">
           <div className="space-y-0.5">
             <Label htmlFor="updates">System updates</Label>
             <p className="text-sm text-muted-foreground">Automatic system updates</p>
           </div>
-          <Switch
-            id="updates"
-            disabled
-          />
+          <Switch id="updates" disabled />
         </div>
       </div>
     </div>

@@ -28,10 +28,7 @@ export const Default: Story = {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b bg-card">
-        <Container
-          className="py-4"
-          asChild
-        >
+        <Container className="py-4" asChild>
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold">Dashboard</h1>
@@ -104,30 +101,21 @@ export const Default: Story = {
             <CardContent>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
-                  <Badge
-                    className="h-4 w-4 rounded-full p-0"
-                    variant="secondary"
-                  />
+                  <Badge className="h-4 w-4 rounded-full p-0" variant="secondary" />
                   <div className="flex-1">
                     <p className="text-sm font-medium">Project Alpha updated</p>
                     <p className="text-xs text-muted-foreground">2 minutes ago</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <Badge
-                    className="h-4 w-4 rounded-full p-0"
-                    variant="destructive"
-                  />
+                  <Badge className="h-4 w-4 rounded-full p-0" variant="destructive" />
                   <div className="flex-1">
                     <p className="text-sm font-medium">New team member added</p>
                     <p className="text-xs text-muted-foreground">1 hour ago</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <Badge
-                    className="h-4 w-4 rounded-full p-0"
-                    variant="default"
-                  />
+                  <Badge className="h-4 w-4 rounded-full p-0" variant="default" />
                   <div className="flex-1">
                     <p className="text-sm font-medium">Deployment in progress</p>
                     <p className="text-xs text-muted-foreground">3 hours ago</p>

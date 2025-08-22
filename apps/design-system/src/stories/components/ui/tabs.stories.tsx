@@ -21,10 +21,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: () => (
-    <Tabs
-      defaultValue="account"
-      className="w-[400px]"
-    >
+    <Tabs defaultValue="account" className="w-[400px]">
       <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger value="account">Account</TabsTrigger>
         <TabsTrigger value="password">Password</TabsTrigger>
@@ -36,10 +33,7 @@ export const Default: Story = {
             Make changes to your account here. Click save when you&apos;re done.
           </p>
           <div className="space-y-2">
-            <label
-              htmlFor="name"
-              className="text-sm font-medium"
-            >
+            <label htmlFor="name" className="text-sm font-medium">
               Name
             </label>
             <input
@@ -49,10 +43,7 @@ export const Default: Story = {
             />
           </div>
           <div className="space-y-2">
-            <label
-              htmlFor="username"
-              className="text-sm font-medium"
-            >
+            <label htmlFor="username" className="text-sm font-medium">
               Username
             </label>
             <input
@@ -70,30 +61,16 @@ export const Default: Story = {
             Change your password here. After saving, you&apos;ll be logged out.
           </p>
           <div className="space-y-2">
-            <label
-              htmlFor="current"
-              className="text-sm font-medium"
-            >
+            <label htmlFor="current" className="text-sm font-medium">
               Current password
             </label>
-            <input
-              id="current"
-              type="password"
-              className="w-full rounded-md border px-3 py-2"
-            />
+            <input id="current" type="password" className="w-full rounded-md border px-3 py-2" />
           </div>
           <div className="space-y-2">
-            <label
-              htmlFor="new"
-              className="text-sm font-medium"
-            >
+            <label htmlFor="new" className="text-sm font-medium">
               New password
             </label>
-            <input
-              id="new"
-              type="password"
-              className="w-full rounded-md border px-3 py-2"
-            />
+            <input id="new" type="password" className="w-full rounded-md border px-3 py-2" />
           </div>
         </div>
       </TabsContent>
@@ -103,10 +80,7 @@ export const Default: Story = {
 
 export const ThreeTabs: Story = {
   render: () => (
-    <Tabs
-      defaultValue="overview"
-      className="w-[400px]"
-    >
+    <Tabs defaultValue="overview" className="w-[400px]">
       <TabsList className="grid w-full grid-cols-3">
         <TabsTrigger value="overview">Overview</TabsTrigger>
         <TabsTrigger value="analytics">Analytics</TabsTrigger>
@@ -151,11 +125,7 @@ export const ThreeTabs: Story = {
 
 export const VerticalTabs: Story = {
   render: () => (
-    <Tabs
-      defaultValue="account"
-      className="w-[400px]"
-      orientation="vertical"
-    >
+    <Tabs defaultValue="account" className="w-[400px]" orientation="vertical">
       <TabsList className="grid w-full grid-cols-1">
         <TabsTrigger value="account">Account</TabsTrigger>
         <TabsTrigger value="password">Password</TabsTrigger>
@@ -189,16 +159,10 @@ export const VerticalTabs: Story = {
 
 export const Disabled: Story = {
   render: () => (
-    <Tabs
-      defaultValue="account"
-      className="w-[400px]"
-    >
+    <Tabs defaultValue="account" className="w-[400px]">
       <TabsList className="grid w-full grid-cols-3">
         <TabsTrigger value="account">Account</TabsTrigger>
-        <TabsTrigger
-          value="password"
-          disabled
-        >
+        <TabsTrigger value="password" disabled>
           Password
         </TabsTrigger>
         <TabsTrigger value="settings">Settings</TabsTrigger>
@@ -229,21 +193,10 @@ export const Disabled: Story = {
 
 export const WithIcons: Story = {
   render: () => (
-    <Tabs
-      defaultValue="dashboard"
-      className="w-[400px]"
-    >
+    <Tabs defaultValue="dashboard" className="w-[400px]">
       <TabsList className="grid w-full grid-cols-3">
-        <TabsTrigger
-          value="dashboard"
-          className="flex items-center gap-2"
-        >
-          <svg
-            className="h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
+        <TabsTrigger value="dashboard" className="flex items-center gap-2">
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -259,16 +212,8 @@ export const WithIcons: Story = {
           </svg>
           Dashboard
         </TabsTrigger>
-        <TabsTrigger
-          value="analytics"
-          className="flex items-center gap-2"
-        >
-          <svg
-            className="h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
+        <TabsTrigger value="analytics" className="flex items-center gap-2">
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -278,16 +223,8 @@ export const WithIcons: Story = {
           </svg>
           Analytics
         </TabsTrigger>
-        <TabsTrigger
-          value="settings"
-          className="flex items-center gap-2"
-        >
-          <svg
-            className="h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
+        <TabsTrigger value="settings" className="flex items-center gap-2">
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"

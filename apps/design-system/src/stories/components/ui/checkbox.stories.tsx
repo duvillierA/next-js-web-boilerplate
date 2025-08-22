@@ -65,10 +65,7 @@ export const DisabledChecked: Story = {
 
 export const WithLabel: Story = {
   render: () => (
-    <Stack
-      direction="horizontal"
-      gap="sm"
-    >
+    <Stack direction="horizontal" gap="sm">
       <Checkbox id="terms-with-label" />
       <Label
         htmlFor="terms-with-label"
@@ -83,31 +80,16 @@ export const WithLabel: Story = {
 export const Multiple: Story = {
   render: () => (
     <div className="space-y-3">
-      <Stack
-        direction="horizontal"
-        gap="sm"
-      >
+      <Stack direction="horizontal" gap="sm">
         <Checkbox id="option1" />
         <Label htmlFor="option1">Option 1</Label>
       </Stack>
-      <Stack
-        direction="horizontal"
-        gap="sm"
-      >
-        <Checkbox
-          id="option2"
-          defaultChecked
-        />
+      <Stack direction="horizontal" gap="sm">
+        <Checkbox id="option2" defaultChecked />
         <Label htmlFor="option2">Option 2</Label>
       </Stack>
-      <Stack
-        direction="horizontal"
-        gap="sm"
-      >
-        <Checkbox
-          id="option3"
-          disabled
-        />
+      <Stack direction="horizontal" gap="sm">
+        <Checkbox id="option3" disabled />
         <Label htmlFor="option3">Option 3 (Disabled)</Label>
       </Stack>
     </div>
@@ -116,16 +98,9 @@ export const Multiple: Story = {
 
 export const WithDescription: Story = {
   render: () => (
-    <Stack
-      direction="horizontal"
-      gap="sm"
-    >
+    <Stack direction="horizontal" gap="sm">
       <Checkbox id="notifications" />
-      <Stack
-        align="baseline"
-        direction="vertical"
-        gap="xs"
-      >
+      <Stack align="baseline" direction="vertical" gap="xs">
         <Label htmlFor="notifications">Email notifications</Label>
         <p className="text-sm text-muted-foreground">Receive emails about your account activity.</p>
       </Stack>
@@ -136,10 +111,7 @@ export const WithDescription: Story = {
 export const Required: Story = {
   render: () => (
     <div className="flex items-center space-x-2">
-      <Checkbox
-        id="required"
-        required
-      />
+      <Checkbox id="required" required />
       <Label htmlFor="required">I agree to the terms and conditions *</Label>
     </div>
   ),

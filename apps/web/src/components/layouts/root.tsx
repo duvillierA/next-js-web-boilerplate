@@ -20,16 +20,10 @@ export const RootLayout: React.FC<RootLayoutProps> = ({
   ...props
 }) => {
   return (
-    <html
-      lang={lang}
-      suppressHydrationWarning
-    >
+    <html lang={lang} suppressHydrationWarning>
       {!!googleTagManagerId && <GoogleTagManager gtmId={googleTagManagerId} />}
       {!!googleAnalyticsId && <GoogleAnalytics gaId={googleAnalyticsId} />}
-      <body
-        className={cn('antialiased', className)}
-        {...props}
-      >
+      <body className={cn('antialiased', className)} {...props}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

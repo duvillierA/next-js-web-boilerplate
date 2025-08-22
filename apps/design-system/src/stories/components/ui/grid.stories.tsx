@@ -92,10 +92,7 @@ function StyledGridItem({
 }) {
   return (
     <GridItem>
-      <Card
-        variant="surface"
-        className={cn('p-4 text-center', className)}
-      >
+      <Card variant="surface" className={cn('p-4 text-center', className)}>
         {children}
       </Card>
     </GridItem>
@@ -118,47 +115,29 @@ export const Default: Story = {
 
 export const ColumnSpanning: Story = {
   render: (args) => (
-    <Grid
-      {...args}
-      cols={4}
-    >
+    <Grid {...args} cols={4}>
       <GridItem colSpan={2}>
-        <Card
-          variant="surface"
-          className="p-4 text-center"
-        >
+        <Card variant="surface" className="p-4 text-center">
           Spans 2 columns
         </Card>
       </GridItem>
       <GridItem>
-        <Card
-          variant="surface"
-          className="p-4 text-center"
-        >
+        <Card variant="surface" className="p-4 text-center">
           Normal
         </Card>
       </GridItem>
       <GridItem>
-        <Card
-          variant="surface"
-          className="p-4 text-center"
-        >
+        <Card variant="surface" className="p-4 text-center">
           Normal
         </Card>
       </GridItem>
       <GridItem colSpan={3}>
-        <Card
-          variant="surface"
-          className="text-center"
-        >
+        <Card variant="surface" className="text-center">
           Spans 3 columns
         </Card>
       </GridItem>
       <GridItem>
-        <Card
-          variant="surface"
-          className="p-4 text-center"
-        >
+        <Card variant="surface" className="p-4 text-center">
           Normal
         </Card>
       </GridItem>
@@ -171,10 +150,7 @@ export const ColumnSpanning: Story = {
 
 export const RowSpanning: Story = {
   render: (args) => (
-    <Grid
-      {...args}
-      rows={3}
-    >
+    <Grid {...args} rows={3}>
       <GridItem rowSpan={2}>
         <Card
           variant="surface"
@@ -184,34 +160,22 @@ export const RowSpanning: Story = {
         </Card>
       </GridItem>
       <GridItem>
-        <Card
-          variant="surface"
-          className="p-4 text-center"
-        >
+        <Card variant="surface" className="p-4 text-center">
           Normal
         </Card>
       </GridItem>
       <GridItem>
-        <Card
-          variant="surface"
-          className="p-4 text-center"
-        >
+        <Card variant="surface" className="p-4 text-center">
           Normal
         </Card>
       </GridItem>
       <GridItem>
-        <Card
-          variant="surface"
-          className="p-4 text-center"
-        >
+        <Card variant="surface" className="p-4 text-center">
           Normal
         </Card>
       </GridItem>
       <GridItem>
-        <Card
-          variant="surface"
-          className="p-4 text-center"
-        >
+        <Card variant="surface" className="p-4 text-center">
           Normal
         </Card>
       </GridItem>
@@ -224,53 +188,24 @@ export const RowSpanning: Story = {
 
 export const Positioning: Story = {
   render: (args) => (
-    <Grid
-      {...args}
-      cols={4}
-    >
-      <GridItem
-        colStart={2}
-        colSpan={2}
-      >
-        <Card
-          variant="surface"
-          className="p-4 text-center"
-        >
+    <Grid {...args} cols={4}>
+      <GridItem colStart={2} colSpan={2}>
+        <Card variant="surface" className="p-4 text-center">
           Starts at column 2, spans 2
         </Card>
       </GridItem>
-      <GridItem
-        rowStart={2}
-        colStart={1}
-        colSpan={2}
-      >
-        <Card
-          variant="surface"
-          className="text-center"
-        >
+      <GridItem rowStart={2} colStart={1} colSpan={2}>
+        <Card variant="surface" className="text-center">
           Starts at row 2, column 1, spans 2
         </Card>
       </GridItem>
-      <GridItem
-        rowStart={2}
-        colStart={4}
-      >
-        <Card
-          variant="surface"
-          className="bg-accent/10 p-4 text-center"
-        >
+      <GridItem rowStart={2} colStart={4}>
+        <Card variant="surface" className="bg-accent/10 p-4 text-center">
           Starts at row 2, column 4
         </Card>
       </GridItem>
-      <GridItem
-        rowStart={3}
-        colStart={3}
-        colSpan={2}
-      >
-        <Card
-          variant="surface"
-          className="bg-muted p-4 text-center"
-        >
+      <GridItem rowStart={3} colStart={3} colSpan={2}>
+        <Card variant="surface" className="bg-muted p-4 text-center">
           Starts at row 3, column 3, spans 2
         </Card>
       </GridItem>
@@ -283,57 +218,34 @@ export const Positioning: Story = {
 
 export const Alignment: Story = {
   render: (args) => (
-    <Grid
-      {...args}
-      cols={3}
-      gap="md"
-      className="h-64 grid-rows-3"
-    >
+    <Grid {...args} cols={3} gap="md" className="h-64 grid-rows-3">
       <GridItem align="start">
-        <Card
-          variant="surface"
-          className="p-4 text-center"
-        >
+        <Card variant="surface" className="p-4 text-center">
           Aligned to start
         </Card>
       </GridItem>
       <GridItem align="center">
-        <Card
-          variant="surface"
-          className="text-center"
-        >
+        <Card variant="surface" className="text-center">
           Aligned to center
         </Card>
       </GridItem>
       <GridItem align="end">
-        <Card
-          variant="surface"
-          className="bg-accent/10 p-4 text-center"
-        >
+        <Card variant="surface" className="bg-accent/10 p-4 text-center">
           Aligned to end
         </Card>
       </GridItem>
       <GridItem justify="start">
-        <Card
-          variant="surface"
-          className="bg-muted p-4 text-center"
-        >
+        <Card variant="surface" className="bg-muted p-4 text-center">
           Justified to start
         </Card>
       </GridItem>
       <GridItem justify="center">
-        <Card
-          variant="surface"
-          className="p-4 text-center"
-        >
+        <Card variant="surface" className="p-4 text-center">
           Justified to center
         </Card>
       </GridItem>
       <GridItem justify="end">
-        <Card
-          variant="surface"
-          className="text-center"
-        >
+        <Card variant="surface" className="text-center">
           Justified to end
         </Card>
       </GridItem>
@@ -350,10 +262,7 @@ export const Responsive: Story = {
       <p className="mb-4 text-sm text-muted-foreground">
         Single column on mobile, {args.cols} columns on large screens
       </p>
-      <Grid
-        {...args}
-        responsive
-      >
+      <Grid {...args} responsive>
         {Array.from({ length: 6 }, (_, i) => (
           <StyledGridItem key={i}>Responsive Item {i + 1}</StyledGridItem>
         ))}

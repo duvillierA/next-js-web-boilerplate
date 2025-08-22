@@ -27,22 +27,11 @@ function DefaultCollapsible() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Collapsible
-      open={isOpen}
-      onOpenChange={setIsOpen}
-      className="w-[350px] space-y-2"
-    >
-      <Stack
-        direction="horizontal"
-        align="center"
-        justify="between"
-      >
+    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-[350px] space-y-2">
+      <Stack direction="horizontal" align="center" justify="between">
         <h4 className="text-sm font-semibold">@peduarte starred 3 repositories</h4>
         <CollapsibleTrigger asChild>
-          <Button
-            variant="ghost"
-            size="icon"
-          >
+          <Button variant="ghost" size="icon">
             {isOpen ? <ChevronDown className="size-4" /> : <ChevronRight className="size-4" />}
           </Button>
         </CollapsibleTrigger>
@@ -60,17 +49,9 @@ function SimpleCollapsible() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Collapsible
-      open={isOpen}
-      onOpenChange={setIsOpen}
-      className="w-[350px] space-y-2"
-    >
+    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="w-[350px] space-y-2">
       <CollapsibleTrigger asChild>
-        <Button
-          size="lg"
-          variant="outline"
-          className="w-full"
-        >
+        <Button size="lg" variant="outline" className="w-full">
           <span>Click to expand</span>
           {isOpen ? <ChevronDown className="size-4" /> : <ChevronRight className="size-4" />}
         </Button>

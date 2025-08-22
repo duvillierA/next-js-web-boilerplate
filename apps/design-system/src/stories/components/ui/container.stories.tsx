@@ -51,11 +51,7 @@ export const GutterSizes: Story = {
   render: (args) => (
     <div className="space-y-4">
       {(['none', 'sm', 'md', 'lg'] as const).map((gutter) => (
-        <Container
-          key={gutter}
-          {...args}
-          gutter={gutter}
-        >
+        <Container key={gutter} {...args} gutter={gutter}>
           <Child>
             Gutter: <b>{gutter}</b>
           </Child>
@@ -73,11 +69,7 @@ export const GutterTypes: Story = {
   render: (args) => (
     <div className="space-y-4">
       {(['all', 'left', 'right'] as const).map((gutterType) => (
-        <Container
-          key={gutterType}
-          {...args}
-          gutterType={gutterType}
-        >
+        <Container key={gutterType} {...args} gutterType={gutterType}>
           <Child>
             Gutter Type: <b>{gutterType}</b>
           </Child>

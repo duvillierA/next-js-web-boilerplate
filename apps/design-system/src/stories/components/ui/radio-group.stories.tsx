@@ -18,34 +18,16 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: () => (
     <RadioGroup defaultValue="option1">
-      <Stack
-        direction="horizontal"
-        gap="sm"
-      >
-        <RadioGroupItem
-          value="option1"
-          id="option1"
-        />
+      <Stack direction="horizontal" gap="sm">
+        <RadioGroupItem value="option1" id="option1" />
         <Label htmlFor="option1">Option 1</Label>
       </Stack>
-      <Stack
-        direction="horizontal"
-        gap="sm"
-      >
-        <RadioGroupItem
-          value="option2"
-          id="option2"
-        />
+      <Stack direction="horizontal" gap="sm">
+        <RadioGroupItem value="option2" id="option2" />
         <Label htmlFor="option2">Option 2</Label>
       </Stack>
-      <Stack
-        direction="horizontal"
-        gap="sm"
-      >
-        <RadioGroupItem
-          value="option3"
-          id="option3"
-        />
+      <Stack direction="horizontal" gap="sm">
+        <RadioGroupItem value="option3" id="option3" />
         <Label htmlFor="option3">Option 3</Label>
       </Stack>
     </RadioGroup>

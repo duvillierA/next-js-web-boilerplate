@@ -56,22 +56,13 @@ type Story = StoryObj<typeof Stack>
 export const Default: Story = {
   args: {
     children: [
-      <Button
-        key="1"
-        variant="default"
-      >
+      <Button key="1" variant="default">
         Button 1
       </Button>,
-      <Button
-        key="2"
-        variant="secondary"
-      >
+      <Button key="2" variant="secondary">
         Button 2
       </Button>,
-      <Button
-        key="3"
-        variant="outline"
-      >
+      <Button key="3" variant="outline">
         Button 3
       </Button>,
     ],
@@ -82,22 +73,13 @@ export const Horizontal: Story = {
   args: {
     direction: 'horizontal',
     children: [
-      <Button
-        key="1"
-        variant="default"
-      >
+      <Button key="1" variant="default">
         Button 1
       </Button>,
-      <Button
-        key="2"
-        variant="secondary"
-      >
+      <Button key="2" variant="secondary">
         Button 2
       </Button>,
-      <Button
-        key="3"
-        variant="outline"
-      >
+      <Button key="3" variant="outline">
         Button 3
       </Button>,
     ],

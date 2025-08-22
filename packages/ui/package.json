@@ -66,6 +66,7 @@
     "./date-time": "./src/components/date-time/index.ts",
     "./feedback": "./src/components/feedback/index.ts",
     "./overlays": "./src/components/overlays/index.ts",
+    "./text": "./src/components/typography/text.tsx",
     "./typography": "./src/components/typography/index.ts",
     "./hover-card": "./src/components/overlays/hover-card.tsx",
     "./progress": "./src/components/feedback/progress.tsx",

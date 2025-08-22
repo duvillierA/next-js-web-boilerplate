@@ -44,10 +44,7 @@ export const WithLabel: Story = {
   render: () => (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <Label htmlFor="message">Message</Label>
-      <Textarea
-        id="message"
-        placeholder="Type your message here..."
-      />
+      <Textarea id="message" placeholder="Type your message here..." />
     </div>
   ),
 }
@@ -72,11 +69,7 @@ export const Required: Story = {
       <Label htmlFor="required-message">
         Message <span className="text-destructive">*</span>
       </Label>
-      <Textarea
-        id="required-message"
-        required
-        placeholder="This field is required..."
-      />
+      <Textarea id="required-message" required placeholder="This field is required..." />
     </div>
   ),
 }
@@ -84,10 +77,7 @@ export const Required: Story = {
 export const WithError: Story = {
   render: () => (
     <div className="grid w-full max-w-sm items-center gap-1.5">
-      <Label
-        htmlFor="error-message"
-        className="text-destructive"
-      >
+      <Label htmlFor="error-message" className="text-destructive">
         Message
       </Label>
       <Textarea
@@ -106,18 +96,11 @@ export const DifferentSizes: Story = {
     <div className="grid w-full max-w-sm items-center gap-4">
       <div className="grid gap-1.5">
         <Label htmlFor="small-textarea">Small</Label>
-        <Textarea
-          id="small-textarea"
-          className="min-h-[80px]"
-          placeholder="Small textarea"
-        />
+        <Textarea id="small-textarea" className="min-h-[80px]" placeholder="Small textarea" />
       </div>
       <div className="grid gap-1.5">
         <Label htmlFor="default-textarea">Default</Label>
-        <Textarea
-          id="default-textarea"
-          placeholder="Default textarea"
-        />
+        <Textarea id="default-textarea" placeholder="Default textarea" />
       </div>
       <div className="grid gap-1.5">
         <Label htmlFor="large-textarea">Large</Label>
@@ -135,10 +118,7 @@ export const WithDescription: Story = {
   render: () => (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <Label htmlFor="bio">Bio</Label>
-      <Textarea
-        id="bio"
-        placeholder="Tell us a little bit about yourself..."
-      />
+      <Textarea id="bio" placeholder="Tell us a little bit about yourself..." />
       <p className="text-sm text-muted-foreground">
         This will be displayed on your public profile.
       </p>

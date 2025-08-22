@@ -61,32 +61,20 @@ export function NavigationMenuDemo() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem
-                href="/docs"
-                title="Introduction"
-              >
+              <ListItem href="/docs" title="Introduction">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
-              <ListItem
-                href="/docs/installation"
-                title="Installation"
-              >
+              <ListItem href="/docs/installation" title="Installation">
                 How to install dependencies and structure your app.
               </ListItem>
-              <ListItem
-                href="/docs/primitives/typography"
-                title="Typography"
-              >
+              <ListItem href="/docs/primitives/typography" title="Typography">
                 Styles for headings, paragraphs, lists...etc
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink
-            asChild
-            className={navigationMenuTriggerStyle()}
-          >
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link href="/docs">Docs</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
@@ -143,28 +131,19 @@ export function NavigationMenuDemo() {
             <ul className="grid w-[200px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="flex-row items-center gap-2"
-                  >
+                  <Link href="#" className="flex-row items-center gap-2">
                     <CircleHelpIcon />
                     Backlog
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="flex-row items-center gap-2"
-                  >
+                  <Link href="#" className="flex-row items-center gap-2">
                     <CircleIcon />
                     To Do
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="flex-row items-center gap-2"
-                  >
+                  <Link href="#" className="flex-row items-center gap-2">
                     <CircleCheckIcon />
                     Done
                   </Link>
@@ -205,34 +184,22 @@ export const Simple: Story = {
     <NavigationMenu {...args}>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuLink
-            asChild
-            className={navigationMenuTriggerStyle()}
-          >
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link href="/">Home</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink
-            asChild
-            className={navigationMenuTriggerStyle()}
-          >
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link href="/about">About</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink
-            asChild
-            className={navigationMenuTriggerStyle()}
-          >
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link href="/contact">Contact</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink
-            asChild
-            className={navigationMenuTriggerStyle()}
-          >
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link href="/blog">Blog</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
@@ -247,28 +214,16 @@ export const WithIcons: Story = {
     <NavigationMenu {...args}>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuLink
-            asChild
-            className={navigationMenuTriggerStyle()}
-          >
-            <Link
-              href="/"
-              className="flex-row items-center gap-2"
-            >
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link href="/" className="flex-row items-center gap-2">
               <Home className="text-foreground" />
               Home
             </Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink
-            asChild
-            className={navigationMenuTriggerStyle()}
-          >
-            <Link
-              href="/about"
-              className="flex-row items-center gap-2"
-            >
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link href="/about" className="flex-row items-center gap-2">
               <User className="text-foreground" />
               About
             </Link>

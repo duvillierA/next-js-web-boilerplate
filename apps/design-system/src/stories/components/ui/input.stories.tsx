@@ -53,11 +53,7 @@ export const WithLabel: Story = {
       >
         Email
       </label>
-      <Input
-        type="email"
-        id="email"
-        placeholder="m@example.com"
-      />
+      <Input type="email" id="email" placeholder="m@example.com" />
     </div>
   ),
 }
@@ -105,11 +101,7 @@ export const Required: Story = {
       >
         Username *
       </label>
-      <Input
-        id="username"
-        required
-        placeholder="Enter your username"
-      />
+      <Input id="username" required placeholder="Enter your username" />
     </div>
   ),
 }
@@ -152,10 +144,7 @@ export const WithIcon: Story = {
           d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
         />
       </svg>
-      <Input
-        className="pl-10"
-        placeholder="Search..."
-      />
+      <Input className="pl-10" placeholder="Search..." />
     </div>
   ),
 }
@@ -164,42 +153,22 @@ export const DifferentSizes: Story = {
   render: () => (
     <div className="grid w-full max-w-sm items-center gap-4">
       <div className="grid gap-1.5">
-        <label
-          htmlFor="small-input"
-          className="text-sm font-medium"
-        >
+        <label htmlFor="small-input" className="text-sm font-medium">
           Small
         </label>
-        <Input
-          id="small-input"
-          className="h-8"
-          placeholder="Small input"
-        />
+        <Input id="small-input" className="h-8" placeholder="Small input" />
       </div>
       <div className="grid gap-1.5">
-        <label
-          htmlFor="default-input"
-          className="text-sm font-medium"
-        >
+        <label htmlFor="default-input" className="text-sm font-medium">
           Default
         </label>
-        <Input
-          id="default-input"
-          placeholder="Default input"
-        />
+        <Input id="default-input" placeholder="Default input" />
       </div>
       <div className="grid gap-1.5">
-        <label
-          htmlFor="large-input"
-          className="text-sm font-medium"
-        >
+        <label htmlFor="large-input" className="text-sm font-medium">
           Large
         </label>
-        <Input
-          id="large-input"
-          className="h-12 text-lg"
-          placeholder="Large input"
-        />
+        <Input id="large-input" className="h-12 text-lg" placeholder="Large input" />
       </div>
     </div>
   ),
@@ -214,10 +183,7 @@ export const WithDescription: Story = {
       >
         Username
       </label>
-      <Input
-        id="username"
-        placeholder="Enter your username"
-      />
+      <Input id="username" placeholder="Enter your username" />
       <p className="text-sm text-muted-foreground">
         This is your public display name. It will be visible to other users.
       </p>
@@ -228,14 +194,8 @@ export const WithDescription: Story = {
 export const CustomStyling: Story = {
   render: () => (
     <div className="grid w-full max-w-sm items-center gap-4">
-      <Input
-        className="border-blue-500 focus-visible:ring-blue-500"
-        placeholder="Blue border"
-      />
-      <Input
-        className="border-green-500 focus-visible:ring-green-500"
-        placeholder="Green border"
-      />
+      <Input className="border-blue-500 focus-visible:ring-blue-500" placeholder="Blue border" />
+      <Input className="border-green-500 focus-visible:ring-green-500" placeholder="Green border" />
       <Input
         className="border-purple-500 focus-visible:ring-purple-500"
         placeholder="Purple border"

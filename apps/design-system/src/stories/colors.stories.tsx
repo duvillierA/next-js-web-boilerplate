@@ -35,11 +35,7 @@ const RenderRow: React.FC<RenderRowProps> = ({ colors, sectionClassName }) => {
   return (
     <section className={cn('grid grid-flow-col gap-2', sectionClassName)}>
       {colors.map(({ name, className }) => (
-        <ColorSwatch
-          key={name}
-          name={name}
-          className={className}
-        />
+        <ColorSwatch key={name} name={name} className={className} />
       ))}
     </section>
   )
@@ -54,10 +50,7 @@ const RenderSection: React.FC<{
       <h2 className="mb-4 text-2xl font-bold">{title}</h2>
       <div className="flex flex-col gap-4">
         {rows.map((row, i) => (
-          <RenderRow
-            key={i}
-            colors={row}
-          />
+          <RenderRow key={i} colors={row} />
         ))}
       </div>
     </>
@@ -105,22 +98,10 @@ function ThemeComponent() {
 
   return (
     <div className={cn('space-y-8')}>
-      <RenderSection
-        title="Theme Colors"
-        rows={themeRows}
-      />
-      <RenderSection
-        title="Card Colors"
-        rows={[cardColors]}
-      />
-      <RenderSection
-        title="Chart Colors"
-        rows={[chartColors]}
-      />
-      <RenderSection
-        title="Sidebar Colors"
-        rows={[sidebarColors]}
-      />
+      <RenderSection title="Theme Colors" rows={themeRows} />
+      <RenderSection title="Card Colors" rows={[cardColors]} />
+      <RenderSection title="Chart Colors" rows={[chartColors]} />
+      <RenderSection title="Sidebar Colors" rows={[sidebarColors]} />
     </div>
   )
 }

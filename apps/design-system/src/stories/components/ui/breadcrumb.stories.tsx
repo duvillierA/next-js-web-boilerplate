@@ -55,10 +55,7 @@ export const WithIcons: Story = {
       <>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink
-              href="/"
-              className="flex items-center gap-1"
-            >
+            <BreadcrumbLink href="/" className="flex items-center gap-1">
               <Home className="h-4 w-4" />
               Home
             </BreadcrumbLink>
@@ -174,16 +171,10 @@ export const Responsive: Story = {
       <>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink
-              href="/"
-              className="hidden sm:inline"
-            >
+            <BreadcrumbLink href="/" className="hidden sm:inline">
               Home
             </BreadcrumbLink>
-            <BreadcrumbLink
-              href="/"
-              className="sm:hidden"
-            >
+            <BreadcrumbLink href="/" className="sm:hidden">
               <Home className="h-4 w-4" />
             </BreadcrumbLink>
           </BreadcrumbItem>

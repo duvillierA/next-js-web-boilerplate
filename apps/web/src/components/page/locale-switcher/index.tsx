@@ -26,19 +26,13 @@ export default function LocaleSwitcher() {
   }
 
   return (
-    <Select
-      value={locale}
-      onValueChange={handleLocaleChange}
-    >
+    <Select value={locale} onValueChange={handleLocaleChange}>
       <SelectTrigger className="w-full">
         <SelectValue placeholder={t('label')} />
       </SelectTrigger>
       <SelectContent>
         {routing.locales.map((locale) => (
-          <SelectItem
-            key={locale}
-            value={locale}
-          >
+          <SelectItem key={locale} value={locale}>
             {t(locale)}
           </SelectItem>
         ))}

@@ -120,10 +120,7 @@ export const Notification: Story = {
         <div className="h-8 w-8 rounded-full bg-muted" />
       </div>
       <div className="relative">
-        <Badge
-          variant="destructive"
-          className="absolute -top-2 -right-2 h-6 w-6 rounded-full p-0"
-        >
+        <Badge variant="destructive" className="absolute -top-2 -right-2 h-6 w-6 rounded-full p-0">
           12
         </Badge>
         <div className="h-8 w-8 rounded-full bg-muted" />

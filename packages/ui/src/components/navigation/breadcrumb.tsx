@@ -5,13 +5,7 @@ import * as React from 'react'
 import { cn } from '@boilerplate/ui/utils'
 
 function Breadcrumb({ ...props }: React.ComponentProps<'nav'>) {
-  return (
-    <nav
-      aria-label="breadcrumb"
-      data-slot="breadcrumb"
-      {...props}
-    />
-  )
+  return <nav aria-label="breadcrumb" data-slot="breadcrumb" {...props} />
 }
 
 function BreadcrumbList({ className, ...props }: React.ComponentProps<'ol'>) {

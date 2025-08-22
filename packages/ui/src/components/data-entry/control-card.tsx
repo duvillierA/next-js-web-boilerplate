@@ -158,12 +158,7 @@ function ControlCard({
  * CheckboxCard component for checkbox-style control cards
  */
 function CheckboxCard(props: Omit<ControlCardProps, 'controlKind'>) {
-  return (
-    <ControlCard
-      {...props}
-      controlKind="checkbox"
-    />
-  )
+  return <ControlCard {...props} controlKind="checkbox" />
 }
 
 /**
@@ -171,24 +166,14 @@ function CheckboxCard(props: Omit<ControlCardProps, 'controlKind'>) {
  * This component should be used within a RadioGroup context
  */
 function RadioCard(props: Omit<ControlCardProps, 'controlKind'>) {
-  return (
-    <ControlCard
-      {...props}
-      controlKind="radio"
-    />
-  )
+  return <ControlCard {...props} controlKind="radio" />
 }
 
 /**
  * SwitchCard component for switch-style control cards
  */
 function SwitchCard(props: Omit<ControlCardProps, 'controlKind'>) {
-  return (
-    <ControlCard
-      {...props}
-      controlKind="switch"
-    />
-  )
+  return <ControlCard {...props} controlKind="switch" />
 }
 
 export { CheckboxCard, ControlCard, RadioCard, SwitchCard, type ControlCardProps }

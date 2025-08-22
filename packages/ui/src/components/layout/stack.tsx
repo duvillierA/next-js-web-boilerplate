@@ -107,3 +107,39 @@ export function Stack({
     </Comp>
   )
 }
+
+/**
+ * HStack component
+ * @description
+ * Provides a flex container with horizontal direction for consistent spacing between children.
+ * Inherits all props from {@link Stack}, except `direction` which is set to "horizontal".
+ * @default
+ * gap = "md" // xs, sm, md, lg, xl
+ * direction = "horizontal"
+ * @example
+ * <HStack gap="lg">
+ *   <Button>One</Button>
+ *   <Button>Two</Button>
+ * </HStack>
+ */
+export function HStack(props: Omit<StackProps, 'direction'>) {
+  return <Stack direction="horizontal" {...props} />
+}
+
+/**
+ * VStack component
+ * @description
+ * Provides a flex container with vertical direction for consistent spacing between children.
+ * Inherits all props from {@link Stack}, except `direction` which is set to "vertical".
+ * @default
+ * gap = "md" // xs, sm, md, lg, xl
+ * direction = "vertical"
+ * @example
+ * <VStack gap="lg">
+ *   <Button>One</Button>
+ *   <Button>Two</Button>
+ * </VStack>
+ */
+export function VStack(props: Omit<StackProps, 'direction'>) {
+  return <Stack direction="vertical" {...props} />
+}

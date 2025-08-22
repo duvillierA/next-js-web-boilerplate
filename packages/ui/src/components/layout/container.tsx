@@ -112,9 +112,6 @@ export const Container: React.FC<ContainerProps> = ({
 }) => {
   const Comp = asChild ? Slot : 'div'
   return (
-    <Comp
-      className={cn(containerVariants({ gutterType, gutter, center }), className)}
-      {...props}
-    />
+    <Comp className={cn(containerVariants({ gutterType, gutter, center }), className)} {...props} />
   )
 }

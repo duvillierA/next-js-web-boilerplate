@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@boilerplate/ui/card'
 import { H1, H2, H3, H4, H5, H6 } from '@boilerplate/ui/heading'
+import { Text } from '@boilerplate/ui/text'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 const meta: Meta = {
@@ -38,16 +39,16 @@ function TypographyComponent() {
           <CardTitle className="mb-4">Body Text</CardTitle>
         </CardHeader>
         <CardContent className="space-y-2">
-          <p className="leading-7 [&:not(:first-child)]:mt-6">
+          <p>
             Body - The quick brown fox jumps over the lazy dog. Lorem ipsum dolor sit amet,
             consectetur adipiscing elit.
           </p>
-          <p className="text-muted-foreground">
+          <Text variant="muted" as="p">
             Muted - The quick brown fox jumps over the lazy dog. Lorem ipsum dolor sit amet.
-          </p>
-          <p className="text-sm text-muted-foreground">
+          </Text>
+          <Text variant="muted" as="small" size="sm">
             Small - The quick brown fox jumps over the lazy dog.
-          </p>
+          </Text>
         </CardContent>
       </Card>
 
@@ -59,10 +60,7 @@ function TypographyComponent() {
           <p>
             <strong>Bold</strong>, <em>Italic</em>, <u>Underline</u>,{' '}
             <code className="rounded bg-muted px-1 text-xs">Code</code>,{' '}
-            <a
-              href="https://example.com"
-              className="text-primary underline"
-            >
+            <a href="https://example.com" className="text-primary underline">
               Link
             </a>
           </p>
@@ -85,12 +83,12 @@ function TypographyComponent() {
           <CardTitle className="mb-4">Other</CardTitle>
         </CardHeader>
         <CardContent className="space-y-2">
-          <span className="text-xs tracking-widest text-muted-foreground uppercase">
+          <Text variant="muted" as="span" size="xs" className="tracking-widest uppercase">
             Label / Overline
-          </span>
-          <p className="text-destructive">
+          </Text>
+          <Text variant="destructive" as="p">
             Destructive - The quick brown fox jumps over the lazy dog.
-          </p>
+          </Text>
         </CardContent>
       </Card>
     </div>

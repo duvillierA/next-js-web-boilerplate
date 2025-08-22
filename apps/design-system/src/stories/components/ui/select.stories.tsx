@@ -30,10 +30,7 @@ function SimpleSelect() {
   const [value, setValue] = useState('')
 
   return (
-    <Select
-      value={value}
-      onValueChange={setValue}
-    >
+    <Select value={value} onValueChange={setValue}>
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Select a fruit" />
       </SelectTrigger>
@@ -66,10 +63,7 @@ function WithDefaultValue() {
   const [value, setValue] = useState('apple')
 
   return (
-    <Select
-      value={value}
-      onValueChange={setValue}
-    >
+    <Select value={value} onValueChange={setValue}>
       <SelectTrigger className="w-[180px]">
         <SelectValue />
       </SelectTrigger>

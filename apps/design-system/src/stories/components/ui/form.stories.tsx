@@ -93,10 +93,7 @@ function FormComponentsDemo() {
     <div className="grid grid-cols-[1fr_minmax(0,1fr)] gap-4">
       <Card>
         <Form {...form}>
-          <form
-            className="space-y-8"
-            onSubmit={form.handleSubmit(onSubmit)}
-          >
+          <form className="space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
             <CardHeader>
               <CardTitle>Form</CardTitle>
               <CardDescription>Example form</CardDescription>
@@ -122,10 +119,7 @@ function FormComponentsDemo() {
                       <span className="text-destructive">*</span> Username
                     </FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="shadcn"
-                        {...field}
-                      />
+                      <Input placeholder="shadcn" {...field} />
                     </FormControl>
                     <FormDescription>This is your public display name.</FormDescription>
                     <FormMessage />
@@ -182,10 +176,7 @@ function FormComponentsDemo() {
                           </Button>
                         </FormControl>
                       </PopoverTrigger>
-                      <PopoverContent
-                        className="w-auto p-0"
-                        align="start"
-                      >
+                      <PopoverContent className="w-auto p-0" align="start">
                         <Calendar
                           mode="single"
                           selected={field.value}
@@ -210,17 +201,10 @@ function FormComponentsDemo() {
                 control={form.control}
                 name="acceptTerms"
                 render={({ field }) => (
-                  <Stack
-                    direction="horizontal"
-                    gap="sm"
-                    asChild
-                  >
+                  <Stack direction="horizontal" gap="sm" asChild>
                     <FormItem>
                       <FormControl>
-                        <Checkbox
-                          checked={field.value}
-                          onCheckedChange={field.onChange}
-                        />
+                        <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                       </FormControl>
                       <FormLabel>Accept terms and conditions</FormLabel>
                       <FormMessage />
@@ -234,17 +218,10 @@ function FormComponentsDemo() {
                 control={form.control}
                 name="notifications"
                 render={({ field }) => (
-                  <Stack
-                    direction="horizontal"
-                    gap="sm"
-                    asChild
-                  >
+                  <Stack direction="horizontal" gap="sm" asChild>
                     <FormItem>
                       <FormControl>
-                        <Switch
-                          checked={field.value}
-                          onCheckedChange={field.onChange}
-                        />
+                        <Switch checked={field.value} onCheckedChange={field.onChange} />
                       </FormControl>
                       <FormLabel>Enable notifications</FormLabel>
                       <FormMessage />
@@ -260,52 +237,22 @@ function FormComponentsDemo() {
                   <FormItem>
                     <FormLabel>Choose one option</FormLabel>
                     <FormControl>
-                      <RadioGroup
-                        onValueChange={field.onChange}
-                        value={field.value}
-                      >
-                        <Stack
-                          direction="horizontal"
-                          gap="sm"
-                        >
-                          <RadioGroupItem
-                            value="option1"
-                            id="radio-option-1"
-                          />
-                          <FormLabel
-                            htmlFor="radio-option-1"
-                            className="font-normal"
-                          >
+                      <RadioGroup onValueChange={field.onChange} value={field.value}>
+                        <Stack direction="horizontal" gap="sm">
+                          <RadioGroupItem value="option1" id="radio-option-1" />
+                          <FormLabel htmlFor="radio-option-1" className="font-normal">
                             Option 1
                           </FormLabel>
                         </Stack>
-                        <Stack
-                          direction="horizontal"
-                          gap="sm"
-                        >
-                          <RadioGroupItem
-                            value="option2"
-                            id="radio-option-2"
-                          />
-                          <FormLabel
-                            htmlFor="radio-option-2"
-                            className="font-normal"
-                          >
+                        <Stack direction="horizontal" gap="sm">
+                          <RadioGroupItem value="option2" id="radio-option-2" />
+                          <FormLabel htmlFor="radio-option-2" className="font-normal">
                             Option 2
                           </FormLabel>
                         </Stack>
-                        <Stack
-                          direction="horizontal"
-                          gap="sm"
-                        >
-                          <RadioGroupItem
-                            value="option3"
-                            id="radio-option-3"
-                          />
-                          <FormLabel
-                            htmlFor="radio-option-3"
-                            className="font-normal"
-                          >
+                        <Stack direction="horizontal" gap="sm">
+                          <RadioGroupItem value="option3" id="radio-option-3" />
+                          <FormLabel htmlFor="radio-option-3" className="font-normal">
                             Option 3
                           </FormLabel>
                         </Stack>
@@ -326,14 +273,8 @@ function FormComponentsDemo() {
                   <FormItem>
                     <FormLabel>Select an option</FormLabel>
                     <FormControl>
-                      <Select
-                        value={field.value}
-                        onValueChange={field.onChange}
-                      >
-                        <SelectTrigger
-                          className="w-full"
-                          id="select-demo"
-                        >
+                      <Select value={field.value} onValueChange={field.onChange}>
+                        <SelectTrigger className="w-full" id="select-demo">
                           <SelectValue placeholder="Choose an option" />
                         </SelectTrigger>
                         <SelectContent>
@@ -358,10 +299,7 @@ function FormComponentsDemo() {
               >
                 Reset
               </Button>
-              <Button
-                type="submit"
-                disabled={form.formState.isSubmitting}
-              >
+              <Button type="submit" disabled={form.formState.isSubmitting}>
                 {form.formState.isSubmitting && <Spinner />}
                 Submit
               </Button>
