@@ -16,21 +16,11 @@ export default function Home({ params }: { params: Promise<{ locale: Locale }> }
   const t = useTranslations('HomePage')
 
   return (
-    <Stack
-      direction="vertical"
-      gap="lg"
-    >
-      <Stack
-        gap="sm"
-        asChild
-      >
+    <Stack direction="vertical" gap="lg">
+      <Stack gap="sm" asChild>
         <section>
           <H2 className="mb-2">{t('features.title')}</H2>
-          <Stack
-            direction="horizontal"
-            gap="sm"
-            wrap
-          >
+          <Stack direction="horizontal" gap="sm" wrap>
             <Badge variant="default">{t('features.i18n')}</Badge>
             <Badge variant="default">{t('features.typescript')}</Badge>
             <Badge variant="default">{t('features.tailwind')}</Badge>
@@ -43,16 +33,10 @@ export default function Home({ params }: { params: Promise<{ locale: Locale }> }
         </section>
       </Stack>
 
-      <Stack
-        gap="sm"
-        asChild
-      >
+      <Stack gap="sm" asChild>
         <section>
           <H2 className="mb-2">Examples</H2>
-          <Grid
-            cols={2}
-            responsive
-          >
+          <Grid cols={{ initial: 1, lg: 2 }}>
             <Card>
               <CardHeader>
                 <CardTitle>Tracking</CardTitle>
@@ -74,16 +58,10 @@ export default function Home({ params }: { params: Promise<{ locale: Locale }> }
         </section>
       </Stack>
 
-      <Stack
-        gap="sm"
-        asChild
-      >
+      <Stack gap="sm" asChild>
         <section>
           <H2 className="mb-2">Suspense</H2>
-          <Grid
-            cols={3}
-            responsive
-          >
+          <Grid cols={{ initial: 1, lg: 3 }}>
             <Suspense fallback={<AsyncCardSkeleton count={3} />}>
               <AsyncCard />
             </Suspense>

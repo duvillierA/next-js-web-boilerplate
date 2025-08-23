@@ -1,7 +1,9 @@
+import { CardContent } from '@boilerplate/ui/card'
 import { Card } from '@boilerplate/ui/interactive'
 import { Grid, GridItem } from '@boilerplate/ui/layout'
 import { cn } from '@boilerplate/ui/utils'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
+import type { ComponentProps } from 'react'
 
 const meta: Meta<typeof Grid> = {
   title: 'Components/Layout/Grid',
@@ -47,12 +49,6 @@ const meta: Meta<typeof Grid> = {
       description: 'Gap size between grid items',
       defaultValue: 'md',
     },
-    responsive: {
-      control: { type: 'boolean' },
-      description:
-        'Enable responsive behavior (single column on mobile, specified columns on large screens)',
-      defaultValue: false,
-    },
     asChild: {
       control: { type: 'boolean' },
       description: 'Whether to render as a different element using Radix UI Slot',
@@ -83,17 +79,11 @@ export default meta
 
 type Story = StoryObj<typeof Grid>
 
-function StyledGridItem({
-  children,
-  className,
-}: {
-  children: React.ReactNode
-  className?: string
-}) {
+function StyledGridItem({ children, className, ...props }: ComponentProps<typeof GridItem>) {
   return (
-    <GridItem>
-      <Card variant="surface" className={cn('p-4 text-center', className)}>
-        {children}
+    <GridItem {...props}>
+      <Card variant="surface" className={cn('text-center', className)}>
+        <CardContent>{children}</CardContent>
       </Card>
     </GridItem>
   )
@@ -116,153 +106,71 @@ export const Default: Story = {
 export const ColumnSpanning: Story = {
   render: (args) => (
     <Grid {...args} cols={4}>
-      <GridItem colSpan={2}>
-        <Card variant="surface" className="p-4 text-center">
-          Spans 2 columns
-        </Card>
-      </GridItem>
-      <GridItem>
-        <Card variant="surface" className="p-4 text-center">
-          Normal
-        </Card>
-      </GridItem>
-      <GridItem>
-        <Card variant="surface" className="p-4 text-center">
-          Normal
-        </Card>
-      </GridItem>
-      <GridItem colSpan={3}>
-        <Card variant="surface" className="text-center">
-          Spans 3 columns
-        </Card>
-      </GridItem>
-      <GridItem>
-        <Card variant="surface" className="p-4 text-center">
-          Normal
-        </Card>
-      </GridItem>
+      <StyledGridItem colSpan={2}>Spans 2 columns</StyledGridItem>
+      <StyledGridItem>Normal</StyledGridItem>
+      <StyledGridItem>Normal</StyledGridItem>
+      <StyledGridItem colSpan={3}>Spans 3 columns</StyledGridItem>
+      <StyledGridItem>Normal</StyledGridItem>
     </Grid>
   ),
-  args: {
-    responsive: false,
-  },
 }
 
 export const RowSpanning: Story = {
   render: (args) => (
     <Grid {...args} rows={3}>
-      <GridItem rowSpan={2}>
-        <Card
-          variant="surface"
-          className="flex h-full items-center justify-center bg-accent/10 p-4 text-center"
-        >
-          Spans 2 rows
-        </Card>
-      </GridItem>
-      <GridItem>
-        <Card variant="surface" className="p-4 text-center">
-          Normal
-        </Card>
-      </GridItem>
-      <GridItem>
-        <Card variant="surface" className="p-4 text-center">
-          Normal
-        </Card>
-      </GridItem>
-      <GridItem>
-        <Card variant="surface" className="p-4 text-center">
-          Normal
-        </Card>
-      </GridItem>
-      <GridItem>
-        <Card variant="surface" className="p-4 text-center">
-          Normal
-        </Card>
-      </GridItem>
+      <StyledGridItem
+        rowSpan={2}
+        className="flex h-full items-center justify-center bg-accent/10 p-4 text-center"
+      >
+        Spans 2 rows
+      </StyledGridItem>
+      <StyledGridItem className="p-4 text-center">Normal</StyledGridItem>
+      <StyledGridItem className="p-4 text-center">Normal</StyledGridItem>
+      <StyledGridItem className="p-4 text-center">Normal</StyledGridItem>
+      <StyledGridItem className="p-4 text-center">Normal</StyledGridItem>
     </Grid>
   ),
-  args: {
-    responsive: false,
-  },
 }
 
 export const Positioning: Story = {
   render: (args) => (
     <Grid {...args} cols={4}>
-      <GridItem colStart={2} colSpan={2}>
-        <Card variant="surface" className="p-4 text-center">
-          Starts at column 2, spans 2
-        </Card>
-      </GridItem>
-      <GridItem rowStart={2} colStart={1} colSpan={2}>
-        <Card variant="surface" className="text-center">
-          Starts at row 2, column 1, spans 2
-        </Card>
-      </GridItem>
-      <GridItem rowStart={2} colStart={4}>
-        <Card variant="surface" className="bg-accent/10 p-4 text-center">
-          Starts at row 2, column 4
-        </Card>
-      </GridItem>
-      <GridItem rowStart={3} colStart={3} colSpan={2}>
-        <Card variant="surface" className="bg-muted p-4 text-center">
-          Starts at row 3, column 3, spans 2
-        </Card>
-      </GridItem>
+      <StyledGridItem colStart={2} colSpan={2}>
+        Starts at column 2, spans 2
+      </StyledGridItem>
+      <StyledGridItem rowStart={2} colStart={1} colSpan={2}>
+        Starts at row 2, column 1, spans 2
+      </StyledGridItem>
+      <StyledGridItem rowStart={2} colStart={4}>
+        Starts at row 2, column 4
+      </StyledGridItem>
+      <StyledGridItem rowStart={3} colStart={3} colSpan={2}>
+        Starts at row 3, column 3, spans 2
+      </StyledGridItem>
     </Grid>
   ),
-  args: {
-    responsive: false,
-  },
 }
 
 export const Alignment: Story = {
   render: (args) => (
     <Grid {...args} cols={3} gap="md" className="h-64 grid-rows-3">
-      <GridItem align="start">
-        <Card variant="surface" className="p-4 text-center">
-          Aligned to start
-        </Card>
-      </GridItem>
-      <GridItem align="center">
-        <Card variant="surface" className="text-center">
-          Aligned to center
-        </Card>
-      </GridItem>
-      <GridItem align="end">
-        <Card variant="surface" className="bg-accent/10 p-4 text-center">
-          Aligned to end
-        </Card>
-      </GridItem>
-      <GridItem justify="start">
-        <Card variant="surface" className="bg-muted p-4 text-center">
-          Justified to start
-        </Card>
-      </GridItem>
-      <GridItem justify="center">
-        <Card variant="surface" className="p-4 text-center">
-          Justified to center
-        </Card>
-      </GridItem>
-      <GridItem justify="end">
-        <Card variant="surface" className="text-center">
-          Justified to end
-        </Card>
-      </GridItem>
+      <StyledGridItem align="start">Aligned to start</StyledGridItem>
+      <StyledGridItem align="center">Aligned to center</StyledGridItem>
+      <StyledGridItem align="end">Aligned to end</StyledGridItem>
+      <StyledGridItem justify="start">Justified to start</StyledGridItem>
+      <StyledGridItem justify="center">Justified to center</StyledGridItem>
+      <StyledGridItem justify="end">Justified to end</StyledGridItem>
     </Grid>
   ),
-  args: {
-    responsive: false,
-  },
 }
 
 export const Responsive: Story = {
   render: (args) => (
     <>
       <p className="mb-4 text-sm text-muted-foreground">
-        Single column on mobile, {args.cols} columns on large screens
+        Single column on mobile, 3 columns on large screens
       </p>
-      <Grid {...args} responsive>
+      <Grid {...args}>
         {Array.from({ length: 6 }, (_, i) => (
           <StyledGridItem key={i}>Responsive Item {i + 1}</StyledGridItem>
         ))}
@@ -270,10 +178,28 @@ export const Responsive: Story = {
     </>
   ),
   args: {
-    cols: 3,
+    cols: {
+      initial: 1,
+      md: 3,
+    },
     gap: 'md',
-    responsive: true,
   },
+}
+
+export const ColsResponsiveTemplate: Story = {
+  args: {
+    cols: {
+      initial: 1,
+      md: '1fr 1fr auto',
+    },
+  },
+  render: (args) => (
+    <Grid {...args}>
+      <StyledGridItem>Fixed width</StyledGridItem>
+      <StyledGridItem>Flexible width</StyledGridItem>
+      <StyledGridItem>Flexible width</StyledGridItem>
+    </Grid>
+  ),
 }
 
 export const AsChild: Story = {

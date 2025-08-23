@@ -1,7 +1,6 @@
 import { Footer } from '@/components/page/footer'
 import { Header } from '@/components/page/header'
-import { Container } from '@boilerplate/ui/layout'
-import { VStack } from '@boilerplate/ui/stack'
+import { Container, Grid } from '@boilerplate/ui/layout'
 import { cn } from '@boilerplate/ui/utils'
 
 export const BaseLayout: React.FC<{ children: React.ReactNode; className?: string }> = ({
@@ -10,11 +9,11 @@ export const BaseLayout: React.FC<{ children: React.ReactNode; className?: strin
 }) => {
   return (
     <Container asChild>
-      <VStack className="min-h-screen">
+      <Grid rows="auto 1fr auto" className="min-h-screen">
         <Header />
-        <main className={cn('flex-1', className)}>{children}</main>
+        <main className={cn(className)}>{children}</main>
         <Footer />
-      </VStack>
+      </Grid>
     </Container>
   )
 }

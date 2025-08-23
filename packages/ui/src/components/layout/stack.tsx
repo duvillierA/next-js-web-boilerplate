@@ -64,6 +64,7 @@ const stackVariants = cva('flex', {
 })
 
 interface StackProps extends React.ComponentProps<'div'>, VariantProps<typeof stackVariants> {
+  as?: React.ElementType
   asChild?: boolean
 }
 
@@ -81,6 +82,7 @@ interface StackProps extends React.ComponentProps<'div'>, VariantProps<typeof st
  * </Stack>
  */
 export function Stack({
+  as = 'div',
   align,
   justify,
   children,
@@ -94,7 +96,7 @@ export function Stack({
   asChild,
   ...props
 }: StackProps) {
-  const Comp = asChild ? Slot : 'div'
+  const Comp = asChild ? Slot : as
   return (
     <Comp
       className={cn(
