@@ -1,11 +1,7 @@
-// import { getPathname, navigationPathnames, type NavigationPathname } from '@/lib/i18n/navigation'
+import withBundleAnalyzer from '@next/bundle-analyzer'
 import type { NextConfig } from 'next'
 import createNextIntlPlugin from 'next-intl/plugin'
 import type { Rewrite } from 'next/dist/lib/load-custom-routes'
-
-const withNextIntl = createNextIntlPlugin({
-  requestConfig: './src/lib/i18n/request.ts',
-})
 
 const postHogRewrite = [
   {
@@ -35,4 +31,14 @@ const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
 }
 
-export default withNextIntl(nextConfig)
+// Initialize the Next-Intl plugin
+let configWithPlugins = createNextIntlPlugin({
+  requestConfig: './src/lib/i18n/request.ts',
+})(nextConfig)
+
+// Conditionally enable bundle analysis
+if (process.env.ANALYZE === 'true') {
+  configWithPlugins = withBundleAnalyzer()(configWithPlugins)
+}
+
+export default configWithPlugins

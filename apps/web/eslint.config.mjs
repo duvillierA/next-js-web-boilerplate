@@ -1,3 +1,10 @@
 import eslintConfigNext from '@boilerplate/eslintconfig/nextjs'
 
-export default eslintConfigNext
+const config = [
+  ...eslintConfigNext,
+  {
+    ignores: ['next-env.d.ts'],
+  },
+]
+
+export default config

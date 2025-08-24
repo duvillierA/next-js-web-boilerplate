@@ -8,6 +8,7 @@
     "apps/*"
   ],
   "scripts": {
+    "analyze": "ANALYZE=true turbo build --filter=web",
     "dev": "turbo dev --parallel",
     "clean": "turbo clean --parallel",
     "coverage": "turbo coverage --parallel",

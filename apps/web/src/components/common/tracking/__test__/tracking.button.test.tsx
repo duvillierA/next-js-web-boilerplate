@@ -15,10 +15,7 @@ describe('TrackingButton', () => {
   })
   it('captures click event in PostHog', async () => {
     const { getByRole } = render(
-      <TrackingButton
-        eventName="button_clicked"
-        eventProperties={{ foo: 'bar' }}
-      >
+      <TrackingButton eventName="button_clicked" eventProperties={{ foo: 'bar' }}>
         Track Click
       </TrackingButton>,
     )
