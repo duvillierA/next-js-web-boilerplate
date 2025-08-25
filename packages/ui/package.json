@@ -70,6 +70,7 @@
     "./typography": "./src/components/typography/index.ts",
     "./hover-card": "./src/components/overlays/hover-card.tsx",
     "./progress": "./src/components/feedback/progress.tsx",
+    "./rating": "./src/components/data-display/rating.tsx",
     "./slider": "./src/components/data-entry/slider.tsx"
   },
   "dependencies": {

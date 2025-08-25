@@ -1,3 +1,4 @@
+import { Grid } from '@boilerplate/ui/layout'
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import * as LucideIcons from 'lucide-react'
 
@@ -68,7 +69,7 @@ type Story = StoryObj<typeof meta>
 
 export const Iconography: Story = {
   render: () => (
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(80px,1fr))] gap-6">
+    <Grid cols="repeat(auto-fill,minmax(80px,1fr))">
       {iconNames.map((iconName) => {
         const Icon = LucideIcons[iconName]
         if (!Icon) return null
@@ -79,7 +80,7 @@ export const Iconography: Story = {
           </div>
         )
       })}
-    </div>
+    </Grid>
   ),
   parameters: {
     docs: {
