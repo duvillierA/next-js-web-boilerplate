@@ -9,7 +9,7 @@ import {
 } from '@boilerplate/ui/navigation-menu'
 import { useTranslations } from 'next-intl'
 
-export default function Navigation() {
+export const PageNavigation = () => {
   const t = useTranslations('Navigation')
   const pathname = usePathname()
 

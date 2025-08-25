@@ -2,7 +2,7 @@ import { config } from '@/config'
 import { Link } from '@/lib/i18n/navigation'
 import { Text } from '@boilerplate/ui/text'
 
-export const Footer = () => {
+export const PageFooter = () => {
   return (
     <footer className="py-4">
       <Text weight="semibold" asChild>

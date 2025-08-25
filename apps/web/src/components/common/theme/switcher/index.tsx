@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from '@boilerplate/ui/dropdown-menu'
 
-export function ThemeToggle() {
+export function ThemeSwitcher() {
   const { setTheme } = useTheme()
 
   return (

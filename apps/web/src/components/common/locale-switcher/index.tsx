@@ -12,7 +12,7 @@ import {
 import { useLocale, useTranslations } from 'next-intl'
 import { useParams } from 'next/navigation'
 
-export default function LocaleSwitcher() {
+export function LocaleSwitcher() {
   const t = useTranslations('LocaleSwitcher')
   const locale = useLocale()
   const router = useRouter()

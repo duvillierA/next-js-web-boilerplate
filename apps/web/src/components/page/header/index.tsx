@@ -1,15 +1,15 @@
-import { ThemeToggle } from '@/components/common/theme/toggle'
-import LocaleSwitcher from '@/components/page/locale-switcher'
-import Navigation from '@/components/page/navigation'
+import { LocaleSwitcher } from '@/components/common/locale-switcher'
+import { ThemeSwitcher } from '@/components/common/theme/switcher'
+import { PageNavigation } from '@/components/page/navigation'
 import { config } from '@/config'
+import { Link } from '@/lib/i18n/navigation'
 import { Separator } from '@boilerplate/ui/separator'
 import { HStack } from '@boilerplate/ui/stack'
 import { Text } from '@boilerplate/ui/text'
 import { cn } from '@boilerplate/ui/utils'
 import { Rocket } from 'lucide-react'
-import Link from 'next/link'
 
-export const Header = () => {
+export const PageHeader = () => {
   return (
     <HStack asChild justify="between" align="center">
       <header className="py-4">
@@ -33,11 +33,11 @@ export const Header = () => {
           <Text variant="muted" as="small" size="sm">
             Next.js project template
           </Text>
-          <Navigation />
+          <PageNavigation />
         </HStack>
         <HStack gap="sm">
           <LocaleSwitcher />
-          <ThemeToggle />
+          <ThemeSwitcher />
         </HStack>
       </header>
     </HStack>
