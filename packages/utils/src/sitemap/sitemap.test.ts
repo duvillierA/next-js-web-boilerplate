@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { SitemapBuilder, type SitemapConfig } from './index'
 
 describe('SitemapBuilder', () => {

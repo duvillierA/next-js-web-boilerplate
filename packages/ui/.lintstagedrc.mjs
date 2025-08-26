@@ -1,6 +1,6 @@
 const buildEslintCommand = 'eslint --fix'
 const buildTestCommand = 'vitest related --run'
 
-module.exports = {
+export default {
   '**/*.{ts,tsx}': [buildEslintCommand, buildTestCommand],
 }

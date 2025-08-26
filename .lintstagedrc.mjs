@@ -1,6 +1,6 @@
 const buildEslintCommand = 'eslint --fix'
 
-module.exports = {
+export default {
   '*.{ts,tsx,mjs}': [buildEslintCommand],
   '**/*.{ts,tsx,mjs}': [buildEslintCommand],
 }
