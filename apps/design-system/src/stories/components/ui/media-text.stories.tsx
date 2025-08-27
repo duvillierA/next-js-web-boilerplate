@@ -12,8 +12,7 @@ import {
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import Image from 'next/image'
 
-const placeholderImage = 'https://placehold.co/400x300'
-const placeholderWideImage = 'https://placehold.co/1600x900'
+const placeholderImage = 'https://images.unsplash.com/photo-1506744038136-46273834b3fb'
 const meta: Meta = {
   title: 'Components/Layout/MediaText',
   component: MediaText,
@@ -97,37 +96,26 @@ export const WithReversedImage: Story = {
   name: 'With Custom Order',
 }
 
-export const withCustomRatio: Story = {
+export const WithOnlyTitle: Story = {
   render: () => (
     <MediaText>
-      <MediaTextImage ratio={16 / 9}>
-        <Image
-          src={placeholderWideImage}
-          alt="Sample"
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+      <MediaTextImage>
+        <Image src={placeholderImage} alt="Sample" fill className="object-cover" />
       </MediaTextImage>
       <MediaTextContent>
         <MediaTextHeader>
           <MediaTextTitle>Beautiful Landscapes</MediaTextTitle>
-          <MediaTextSubtitle as={'p'}>Subtitle goes here</MediaTextSubtitle>
         </MediaTextHeader>
-        <MediaTextDescription as={'p'}>
-          Discover breathtaking views and tranquil scenes from around the world. Our curated
-          collection brings the beauty of nature to your screen.
-        </MediaTextDescription>
       </MediaTextContent>
     </MediaText>
   ),
-  name: 'With Custom Ratio',
+  name: 'Without Subtitle',
 }
 
-export const withVideo: Story = {
+export const withCustomRatio: Story = {
   render: () => (
     <MediaText>
-      <MediaTextImage ratio={16 / 9}>
+      <MediaTextImage ratio={'video'}>
         <iframe
           className="h-full w-full"
           src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -147,20 +135,4 @@ export const withVideo: Story = {
       </MediaTextContent>
     </MediaText>
   ),
-}
-
-export const WithOnlyTitle: Story = {
-  render: () => (
-    <MediaText>
-      <MediaTextImage>
-        <Image src={placeholderImage} alt="Sample" fill className="object-cover" />
-      </MediaTextImage>
-      <MediaTextContent>
-        <MediaTextHeader>
-          <MediaTextTitle>Beautiful Landscapes</MediaTextTitle>
-        </MediaTextHeader>
-      </MediaTextContent>
-    </MediaText>
-  ),
-  name: 'With Only Title',
 }

@@ -1,8 +1,8 @@
 import { cn } from '@boilerplate/ui/utils'
-import { AspectRatio } from '@radix-ui/react-aspect-ratio'
+import { cva, type VariantProps } from 'class-variance-authority'
 import * as React from 'react'
 import { H2, Text } from '../typography'
-import { Grid, GridItem } from './grid'
+import { Grid } from './grid'
 import { HStack, Stack, VStack } from './stack'
 
 type MediaTextContextValue = {
@@ -56,32 +56,48 @@ function MediaText({ reversed = false, children, ...props }: MediaTextProps) {
   )
 }
 
+const mediaTextImageVariants = cva('relative overflow-hidden rounded', {
+  variants: {
+    ratio: {
+      default: 'aspect-[3/4] lg:aspect-[4/3]',
+      auto: 'aspect-auto',
+      video: 'aspect-video',
+      landscape: 'aspect-[4/3]',
+      portrait: 'aspect-[3/4]',
+      square: 'aspect-square',
+    },
+  },
+  defaultVariants: {
+    ratio: 'default',
+  },
+})
+
+interface MediaTextImageProps
+  extends React.ComponentProps<'div'>,
+    VariantProps<typeof mediaTextImageVariants> {}
+
 /**
  * MediaTextImage component
  * @description
  * Renders an image container with responsive ordering based on MediaText context.
  * Always appears second on mobile, and respects the reversed prop on desktop.
  */
-function MediaTextImage({ className, ...props }: React.ComponentProps<typeof AspectRatio>) {
+function MediaTextImage({ ratio, className, ...props }: MediaTextImageProps) {
   const { reversed } = useMediaText()
 
   return (
-    <GridItem
+    <div
+      data-slot="media-text-image"
       className={cn(
-        'overflow-hidden rounded',
+        mediaTextImageVariants({ ratio }),
         // On mobile (initial), image is always second (order-2)
         'order-2 lg:order-1',
         // On desktop (lg), if reversed, image is second (order-2), otherwise first (order-1)
         reversed ? 'lg:order-2' : 'lg:order-1',
+        className,
       )}
-    >
-      <AspectRatio
-        ratio={4 / 3}
-        data-slot="media-text-media"
-        className={cn(className)}
-        {...props}
-      />
-    </GridItem>
+      {...props}
+    ></div>
   )
 }
 
@@ -95,20 +111,16 @@ function MediaTextContent({ className, ...props }: React.ComponentProps<typeof S
   const { reversed } = useMediaText()
 
   return (
-    <GridItem
+    <VStack
+      data-slot="media-text-content"
       className={cn(
-        // On mobile (initial), content is always first (order-1)
+        'w-full justify-center',
         'order-1 lg:order-2',
-        // On desktop (lg), if reversed, content is first (order-1), otherwise second (order-2)
         reversed ? 'lg:order-1' : 'lg:order-2',
+        className,
       )}
-    >
-      <VStack
-        data-slot="media-text-content"
-        className={cn('w-full justify-center', className)}
-        {...props}
-      />
-    </GridItem>
+      {...props}
+    />
   )
 }
 
