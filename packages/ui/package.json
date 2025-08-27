@@ -34,6 +34,7 @@
     "./checkbox": "./src/components/data-entry/checkbox.tsx",
     "./control-card": "./src/components/data-entry/control-card.tsx",
     "./collapsible": "./src/components/interactive/collapsible.tsx",
+    "./definition-list": "./src/components/layout/definition-list.tsx",
     "./dialog": "./src/components/overlays/dialog.tsx",
     "./dropdown-menu": "./src/components/navigation/dropdown-menu.tsx",
     "./form": "./src/components/data-entry/form.tsx",

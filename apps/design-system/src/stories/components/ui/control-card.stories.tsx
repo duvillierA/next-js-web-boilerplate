@@ -34,7 +34,7 @@ type Story = StoryObj
 
 export const Checkbox: Story = {
   render: (args) => (
-    <Grid cols={3} responsive>
+    <Grid cols={{ initial: 1, lg: 3 }}>
       <CheckboxCard label="Enable notifications" defaultChecked {...args}>
         Enable or disable notifications for your account.
       </CheckboxCard>
@@ -59,7 +59,7 @@ function RadioGroupDemo(args: ControlCardProps) {
   const [value, setValue] = useState('option1')
   return (
     <RadioGroup>
-      <Grid cols={3} responsive>
+      <Grid cols={{ initial: 1, lg: 3 }}>
         <RadioCard
           label="Option 1"
           value="option1"
@@ -109,7 +109,7 @@ export const Radio: Story = {
 
 export const Switch: Story = {
   render: (args) => (
-    <Grid cols={3} responsive>
+    <Grid cols={{ initial: 1, lg: 3 }}>
       <SwitchCard label="Dark mode" defaultChecked {...args} />
       <SwitchCard label="Auto-update" {...args} />
       <SwitchCard label="Experimental features" disabled {...args} />

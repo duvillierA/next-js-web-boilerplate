@@ -1,5 +1,15 @@
 export { AspectRatio } from './aspect-ratio'
 export { Container } from './container'
+export {
+  DefinitionItem,
+  DefinitionItemDescription,
+  DefinitionItemLabel,
+  DefinitionList,
+  DefinitionListContent,
+  DefinitionListHeader,
+  DefinitionListHeaderItem,
+  DefinitionListTitle,
+} from './definition-list'
 export { Grid, GridItem } from './grid'
 export {
   MediaActions,

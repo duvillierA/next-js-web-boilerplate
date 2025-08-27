@@ -8,7 +8,7 @@ type BaseHeadingProps<T extends HeadingLevel> = React.ComponentProps<T> & {
 }
 
 type HeadingProps = BaseHeadingProps<HeadingLevel> & {
-  as: HeadingLevel
+  as?: HeadingLevel
 }
 
 const Heading = ({ asChild, as = 'h1', className, ...props }: HeadingProps) => {
@@ -16,28 +16,28 @@ const Heading = ({ asChild, as = 'h1', className, ...props }: HeadingProps) => {
   return <Comp className={cn('font-bold', className)} {...props} />
 }
 
-const H1 = ({ className, ...props }: BaseHeadingProps<'h1'>) => {
-  return <Heading as="h1" className={cn('text-4xl', className)} {...props} />
+const H1 = ({ className, as = 'h1', ...props }: HeadingProps) => {
+  return <Heading as={as} className={cn('text-4xl', className)} {...props} />
 }
 
-const H2 = ({ className, ...props }: BaseHeadingProps<'h2'>) => {
-  return <Heading as="h2" className={cn('text-3xl', className)} {...props} />
+const H2 = ({ className, as = 'h2', ...props }: HeadingProps) => {
+  return <Heading as={as} className={cn('text-3xl', className)} {...props} />
 }
 
-const H3 = ({ className, ...props }: BaseHeadingProps<'h3'>) => {
-  return <Heading as="h3" className={cn('text-2xl', className)} {...props} />
+const H3 = ({ className, as = 'h3', ...props }: HeadingProps) => {
+  return <Heading as={as} className={cn('text-2xl', className)} {...props} />
 }
 
-const H4 = ({ className, ...props }: BaseHeadingProps<'h4'>) => {
-  return <Heading as="h4" className={cn('text-xl', className)} {...props} />
+const H4 = ({ className, as = 'h4', ...props }: HeadingProps) => {
+  return <Heading as={as} className={cn('text-xl', className)} {...props} />
 }
 
-const H5 = ({ className, ...props }: BaseHeadingProps<'h5'>) => {
-  return <Heading as="h5" className={cn('text-lg', className)} {...props} />
+const H5 = ({ className, as = 'h5', ...props }: HeadingProps) => {
+  return <Heading as={as} className={cn('text-lg', className)} {...props} />
 }
 
-const H6 = ({ className, ...props }: BaseHeadingProps<'h6'>) => {
-  return <Heading as="h6" className={cn('text-base', className)} {...props} />
+const H6 = ({ className, as = 'h6', ...props }: HeadingProps) => {
+  return <Heading as={as} className={cn('text-base', className)} {...props} />
 }
 
 export { H1, H2, H3, H4, H5, H6 }
