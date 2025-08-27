@@ -43,6 +43,7 @@
     "./input": "./src/components/data-entry/input.tsx",
     "./label": "./src/components/data-entry/label.tsx",
     "./layout": "./src/components/layout/index.ts",
+    "./media-text": "./src/components/layout/media-text.tsx",
     "./navigation-menu": "./src/components/navigation/navigation-menu.tsx",
     "./popover": "./src/components/overlays/popover.tsx",
     "./radio-group": "./src/components/data-entry/radio-group.tsx",
