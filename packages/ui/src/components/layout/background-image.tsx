@@ -11,6 +11,19 @@ type BgImageProps<T extends React.ElementType> = Omit<React.ComponentPropsWithou
   overlay?: 'dark' | 'light' | 'none'
 }
 
+/**
+ * BgImage
+ * @description Container for background image and content.
+ * @example
+ * <BgImage overlay="dark">
+ *   <BgImageSlot asChild>
+ *     <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Background" />
+ *   </BgImageSlot>
+ *   <BgImageContent>
+ *     <h1>Background Image</h1>
+ *   </BgImageContent>
+ * </BgImage>
+ */
 function BgImage<T extends React.ElementType = 'section'>({
   as,
   className,
@@ -50,10 +63,21 @@ function BgImageOverlay({
 
 /**
  * BgImageSlot
- * @description Foreground image slot.
+ * @description Foreground image slot. Center and cover the image.
+ * @example
+ * <BgImageSlot asChild>
+ *   <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Background" />
+ * </BgImageSlot>
  */
-function BgImageSlot({ className, ...props }: React.ComponentProps<'div'>) {
-  return <div className={cn('absolute inset-0 z-1', className)} {...props} />
+function BgImageSlot({
+  className,
+  asChild,
+  ...props
+}: React.ComponentProps<'div'> & { asChild?: boolean }) {
+  const Comp = asChild ? Slot : 'div'
+  return (
+    <Comp className={cn('absolute inset-0 z-1 object-cover object-center', className)} {...props} />
+  )
 }
 
 /**

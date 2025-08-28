@@ -104,11 +104,10 @@ export const withContainerAndFullHeight: Story = {
 export const withBackground: Story = {
   render: () => (
     <BgImage overlay="dark">
-      <BgImageSlot>
+      <BgImageSlot asChild>
         <NextImage
           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
           alt="Unsplash Sample"
-          className="object-cover"
           sizes="100vw"
           fill
         />

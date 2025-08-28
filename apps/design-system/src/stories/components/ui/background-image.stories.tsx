@@ -24,11 +24,10 @@ type Story = StoryObj<typeof BgImage>
 export const Default: Story = {
   render: ({ overlay }) => (
     <BgImage overlay={overlay}>
-      <BgImageSlot>
+      <BgImageSlot asChild>
         <NextImage
           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
           alt="Background"
-          className="object-cover"
           fill
           sizes="100vw"
         />
@@ -43,11 +42,10 @@ export const Default: Story = {
 export const WithDarkOverlay: Story = {
   render: () => (
     <BgImage overlay="dark">
-      <BgImageSlot>
+      <BgImageSlot asChild>
         <NextImage
           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
           alt="Background"
-          className="object-cover"
           fill
           sizes="100vw"
         />
@@ -66,11 +64,10 @@ export const WithDarkOverlay: Story = {
 export const WithLightOverlay: Story = {
   render: () => (
     <BgImage overlay="light">
-      <BgImageSlot>
+      <BgImageSlot asChild>
         <NextImage
           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
           alt="Background"
-          className="object-cover"
           fill
           sizes="100vw"
         />
@@ -89,11 +86,10 @@ export const WithLightOverlay: Story = {
 export const WithContainerContent: Story = {
   render: () => (
     <BgImage overlay="dark">
-      <BgImageSlot>
+      <BgImageSlot asChild>
         <NextImage
           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
           alt="Background"
-          className="object-cover"
           fill
           sizes="100vw"
         />
