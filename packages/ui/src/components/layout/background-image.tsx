@@ -2,10 +2,6 @@ import { cn } from '@boilerplate/ui/utils'
 import { Slot } from '@radix-ui/react-slot'
 import * as React from 'react'
 
-/**
- * BackgroundImage
- * @description Container for background image and content.
- */
 type BgImageProps<T extends React.ElementType> = Omit<React.ComponentPropsWithoutRef<T>, 'as'> & {
   as?: T
   overlay?: 'dark' | 'light' | 'none'
@@ -13,7 +9,7 @@ type BgImageProps<T extends React.ElementType> = Omit<React.ComponentPropsWithou
 
 /**
  * BgImage
- * @description Container for background image and content.
+ * @description Container for background image and foreground content.
  * @example
  * <BgImage overlay="dark">
  *   <BgImageSlot asChild>
@@ -42,7 +38,7 @@ function BgImage<T extends React.ElementType = 'section'>({
 
 /**
  * BgImageOverlay
- * @description Overlay for Bg image.
+ * @description Overlay for Background Image.
  */
 function BgImageOverlay({
   className,
@@ -63,7 +59,7 @@ function BgImageOverlay({
 
 /**
  * BgImageSlot
- * @description Foreground image slot. Center and cover the image.
+ * @description Background image slot. Center and cover the image.
  * @example
  * <BgImageSlot asChild>
  *   <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Background" />
@@ -81,10 +77,10 @@ function BgImageSlot({
 }
 
 /**
- * BgImageContent
+ * BgImageForeground
  * @description Foreground content.
  */
-function BgImageContent({
+function BgImageForeground({
   className,
   asChild,
   ...props
@@ -93,4 +89,4 @@ function BgImageContent({
   return <Comp className={cn('relative z-3', className)} {...props} />
 }
 
-export { BgImage, BgImageContent, BgImageSlot }
+export { BgImage, BgImageForeground, BgImageSlot }

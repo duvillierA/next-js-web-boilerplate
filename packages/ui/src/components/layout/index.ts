@@ -1,5 +1,4 @@
 export { AspectRatio } from './aspect-ratio'
-export { BgImage, BgImageContent, BgImageSlot } from './background-image'
 export { Container } from './container'
 export { Grid, GridItem } from './grid'
 export { Separator } from './separator'

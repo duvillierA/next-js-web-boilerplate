@@ -1,4 +1,4 @@
-import { BgImage, BgImageContent, BgImageSlot } from '@boilerplate/ui/background-image'
+import { BgImage, BgImageForeground, BgImageSlot } from '@boilerplate/ui/background-image'
 import { Button } from '@boilerplate/ui/button'
 import {
   Hero,
@@ -112,7 +112,7 @@ export const withBackground: Story = {
           fill
         />
       </BgImageSlot>
-      <BgImageContent>
+      <BgImageForeground>
         <Container gutter="md">
           <Hero className="min-h-[calc(100vh-32px)]">
             <HeroHeader>
@@ -137,7 +137,7 @@ export const withBackground: Story = {
             </HeroImage>
           </Hero>
         </Container>
-      </BgImageContent>
+      </BgImageForeground>
     </BgImage>
   ),
 }
